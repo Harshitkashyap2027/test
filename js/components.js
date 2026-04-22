@@ -170,3 +170,113 @@ document.addEventListener('DOMContentLoaded', () => {
     initAccordion();
     initHorizontalScroll();
 });
+/* ==========================================================================
+   3D Tilt Effect Engine — Mouse-tracking perspective for .bento-card elements
+   ========================================================================== */
+(function initTiltEffect() {
+    'use strict';
+
+    const TILT_MAX = 12;       // Max tilt degrees
+    const TILT_SCALE = 1.04;   // Scale on hover
+    const EASE = 0.12;         // Lerp easing factor (spring)
+
+    function applyTilt(card) {
+        let rafId = null;
+        let targetX = 0, targetY = 0;
+        let currentX = 0, currentY = 0;
+        let isHovered = false;
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        function animate() {
+            currentX = lerp(currentX, targetX, EASE * 4);
+            currentY = lerp(currentY, targetY, EASE * 4);
+
+            if (Math.abs(currentX - targetX) < 0.01 && Math.abs(currentY - targetY) < 0.01) {
+                currentX = targetX;
+                currentY = targetY;
+            }
+
+            card.style.transform = isHovered
+                ? `perspective(1000px) rotateX(${currentX}deg) rotateY(${currentY}deg) scale(${TILT_SCALE}) translateZ(20px)`
+                : `perspective(1000px) rotateX(${currentX}deg) rotateY(${currentY}deg) scale(1) translateZ(0)`;
+
+            if (isHovered || Math.abs(currentX) > 0.05 || Math.abs(currentY) > 0.05) {
+                rafId = requestAnimationFrame(animate);
+            }
+        }
+
+        function onMouseMove(e) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            targetY =  ((x - centerX) / centerX) * TILT_MAX;
+            targetX = -((y - centerY) / centerY) * TILT_MAX;
+            if (!rafId) rafId = requestAnimationFrame(animate);
+        }
+
+        function onMouseEnter() {
+            isHovered = true;
+            card.style.willChange = 'transform';
+            card.style.transition = 'none';
+            if (!rafId) rafId = requestAnimationFrame(animate);
+        }
+
+        function onMouseLeave() {
+            isHovered = false;
+            targetX = 0;
+            targetY = 0;
+            card.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+            if (!rafId) rafId = requestAnimationFrame(animate);
+        }
+
+        // Touch support
+        function onTouchMove(e) {
+            const touch = e.touches[0];
+            const rect = card.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            targetY =  ((x - centerX) / centerX) * (TILT_MAX * 0.5);
+            targetX = -((y - centerY) / centerY) * (TILT_MAX * 0.5);
+            if (!rafId) rafId = requestAnimationFrame(animate);
+        }
+
+        function onTouchEnd() {
+            isHovered = false;
+            targetX = 0;
+            targetY = 0;
+            if (!rafId) rafId = requestAnimationFrame(animate);
+        }
+
+        card.addEventListener('mouseenter', onMouseEnter, { passive: true });
+        card.addEventListener('mousemove', onMouseMove, { passive: true });
+        card.addEventListener('mouseleave', onMouseLeave, { passive: true });
+        card.addEventListener('touchmove', onTouchMove, { passive: true });
+        card.addEventListener('touchend', onTouchEnd, { passive: true });
+    }
+
+    function initCards() {
+        const cards = document.querySelectorAll('.bento-card, .bento-card-3d, .glass-panel.interactive');
+        cards.forEach(card => {
+            if (!card.dataset.tiltInit) {
+                card.dataset.tiltInit = 'true';
+                card.style.transformStyle = 'preserve-3d';
+                applyTilt(card);
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCards);
+    } else {
+        initCards();
+    }
+
+    // Re-init on dynamic content (e.g. after tab switch)
+    const observer = new MutationObserver(() => initCards());
+    observer.observe(document.body, { childList: true, subtree: true });
+}());
