@@ -1,0 +1,189 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE SCALING)
+   ========================================================================== */
+
+/* TABLET LAYOUT (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    .section-padding {
+        padding: var(--space-12) 5%;
+    }
+
+    /* Bento Grids scale down from 4 cols to 2 cols */
+    .industry-grid .bento-card,
+    .rpg-card {
+        grid-column: span 6;
+    }
+
+    .pricing-grid,
+    .testimonial-slider {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* AI Section Split to Stacked */
+    .ai-split-container {
+        flex-direction: column;
+    }
+    
+    .ai-visual-right {
+        width: 100%;
+        margin-top: var(--space-6);
+    }
+
+    /* Header Nav Adjustments */
+    .nav-links {
+        display: none; /* Hide standard nav, rely on mobile menu */
+    }
+    
+    .nav-actions {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        background: transparent;
+        border: none;
+    }
+
+    /* Hero adjustments */
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding-top: var(--space-10);
+    }
+
+    .hero-text-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-visual-block {
+        height: auto;
+        min-height: 400px;
+        margin-top: var(--space-8);
+    }
+
+    .main-dashboard {
+        transform: rotateY(0deg) rotateX(0deg); /* Disable 3D tilt on smaller screens */
+    }
+    
+    .floating-element {
+        display: none; /* Hide heavy floating animations on tablet to save performance */
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE LAYOUT (Max Width: 768px) */
+@media (max-width: 768px) {
+    :root {
+        --space-16: 96px;
+        --space-10: 48px;
+        --header-height: 70px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .glass-nav {
+        width: 95%;
+        padding: 0 var(--space-4);
+    }
+
+    /* Core Features Stack */
+    .feature-large,
+    .feature-wide,
+    .feature-box {
+        grid-column: span 12;
+    }
+
+    .automation-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Trust Metrics Flow */
+    .trust-metrics {
+        flex-direction: column;
+        gap: var(--space-5);
+    }
+
+    .metric-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    /* Full Stack Grids */
+    .industry-grid .bento-card,
+    .rpg-card {
+        grid-column: span 12;
+    }
+
+    .pricing-grid,
+    .testimonial-slider {
+        grid-template-columns: 1fr;
+    }
+
+    .popular-plan {
+        transform: scale(1);
+    }
+
+    .popular-plan:hover {
+        transform: scale(1) translateY(-5px);
+    }
+
+    /* Timeline Steps adjustment */
+    .timeline-step {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .timeline-line {
+        left: 25px; /* Adjust line position for stacked numbers */
+    }
+
+    /* Showcase Scroll Adjustments */
+    .showcase-item {
+        width: 90vw;
+        height: 350px;
+    }
+
+    /* Footer Mobile */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+    }
+}
+
+/* SMALL MOBILE (Max Width: 480px) */
+@media (max-width: 480px) {
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-cta-group .btn {
+        width: 100%;
+    }
+
+    .bento-grid-mini {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        grid-column: span 1;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+}

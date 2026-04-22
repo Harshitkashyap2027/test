@@ -1,0 +1,165 @@
+/* ==========================================================================
+   PARENT PORTAL - CUSTOM STYLESHEET
+   ========================================================================== */
+
+/* 🛡️ 1. CHILD GAMIFICATION STATUS */
+.child-status-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    flex: 1;
+}
+
+.overview-box {
+    padding: var(--space-5);
+    background: rgba(255, 255, 255, 0.02);
+    border: var(--border-thin);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.box-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.guild-mini-logo {
+    width: 48px; height: 48px;
+    background: rgba(0, 136, 255, 0.1);
+    border: 1px solid rgba(0, 136, 255, 0.3);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* 🧠 2. AI INSIGHT BOX */
+.ai-insight-card {
+    display: flex; flex-direction: column;
+}
+
+.action-alert {
+    display: flex; align-items: center; gap: 16px;
+    background: rgba(255, 214, 0, 0.05);
+    border: 1px solid rgba(255, 214, 0, 0.2);
+    padding: 16px; border-radius: var(--radius-md);
+}
+
+.pulse-purple {
+    animation: pulse-glow-purple 2s infinite;
+}
+
+@keyframes pulse-glow-purple {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(176, 38, 255, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(176, 38, 255, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(176, 38, 255, 0); }
+}
+
+/* 📅 3. ATTENDANCE HEATMAP */
+.attendance-card {
+    display: flex; flex-direction: column;
+}
+
+.heatmap-container {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    border: var(--border-thin);
+}
+
+.heatmap-grid {
+    display: grid;
+    /* Simulate a 5 day week mapping */
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.hm-day {
+    width: 100%; aspect-ratio: 1/1; min-width: 20px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform var(--transition-fast);
+}
+
+.hm-day:hover { transform: scale(1.2); z-index: 10; position: relative; }
+
+.hm-day.present { background: rgba(0, 255, 170, 0.2); border-color: rgba(0, 255, 170, 0.4); }
+.hm-day.absent { background: rgba(255, 51, 102, 0.2); border-color: rgba(255, 51, 102, 0.4); }
+.hm-day.late { background: rgba(255, 214, 0, 0.2); border-color: rgba(255, 214, 0, 0.4); }
+
+/* 💰 4. FINANCE & BILLING */
+.finance-card {
+    display: flex; flex-direction: column;
+}
+
+.invoice-box {
+    background: rgba(0, 136, 255, 0.05);
+    border: 1px solid rgba(0, 136, 255, 0.2);
+    padding: var(--space-5);
+    border-radius: var(--radius-md);
+    display: flex; flex-direction: column;
+}
+
+/* 📝 5. DATA TABLES (Grades/History) */
+.grade-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: var(--border-thin);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.grade-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.grade-table th {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border-bottom: var(--border-thin);
+}
+
+.grade-table td {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    color: var(--text-secondary);
+}
+
+.grade-table tbody tr:last-child td { border-bottom: none; }
+.grade-table tbody tr:hover td { background: rgba(255, 255, 255, 0.02); color: var(--text-primary); }
+
+.subject-tag { padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.subject-tag.physics { background: rgba(255, 51, 102, 0.1); color: #FF3366; }
+.subject-tag.history { background: rgba(255, 214, 0, 0.1); color: #FFD700; }
+.subject-tag.math { background: rgba(0, 136, 255, 0.1); color: #0088FF; }
+
+.status-tag { padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; border: 1px solid; }
+.status-tag.graded { background: rgba(0, 255, 170, 0.1); color: #00FFAA; border-color: rgba(0, 255, 170, 0.3); }
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .status-overview-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1024px) {
+    .child-status-card, .ai-insight-card, .attendance-card, .finance-card { grid-column: span 12; }
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Library | lvlBase Learning</title>
+    
+    <meta name="description" content="Access your smart learning modules. Engage with interactive simulations, AI-generated notes, and quick revision tasks.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/guilds.css">
+    <link rel="stylesheet" href="../css/dashboards.css">
+    <link rel="stylesheet" href="../css/learning.css">
+</head>
+<body class="dark-theme bento-body learning-body guild-azure">
+
+    <div class="ambient-glow glow-top-left guild-ambient-primary" style="opacity: 0.3;"></div>
+    <div class="ambient-glow glow-bottom-right guild-ambient-secondary" style="opacity: 0.2;"></div>
+    <div class="grid-overlay" style="opacity: 0.4;"></div>
+
+    <div class="app-layout">
+        
+        <aside class="dashboard-sidebar glass-panel">
+            <div class="sidebar-header">
+                <div class="logo-container" onclick="window.location.href='../index.html'">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#0088FF"/>
+                        <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint_logo)"/>
+                        <defs><linearGradient id="paint_logo" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#0088FF"/><stop offset="1" stop-color="#00FF88"/></linearGradient></defs>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <span class="menu-label">Command Center</span>
+                <a href="../services/student/dashboard.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Overview</span>
+                </a>
+                <a href="subjects.html" class="menu-item active">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>My Subjects</span>
+                </a>
+                
+                <span class="menu-label" style="margin-top: 24px;">The Arena</span>
+                <a href="../arena/daily-challenge.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Daily Quests</span>
+                </a>
+                <a href="../arena/battle-hub.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                    <span>Battle Hub</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../settings/profile.html" class="user-profile-widget glass-panel">
+                    <div class="user-avatar guild-azure-bg">A</div>
+                    <div class="user-meta">
+                        <span class="user-name">Alex Chen</span>
+                        <span class="user-rank text-gradient">Rank B (Elite)</span>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            
+            <header class="dashboard-topbar">
+                <div class="search-module glass-panel" style="width: 500px;">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" placeholder="Search for 'Newton's Laws', 'Algebra', or 'Simulations'...">
+                    <div class="hotkey-hint">⌘K</div>
+                </div>
+
+                <div class="topbar-stats">
+                    <button class="btn btn-outline btn-small" id="focus-mode-btn" onclick="window.location.href='focus-mode.html'">
+                        <svg width="14" height="14" fill="none" stroke="var(--accent-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Focus Mode
+                    </button>
+                    <div class="stat-pill glass-panel power-score-pill">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        <div class="stat-data">
+                            <span class="stat-label">Power Score</span>
+                            <span class="stat-value">8,450</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="bento-grid learning-grid">
+                
+                <div class="bento-card glass-panel span-8-col resume-card" data-animate="fade-up">
+                    <div class="resume-bg-graphic"></div>
+                    <div class="resume-content">
+                        <div class="card-header" style="margin-bottom: 12px;">
+                            <span class="text-muted" style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">Pick up where you left off</span>
+                        </div>
+                        <h2 style="font-size: 2rem; margin-bottom: 8px;">Physics: Electromagnetism</h2>
+                        <p style="color: var(--text-secondary); max-width: 500px; margin-bottom: 24px;">You stopped at Chapter 4.2: Faraday's Law of Induction. You need to complete this module to unlock the Circuit Builder simulation.</p>
+                        
+                        <div class="resume-progress" style="margin-bottom: 24px; max-width: 400px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px;">
+                                <span>Module Completion</span>
+                                <span style="color: var(--accent-primary); font-weight: bold;">68%</span>
+                            </div>
+                            <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 68%; height: 100%; background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary);"></div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 16px;">
+                            <button class="btn btn-primary bento-glow">Resume Lesson</button>
+                            <button class="btn btn-outline" onclick="window.location.href='smart-notes.html'">Generate Smart Notes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col revision-card" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <div class="pulse-ring" style="width: 12px; height: 12px; border-color: var(--accent-red);"><div class="dot pulse-red" style="width: 6px; height: 6px;"></div></div>
+                            <h3 style="font-size: 1.1rem;">Smart Revision</h3>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">AI detects fading memory retention for these topics. Revise now to stabilize your Skill DNA.</p>
+                    
+                    <ul class="revision-list">
+                        <li class="rev-item">
+                            <div class="rev-icon" style="color: #FF8C00; background: rgba(255,140,0,0.1);">🧬</div>
+                            <div class="rev-info">
+                                <h4>Cellular Mitosis</h4>
+                                <span>Studied 4 days ago</span>
+                            </div>
+                            <button class="btn btn-ghost btn-small" style="color: var(--accent-primary);">Review</button>
+                        </li>
+                        <li class="rev-item">
+                            <div class="rev-icon" style="color: #0088FF; background: rgba(0,136,255,0.1);">📐</div>
+                            <div class="rev-info">
+                                <h4>Trigonometry Basics</h4>
+                                <span>Studied 7 days ago</span>
+                            </div>
+                            <button class="btn btn-ghost btn-small" style="color: var(--accent-primary);">Review</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bento-card glass-panel span-full micro-learning-card" data-animate="fade-up">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+                        <div>
+                            <h2 style="font-size: 1.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 12px;">
+                                ⏱️ Micro-Learning Burst
+                                <span style="font-size: 0.75rem; background: var(--accent-yellow); color: #000; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Short Attention Mode</span>
+                            </h2>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Only have 5 minutes? Play a rapid-fire quiz to keep your daily streak alive and earn quick XP.</p>
+                        </div>
+                        <button class="btn btn-primary btn-large" style="background: #fff; color: #000;" onclick="window.location.href='micro-lesson.html'">Start 5-Min Burst</button>
+                    </div>
+                </div>
+
+                <h3 class="span-full" style="font-size: 1.2rem; margin: 16px 0 0 0; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Your Subject Library</h3>
+                
+                <div class="bento-card glass-panel span-4-col subject-card math-theme" data-animate="fade-up">
+                    <div class="sub-bg"></div>
+                    <div class="sub-header">
+                        <div class="sub-icon">📐</div>
+                        <span class="sub-level">Level 42</span>
+                    </div>
+                    <h3>Mathematics</h3>
+                    <p>Algebra, Calculus, Geometry, and logic-based questing.</p>
+                    
+                    <div class="sub-stats">
+                        <div class="sub-stat"><span>Mastery</span><strong>84%</strong></div>
+                        <div class="sub-stat"><span>Rank</span><strong>A</strong></div>
+                    </div>
+                    <button class="btn btn-outline full-width">Enter Module</button>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col subject-card science-theme" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="sub-bg"></div>
+                    <div class="sub-header">
+                        <div class="sub-icon">🔬</div>
+                        <span class="sub-level">Level 35</span>
+                    </div>
+                    <h3>Sciences</h3>
+                    <p>Physics simulations, Chemistry labs, and Biology diagrams.</p>
+                    
+                    <div class="sub-stats">
+                        <div class="sub-stat"><span>Mastery</span><strong>72%</strong></div>
+                        <div class="sub-stat"><span>Rank</span><strong>B</strong></div>
+                    </div>
+                    <button class="btn btn-outline full-width">Enter Module</button>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col subject-card english-theme" data-animate="fade-up" style="animation-delay: 0.2s;">
+                    <div class="sub-bg"></div>
+                    <div class="sub-header">
+                        <div class="sub-icon">📖</div>
+                        <span class="sub-level">Level 50</span>
+                    </div>
+                    <h3>English Lit.</h3>
+                    <p>Grammar quests, automated essay grading, and reading comprehension.</p>
+                    
+                    <div class="sub-stats">
+                        <div class="sub-stat"><span>Mastery</span><strong>91%</strong></div>
+                        <div class="sub-stat"><span>Rank</span><strong style="color: #FFD700;">S</strong></div>
+                    </div>
+                    <button class="btn btn-outline full-width">Enter Module</button>
+                </div>
+
+                <div class="bento-card glass-panel span-full simulations-banner" data-animate="fade-up">
+                    <div class="sim-content">
+                        <span style="color: var(--accent-primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Interactive Canvas</span>
+                        <h2 style="font-size: 2rem; margin: 8px 0 16px;">Stop reading. Start interacting.</h2>
+                        <p style="color: var(--text-secondary); max-width: 500px; margin-bottom: 24px;">Don't memorize how gravity works—manipulate the mass of a planet and watch the orbit change in real-time. Enter the visual simulation lab to truly understand concepts.</p>
+                        <button class="btn btn-primary bento-glow" onclick="window.location.href='simulations.html'">Open Simulation Lab</button>
+                    </div>
+                    
+                    <div class="sim-visual">
+                        <div class="orbit-container">
+                            <div class="sun"></div>
+                            <div class="orbit-path">
+                                <div class="planet"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/core-auth.js"></script>
+    <script src="../../js/study-algorithms.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+/* ==========================================================================
+   THE BENTO SYSTEM & GLASSMORPHISM
+   ========================================================================== */
+
+/* The Core Glass Panel (Used Everywhere) */
+.glass-panel {
+    background: var(--gradient-glass);
+    backdrop-filter: var(--blur-base);
+    -webkit-backdrop-filter: var(--blur-base);
+    border: var(--border-thin);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Inner glow for glass panels */
+.glass-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    z-index: 2;
+}
+
+/* Base Bento Grid Structure */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-5);
+    width: 100%;
+}
+
+.bento-card {
+    grid-column: span 3;
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-bounce), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+/* Hover Effects for Interactive Bento Boxes */
+.bento-hover-effect:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+/* Specific Grid Spans for varying box sizes */
+.span-2-col { grid-column: span 6; }
+.span-full { grid-column: 1 / -1; }
+.span-4-col { grid-column: span 4; }
+.span-8-col { grid-column: span 8; }
+
+/* ==========================================================================
+   BUTTONS & CONTROLS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: 12px 24px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.125rem;
+}
+
+.btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-base);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Neon Glow Button */
+.bento-glow {
+    background: var(--accent-primary);
+    color: #000;
+    position: relative;
+    z-index: 1;
+}
+
+.bento-glow::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: var(--radius-pill);
+    background: var(--gradient-brand);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.bento-glow:hover::after {
+    opacity: 0.8;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: var(--border-light);
+    color: var(--text-primary);
+    backdrop-filter: var(--blur-base);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+.btn-ghost:hover {
+    color: var(--accent-primary);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   AMBIENT GLOWS & BACKGROUND EFFECTS
+   ========================================================================== */
+.ambient-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.glow-top-left {
+    top: -200px;
+    left: -200px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.2), transparent 70%);
+}
+
+.glow-bottom-right {
+    bottom: -200px;
+    right: -200px;
+    background: radial-gradient(circle, rgba(176, 38, 255, 0.2), transparent 70%);
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+}
+
+/* ==========================================================================
+   ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+}
+
+@keyframes dash {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkTextCursor {
+    from { border-right-color: rgba(255,255,255,.75); }
+    to { border-right-color: transparent; }
+}

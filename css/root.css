@@ -1,0 +1,193 @@
+/* ==========================================================================
+   ROOT VARIABLES & DESIGN TOKENS
+   ========================================================================== */
+:root {
+    /* Color Palette - Dark Theme Defaults */
+    --bg-base: #050505;
+    --bg-surface: rgba(20, 20, 22, 0.6);
+    --bg-surface-hover: rgba(30, 30, 35, 0.8);
+    --bg-surface-light: rgba(255, 255, 255, 0.03);
+    
+    /* Neon Accents */
+    --accent-primary: #00FF88;
+    --accent-secondary: #0088FF;
+    --accent-purple: #B026FF;
+    --accent-red: #FF3366;
+    --accent-yellow: #FFD600;
+
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    --gradient-glass: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.15) 0%, transparent 70%);
+
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A5;
+    --text-muted: #66666E;
+
+    /* Bento / Apple Design Geometry */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px; /* Core iPhone Bento Radius */
+    --radius-pill: 9999px;
+    
+    /* Spacing Scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
+    --space-10: 64px;
+    --space-12: 96px;
+    --space-16: 128px;
+
+    /* Borders & Glass Effects */
+    --border-thin: 1px solid rgba(255, 255, 255, 0.08);
+    --border-light: 1px solid rgba(255, 255, 255, 0.12);
+    --blur-base: blur(20px);
+    --blur-heavy: blur(40px);
+
+    /* Shadows */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+    --shadow-glow-primary: 0 0 20px rgba(0, 255, 136, 0.3);
+    --shadow-glow-secondary: 0 0 30px rgba(0, 136, 255, 0.2);
+
+    /* Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-base: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Layout Constraints */
+    --max-width-container: 1400px;
+    --header-height: 80px;
+}
+
+/* ==========================================================================
+   GLOBAL RESET & ACCESSIBILITY
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.dark-theme {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Custom Scrollbar for sleek UI */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--bg-surface-hover);
+    border-radius: var(--radius-pill);
+    border: 2px solid var(--bg-base);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+::selection {
+    background: rgba(0, 255, 136, 0.3);
+    color: #fff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+img, svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* Typography Base Elements */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.text-gradient {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.text-center { text-align: center; }
+.section-padding { padding: var(--space-16) 5%; }
+.full-width { width: 100%; }
+
+/* Layout Utilities */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    width: 100%;
+    max-width: var(--max-width-container);
+    position: relative;
+    z-index: 2;
+}
+
+.section-header {
+    margin-bottom: var(--space-10);
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: var(--space-4);
+}
+
+.section-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}

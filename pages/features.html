@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features | lvlBase Ecosystem Core</title>
+    
+    <meta name="description" content="Explore the deep features of lvlBase: Gamification engines, Zero-Trust Security, Advanced Analytics, and Webhook Integrations.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/features.css">
+</head>
+<body class="dark-theme bento-body">
+
+    <div class="ambient-glow glow-top-left" style="background: radial-gradient(circle, rgba(0, 255, 136, 0.15), transparent 70%);"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(176, 38, 255, 0.15), transparent 70%);"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint0_linear)"/>
+                    <defs><linearGradient id="paint0_linear" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#00FF88"/><stop offset="1" stop-color="#0088FF"/></linearGradient></defs>
+                </svg>
+                <span class="logo-text">lvlBase</span>
+            </div>
+            <nav class="nav-links">
+                <a href="product.html" class="nav-item">Product</a>
+                <a href="solutions.html" class="nav-item">Solutions</a>
+                <a href="features.html" class="nav-item text-gradient" style="font-weight: 700;">Features</a>
+                <a href="pricing.html" class="nav-item">Pricing</a>
+                <a href="ai-lab.html" class="nav-item ai-badge">AI Lab <span>New</span></a>
+            </nav>
+            <div class="nav-actions">
+                <a href="auth.html" class="btn btn-ghost">Sign In</a>
+                <a href="auth.html" class="btn btn-primary bento-glow">Get Started</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="sticky-subnav glass-panel" id="feature-nav">
+        <div class="subnav-container">
+            <a href="#gamification" class="subnav-link active"><span class="icon">⚔️</span> Gamification Engine</a>
+            <a href="#security" class="subnav-link"><span class="icon">🛡️</span> Zero-Trust Security</a>
+            <a href="#analytics" class="subnav-link"><span class="icon">📊</span> Deep Telemetry</a>
+            <a href="#api" class="subnav-link"><span class="icon">🔌</span> API & Webhooks</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="features-hero section-padding">
+            <div class="section-header text-center" data-animate="fade-up">
+                <div class="hero-badge" style="border-color: var(--accent-primary); color: var(--accent-primary);">Architecture Breakdown</div>
+                <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4.5rem);">Engineered for <span class="text-gradient">Extremes.</span></h1>
+                <p class="hero-subtext" style="max-width: 800px; margin: 0 auto;">Beyond the beautiful UI lies a ruthless, highly optimized, mathematically balanced backend ecosystem. Explore the core systems that power lvlBase.</p>
+            </div>
+        </section>
+
+        <section class="feature-block section-padding" id="gamification">
+            <div class="section-header">
+                <h2 class="section-title">The <span style="color: var(--accent-yellow);">Gamification</span> Core</h2>
+                <p class="section-subtitle" style="margin: 0;">We don't just add badges. We built a mathematically balanced RPG economy that scales from 10 to 100,000 users without inflation.</p>
+            </div>
+
+            <div class="bento-grid">
+                
+                <div class="bento-card glass-panel span-8-col">
+                    <h3 style="margin-bottom: 24px;">Dynamic Rank Progression (E to S)</h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div class="rank-row">
+                            <div class="rank-badge-box" style="border-color: #A0A0A5; color: #A0A0A5;">E</div>
+                            <div class="rank-details">
+                                <h4>Novice / Initiate</h4>
+                                <p>Base multiplier: 1.0x | Unlocks standard dashboard access.</p>
+                            </div>
+                            <div class="rank-xp">0 - 5,000 XP</div>
+                        </div>
+                        <div class="rank-row">
+                            <div class="rank-badge-box" style="border-color: #0088FF; color: #0088FF; box-shadow: inset 0 0 10px rgba(0,136,255,0.2);">D</div>
+                            <div class="rank-details">
+                                <h4>Apprentice</h4>
+                                <p>Base multiplier: 1.1x | Unlocks Guild participation.</p>
+                            </div>
+                            <div class="rank-xp">5,000 - 15,000 XP</div>
+                        </div>
+                        <div class="rank-row">
+                            <div class="rank-badge-box" style="border-color: #00FF88; color: #00FF88; box-shadow: inset 0 0 10px rgba(0,255,136,0.2);">C</div>
+                            <div class="rank-details">
+                                <h4>Adept</h4>
+                                <p>Base multiplier: 1.25x | Unlocks Advanced Quests.</p>
+                            </div>
+                            <div class="rank-xp">15K - 40K XP</div>
+                        </div>
+                        <div class="rank-row">
+                            <div class="rank-badge-box" style="border-color: #FF3366; color: #FF3366; box-shadow: inset 0 0 10px rgba(255,51,102,0.2);">B</div>
+                            <div class="rank-details">
+                                <h4>Elite</h4>
+                                <p>Base multiplier: 1.5x | Unlocks Cross-Org Network visibility.</p>
+                            </div>
+                            <div class="rank-xp">40K - 100K XP</div>
+                        </div>
+                        <div class="rank-row">
+                            <div class="rank-badge-box" style="border-color: #B026FF; color: #B026FF; box-shadow: inset 0 0 15px rgba(176,38,255,0.4);">A</div>
+                            <div class="rank-details">
+                                <h4>Master</h4>
+                                <p>Base multiplier: 2.0x | Unlocks Mentorship privileges & Real-world rewards.</p>
+                            </div>
+                            <div class="rank-xp">100K - 250K XP</div>
+                        </div>
+                        <div class="rank-row s-rank-row" style="background: linear-gradient(90deg, rgba(255,214,0,0.1), transparent); border-color: var(--accent-yellow);">
+                            <div class="rank-badge-box" style="background: rgba(255,214,0,0.2); border-color: var(--accent-yellow); color: var(--accent-yellow); box-shadow: 0 0 20px rgba(255,214,0,0.5);">S</div>
+                            <div class="rank-details">
+                                <h4 style="color: var(--accent-yellow); text-shadow: 0 0 5px rgba(255,214,0,0.5);">Supreme / Monarch</h4>
+                                <p style="color: #fff;">Base multiplier: 3.0x | Root Admin privileges or Ultimate Guild Leadership.</p>
+                            </div>
+                            <div class="rank-xp" style="color: var(--accent-yellow); font-weight: 900;">250,000+ XP</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col" style="background: rgba(255,214,0,0.02);">
+                    <h3 style="margin-bottom: 16px;">The XP Algorithm</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">Our proprietary formula ensures that grinding low-level tasks yields diminishing returns, forcing users to tackle higher-difficulty 'Quests' to progress.</p>
+                    
+                    <div style="background: #0D0D0D; padding: 16px; border-radius: var(--radius-md); border: var(--border-thin); font-family: 'Fira Code', monospace; font-size: 0.8rem; color: #A0A0A5; line-height: 1.6; margin-bottom: 24px;">
+                        <span style="color: var(--accent-purple);">function</span> <span style="color: var(--accent-secondary);">calculateYield</span>(base, diff, streak) {<br>
+                        &nbsp;&nbsp;<span style="color: var(--accent-purple);">const</span> multiplier = Math.pow(<span style="color: var(--accent-yellow);">1.15</span>, diff);<br>
+                        &nbsp;&nbsp;<span style="color: var(--accent-purple);">let</span> total = base * multiplier;<br>
+                        &nbsp;&nbsp;<span style="color: var(--accent-purple);">if</span> (streak > <span style="color: var(--accent-yellow);">7</span>) total *= <span style="color: var(--accent-yellow);">1.2</span>;<br>
+                        &nbsp;&nbsp;<span style="color: var(--accent-purple);">return</span> Math.round(total);<br>
+                        }
+                    </div>
+
+                    <div style="padding: 16px; border-radius: var(--radius-md); background: rgba(255,255,255,0.05); text-align: center;">
+                        <h4 style="color: var(--accent-yellow); margin-bottom: 8px;">Loot Box Drop Rates</h4>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 4px;"><span>Common (White)</span> <span>60%</span></div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 4px; color: #0088FF;"><span>Rare (Blue)</span> <span>25%</span></div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 4px; color: #B026FF;"><span>Epic (Purple)</span> <span>12%</span></div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #FFD600; font-weight: bold;"><span>Legendary (Gold)</span> <span>3%</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-block section-padding" id="security">
+            <div class="section-header text-right" style="margin-left: auto; margin-right: 0;">
+                <h2 class="section-title"><span style="color: var(--accent-red);">Zero-Trust</span> Architecture</h2>
+                <p class="section-subtitle" style="margin-left: auto; margin-right: 0;">Military-grade encryption protecting the multi-tenant clusters. We assume every network request is hostile until cryptographically verified.</p>
+            </div>
+
+            <div class="bento-grid">
+                
+                <div class="bento-card glass-panel span-full encryption-card" style="padding: 0; background: #08080A; display: flex; flex-direction: column;">
+                    <div style="padding: var(--space-6); border-bottom: var(--border-thin); display: flex; justify-content: space-between; align-items: center; background: rgba(255,51,102,0.05);">
+                        <div>
+                            <h3 style="font-size: 1.5rem; color: #fff;">End-to-End Encryption Flow</h3>
+                            <span style="color: var(--accent-red); font-size: 0.9rem;">AES-256 + RSA-4096 Key Exchange</span>
+                        </div>
+                        <div class="security-status-indicator">
+                            <span class="pulse-dot" style="background: var(--accent-red); box-shadow: 0 0 10px var(--accent-red);"></span> Fully Secured
+                        </div>
+                    </div>
+                    
+                    <div style="flex: 1; padding: var(--space-6); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); position: relative; overflow: hidden;">
+                        
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255,51,102,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,51,102,0.05) 1px, transparent 1px); background-size: 30px 30px; z-index: 0; pointer-events: none;"></div>
+
+                        <div class="sec-node" style="z-index: 1;">
+                            <div class="sec-icon">📱</div>
+                            <h4>Client Device</h4>
+                            <p>Data encrypted locally before transmission.</p>
+                        </div>
+
+                        <div class="sec-transmission" style="z-index: 1;">
+                            <div class="data-packet">
+                                <span class="lock-icon">🔒</span>
+                                <span class="crypto-hash">0x8F9A...3B2C</span>
+                            </div>
+                            <svg width="100%" height="40" style="position: absolute; top: 50%; transform: translateY(-50%); z-index: -1;">
+                                <line x1="0" y1="20" x2="100%" y2="20" stroke="var(--accent-red)" stroke-width="2" stroke-dasharray="8" class="moving-dash"/>
+                            </svg>
+                        </div>
+
+                        <div class="sec-node gateway-node" style="z-index: 1; border-color: var(--accent-red); background: rgba(255,51,102,0.1);">
+                            <div class="sec-icon" style="color: var(--accent-red);">🛡️</div>
+                            <h4>API Gateway</h4>
+                            <p>Verifies JWT & Tenant Isolation Shard.</p>
+                        </div>
+
+                        <div class="sec-transmission" style="z-index: 1;">
+                            <div class="data-packet delay-packet">
+                                <span class="lock-icon">🔒</span>
+                                <span class="crypto-hash">0x1C4D...9F8E</span>
+                            </div>
+                            <svg width="100%" height="40" style="position: absolute; top: 50%; transform: translateY(-50%); z-index: -1;">
+                                <line x1="0" y1="20" x2="100%" y2="20" stroke="var(--accent-primary)" stroke-width="2" stroke-dasharray="8" class="moving-dash"/>
+                            </svg>
+                        </div>
+
+                        <div class="sec-node" style="z-index: 1;">
+                            <div class="sec-icon">🗄️</div>
+                            <h4>Firebase Multi-Tenant DB</h4>
+                            <p>Encrypted at rest. Zero-knowledge proof.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-6-col">
+                    <h3 style="margin-bottom: 16px;">Identity & Access Management</h3>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; gap: 16px; align-items: flex-start;">
+                            <div style="color: var(--accent-red); margin-top: 4px;"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                            <div>
+                                <strong>Role-Based Access Control (RBAC)</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">Dynamic permissions tied to Gamification Ranks. A Rank-C user literally cannot query Rank-B endpoints at the API level.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 16px; align-items: flex-start;">
+                            <div style="color: var(--accent-red); margin-top: 4px;"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                            <div>
+                                <strong>Strict Multi-Tenant Isolation</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">Tenant A's data is cryptographically walled off from Tenant B. A breach in one shard does not compromise the ecosystem.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 16px; align-items: flex-start;">
+                            <div style="color: var(--accent-red); margin-top: 4px;"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 2v6h6"/></svg></div>
+                            <div>
+                                <strong>Automated Audit Trails</strong>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">Every DB write, API request, and authentication attempt is logged immutably for compliance (HIPAA, GDPR, SOC2).</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bento-card glass-panel span-6-col" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: rgba(255,255,255,0.02);">
+                    <h3 style="margin-bottom: 24px;">Enterprise Compliant</h3>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;">
+                        <div class="compliance-badge">SOC 2 Type II</div>
+                        <div class="compliance-badge">HIPAA</div>
+                        <div class="compliance-badge">GDPR</div>
+                        <div class="compliance-badge">ISO 27001</div>
+                        <div class="compliance-badge">FERPA</div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 32px; max-width: 300px;">Our infrastructure undergoes rigorous third-party penetration testing quarterly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-block section-padding" id="analytics">
+            <div class="section-header">
+                <h2 class="section-title">Deep <span style="color: var(--accent-secondary);">Telemetry</span></h2>
+                <p class="section-subtitle" style="margin: 0;">Visualize the heartbeat of your organization. Every action creates a data point mapped into real-time dashboards.</p>
+            </div>
+
+            <div class="bento-grid">
+                
+                <div class="bento-card glass-panel span-8-col mockup-container" style="padding: 0; background: #08080A; border-color: rgba(0,136,255,0.3);">
+                    <div class="mockup-header" style="background: rgba(0,136,255,0.1);">
+                        <div class="mac-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <div class="mockup-title" style="color: #fff;">Analytics Matrix</div>
+                    </div>
+                    
+                    <div style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4);">
+                        <div style="display: flex; justify-content: space-between;">
+                            <h4 style="font-size: 1.2rem;">Global Organizational Health</h4>
+                            <div style="display: flex; gap: 8px;">
+                                <span style="background: rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 4px; font-size: 0.8rem;">24h</span>
+                                <span style="background: var(--accent-secondary); color: #000; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">7d</span>
+                                <span style="background: rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 4px; font-size: 0.8rem;">30d</span>
+                            </div>
+                        </div>
+
+                        <div style="height: 200px; background: rgba(255,255,255,0.02); border-radius: var(--radius-md); border: var(--border-thin); position: relative; padding: 20px;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 20px; pointer-events: none; opacity: 0.1;">
+                                <div style="border-top: 1px dashed #fff; width: 100%;"></div>
+                                <div style="border-top: 1px dashed #fff; width: 100%;"></div>
+                                <div style="border-top: 1px dashed #fff; width: 100%;"></div>
+                                <div style="border-top: 1px dashed #fff; width: 100%;"></div>
+                            </div>
+                            
+                            <svg width="100%" height="100%" viewBox="0 0 800 160" preserveAspectRatio="none">
+                                <path d="M0,160 L0,120 C100,100 200,140 300,90 C400,40 500,80 600,50 C700,20 800,60 800,60 L800,160 Z" fill="rgba(0,136,255,0.2)"/>
+                                <path d="M0,120 C100,100 200,140 300,90 C400,40 500,80 600,50 C700,20 800,60 800,60" fill="none" stroke="var(--accent-secondary)" stroke-width="3" class="chart-line-anim"/>
+                                
+                                <path d="M0,160 L0,150 C150,150 250,110 350,130 C450,150 550,90 650,100 C750,110 800,80 800,80 L800,160 Z" fill="rgba(176,38,255,0.1)"/>
+                                <path d="M0,150 C150,150 250,110 350,130 C450,150 550,90 650,100 C750,110 800,80 800,80" fill="none" stroke="var(--accent-purple)" stroke-width="2" class="chart-line-anim-delayed"/>
+                            </svg>
+                            
+                            <div style="position: absolute; top: 10px; right: 20px; display: flex; gap: 16px; font-size: 0.8rem;">
+                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background: var(--accent-secondary); border-radius: 50%;"></span> Quest Completion Rate</div>
+                                <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background: var(--accent-purple); border-radius: 50%;"></span> AI Burnout Predictor</div>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                            <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: var(--border-thin);">
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Top Performing Guild</span>
+                                <h4 style="font-size: 1.2rem; margin-top: 8px; color: var(--accent-primary);">Engineering Alpha</h4>
+                                <div style="margin-top: 8px; width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;"><div style="width: 92%; height: 100%; background: var(--accent-primary);"></div></div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: var(--border-thin);">
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Resource Efficiency</span>
+                                <h4 style="font-size: 1.2rem; margin-top: 8px; color: var(--accent-secondary);">87.4%</h4>
+                                <div style="margin-top: 8px; width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;"><div style="width: 87%; height: 100%; background: var(--accent-secondary);"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col" style="background: rgba(0,136,255,0.02);">
+                    <div class="rpg-icon-box" style="background: rgba(0,136,255,0.1); color: var(--accent-secondary); border-color: var(--accent-secondary);">📑</div>
+                    <h3 style="margin-bottom: 16px;">Automated Reporting</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6;">Don't spend hours compiling data in Excel. lvlBase generates pixel-perfect PDF or CSV reports automatically.</p>
+                    
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+                        <li style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <span>Financial Reconciliation</span> <span style="color: var(--accent-secondary);">Monthly</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <span>Student Performance Matrix</span> <span style="color: var(--accent-secondary);">Weekly</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <span>Server Load & Uptime</span> <span style="color: var(--accent-secondary);">Daily</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between;">
+                            <span>Compliance Audit Log</span> <span style="color: var(--accent-red);">On Demand</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-block section-padding" id="api">
+            <div class="section-header text-right" style="margin-left: auto; margin-right: 0;">
+                <h2 class="section-title"><span style="color: var(--accent-primary);">Developer</span> Ready</h2>
+                <p class="section-subtitle" style="margin-left: auto; margin-right: 0;">A fully documented REST and GraphQL API. Connect lvlBase to your existing legacy software, payment gateways, and communication tools.</p>
+            </div>
+
+            <div class="bento-grid">
+                
+                <div class="bento-card glass-panel span-5-col">
+                    <h3 style="margin-bottom: 16px;">Event Webhooks</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">Trigger real-time actions across the web when events happen inside lvlBase.</p>
+                    
+                    <div style="background: rgba(0,0,0,0.3); border-radius: var(--radius-md); padding: 16px; border: var(--border-thin); display: flex; flex-direction: column; gap: 16px;">
+                        
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; font-family: 'Fira Code', monospace; color: var(--accent-primary); border: 1px solid rgba(0,255,136,0.3);">user.rank_up</div>
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; font-size: 0.8rem;">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E01E5A'><path d='M5 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3v-3c0-1.66-1.34-3-3-3zm14-8c1.66 0 3-1.34 3-3s-1.34-3-3-3h-3v3c0 1.66 1.34 3 3 3zm-8 8c1.66 0 3-1.34 3-3s-1.34-3-3-3H8v3c0 1.66 1.34 3 3 3zm0 2c-1.66 0-3 1.34-3 3s1.34 3 3 3h3v-3c0-1.66-1.34-3-3-3z'/></svg>" width="16" height="16" alt="Slack">
+                                Post to Slack
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; font-family: 'Fira Code', monospace; color: var(--accent-secondary); border: 1px solid rgba(0,136,255,0.3);">invoice.paid</div>
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; font-size: 0.8rem;">
+                                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23008CDD'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/></svg>" width="16" height="16" alt="SAP">
+                                Update SAP ERP
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; font-family: 'Fira Code', monospace; color: var(--accent-red); border: 1px solid rgba(255,51,102,0.3);">sec.breach_attempt</div>
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,51,102,0.1); padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; color: var(--accent-red); border: 1px solid rgba(255,51,102,0.3);">
+                                🚨 PagerDuty Alert
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-7-col" style="padding: 0; background: #0D0D0D;">
+                    <div class="mockup-header" style="background: rgba(255,255,255,0.02);">
+                        <div class="mac-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <div style="display: flex; gap: 16px; margin-left: 24px; font-size: 0.8rem; color: var(--text-secondary);">
+                            <span style="color: #fff; border-bottom: 2px solid var(--accent-primary); padding-bottom: 8px; margin-bottom: -8px;">cURL</span>
+                            <span>Node.js</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                    <div style="padding: var(--space-5); overflow-x: auto;">
+<pre style="margin: 0; font-family: 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.6; color: #E5E5E5;">
+<span style="color: var(--text-muted);"># Grant 500 XP to a user via API</span>
+curl -X POST https://api.lvlbase.in/v1/gamification/xp \
+  -H <span style="color: #A3BE8C;">"Authorization: Bearer sk_live_8f9A..."</span> \
+  -H <span style="color: #A3BE8C;">"Content-Type: application/json"</span> \
+  -d '{
+    <span style="color: #81A1C1;">"user_id"</span>: <span style="color: #A3BE8C;">"usr_99123"</span>,
+    <span style="color: #81A1C1;">"amount"</span>: <span style="color: #B48EAD;">500</span>,
+    <span style="color: #81A1C1;">"reason"</span>: <span style="color: #A3BE8C;">"Closed Q3 Bug Ticket #441"</span>,
+    <span style="color: #81A1C1;">"trigger_animations"</span>: <span style="color: #B48EAD;">true</span>
+  }'
+
+<span style="color: var(--text-muted);"># Expected Response: 200 OK</span>
+{
+  <span style="color: #81A1C1;">"status"</span>: <span style="color: #A3BE8C;">"success"</span>,
+  <span style="color: #81A1C1;">"new_total_xp"</span>: <span style="color: #B48EAD;">41500</span>,
+  <span style="color: #81A1C1;">"rank_up_occurred"</span>: <span style="color: #B48EAD;">true</span>,
+  <span style="color: #81A1C1;">"new_rank"</span>: <span style="color: #A3BE8C;">"B"</span>
+}
+</pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="final-cta-section section-padding">
+            <div class="cta-block glass-panel gradient-border" style="text-align: center;">
+                <h2>Build on our Architecture</h2>
+                <p>Read the full technical documentation or start deploying your organizational nodes instantly.</p>
+                <div class="cta-buttons" style="margin-top: 24px; justify-content: center;">
+                    <a href="auth.html" class="btn btn-primary btn-large bento-glow">Start Building</a>
+                    <a href="#" class="btn btn-outline btn-large">View Documentation API</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+                <p>The ultimate multi-tenant platform with RPG gamification and AI.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul><li><a href="product.html">Overview</a></li><li><a href="features.html">Features</a></li></ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/features.js"></script>
+</body>
+</html>

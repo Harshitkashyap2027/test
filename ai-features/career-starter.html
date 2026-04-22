@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Predictor | lvlBase Neural Core</title>
+    
+    <meta name="description" content="Let Jarvis AI analyze your academic DNA to project your optimal future career paths and generate a custom roadmap.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/guilds.css">
+    <link rel="stylesheet" href="../css/dashboards.css">
+    <link rel="stylesheet" href="../css/career-starter.css">
+</head>
+<body class="dark-theme bento-body career-body guild-azure">
+
+    <div class="ambient-glow glow-top-left guild-ambient-primary" style="opacity: 0.5;"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(176,38,255,0.2), transparent 70%);"></div>
+    <div class="grid-overlay" style="opacity: 0.3; background-size: 50px 50px;"></div>
+
+    <div class="app-layout">
+        
+        <aside class="dashboard-sidebar glass-panel">
+            <div class="sidebar-header">
+                <div class="logo-container" onclick="window.location.href='../index.html'">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#0088FF"/>
+                        <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint_logo)"/>
+                        <defs><linearGradient id="paint_logo" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#0088FF"/><stop offset="1" stop-color="#00FF88"/></linearGradient></defs>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <span class="menu-label">Command Center</span>
+                <a href="../services/student/dashboard.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Overview</span>
+                </a>
+                <a href="../services/student/performance.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M6 20V10M18 20V4"></path></svg>
+                    <span>Performance DNA</span>
+                </a>
+
+                <span class="menu-label" style="margin-top: 24px;">Jarvis Tools</span>
+                <a href="homework-scanner.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <span>Vision Scanner</span>
+                </a>
+                <a href="career-starter.html" class="menu-item active">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span>Career Predictor</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../settings/profile.html" class="user-profile-widget glass-panel">
+                    <div class="user-avatar guild-azure-bg">A</div>
+                    <div class="user-meta">
+                        <span class="user-name">Alex Chen</span>
+                        <span class="user-rank text-gradient">Rank B (Elite)</span>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main career-main">
+            
+            <header class="dashboard-topbar">
+                <div class="header-titles">
+                    <h2 style="font-size: 1.5rem; display: flex; align-items: center; gap: 12px;">
+                        <span class="emoji-icon">🔮</span> Jarvis Career Engine
+                    </h2>
+                </div>
+
+                <div class="topbar-stats">
+                    <div class="stat-pill glass-panel">
+                        <svg width="16" height="16" fill="none" stroke="var(--accent-purple)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        <div class="stat-data">
+                            <span class="stat-label">Model</span>
+                            <span class="stat-value">Jarvis v4.2 (Predictive)</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="bento-grid career-grid">
+                
+                <div class="bento-card glass-panel span-4-col dna-input-module" data-animate="fade-up">
+                    <div class="card-header" style="margin-bottom: 24px;">
+                        <h3>Your Data Profile</h3>
+                        <span class="badge" style="background: rgba(0,136,255,0.1); color: #0088FF; border: 1px solid rgba(0,136,255,0.3);">Verified</span>
+                    </div>
+
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 24px;">Jarvis will use your accumulated XP, subject mastery, and guild traits to project your future.</p>
+
+                    <div class="dna-stats-list">
+                        <div class="dna-stat-item">
+                            <div class="stat-meta"><span>Logic & Math</span> <span class="val text-gradient">92%</span></div>
+                            <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 92%; background: #0088FF;"></div></div>
+                        </div>
+                        <div class="dna-stat-item">
+                            <div class="stat-meta"><span>Sciences (Physics)</span> <span class="val" style="color: #00FF88;">88%</span></div>
+                            <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 88%; background: #00FF88;"></div></div>
+                        </div>
+                        <div class="dna-stat-item">
+                            <div class="stat-meta"><span>Creativity & English</span> <span class="val" style="color: #B026FF;">75%</span></div>
+                            <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 75%; background: #B026FF;"></div></div>
+                        </div>
+                        <div class="dna-stat-item">
+                            <div class="stat-meta"><span>Consistency (Streak)</span> <span class="val" style="color: #FF3366;">98%</span></div>
+                            <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 98%; background: #FF3366;"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="guild-trait-box glass-panel mt-4">
+                        <span class="trait-label">Primary Guild Trait</span>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+                            <div class="trait-icon"><svg width="24" height="24" viewBox="0 0 100 100" fill="none"><path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" fill="rgba(0,136,255,0.2)" stroke="#0088FF" stroke-width="4"/></svg></div>
+                            <div>
+                                <h4 style="color: #0088FF;">Azure Mind</h4>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Calculated & Strategic</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-large bento-glow full-width" id="run-analysis-btn" style="margin-top: auto;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                        Initiate Neural Scan
+                    </button>
+                </div>
+
+                <div class="bento-card glass-panel span-8-col prediction-module" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    
+                    <div class="pred-state idle-state" id="pred-idle">
+                        <div class="idle-graphic">
+                            <svg width="120" height="120" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"><circle cx="60" cy="60" r="50"/><circle cx="60" cy="60" r="30"/><circle cx="60" cy="60" r="10"/></svg>
+                        </div>
+                        <h2 style="font-size: 2rem; margin-bottom: 12px;">What is your Destiny?</h2>
+                        <p style="color: var(--text-secondary); max-width: 400px; text-align: center;">Click "Initiate Neural Scan" to let Jarvis map your academic DNA against 50,000+ modern career profiles.</p>
+                    </div>
+
+                    <div class="pred-state processing-state" id="pred-processing" style="display: none;">
+                        <div class="neural-scanner-visual">
+                            <div class="hex-grid"></div>
+                            <div class="scan-beam"></div>
+                            <div class="center-core"></div>
+                        </div>
+                        <h3 class="text-gradient" id="scan-status-text" style="margin-top: 32px; font-size: 1.5rem;">Connecting to Neural Net...</h3>
+                        
+                        <div class="processing-logs">
+                            <div class="log-item">> Parsing Math execution speeds... <span style="color: #00FF88;">[OK]</span></div>
+                            <div class="log-item">> Evaluating consistency variables... <span style="color: #00FF88;">[OK]</span></div>
+                            <div class="log-item">> Running pattern match against Silicon Valley datasets... <span class="blink">_</span></div>
+                        </div>
+                    </div>
+
+                    <div class="pred-state result-state" id="pred-result" style="display: none;">
+                        <div class="card-header" style="margin-bottom: 24px; width: 100%;">
+                            <div>
+                                <h3>Optimal Career Paths</h3>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary);">Based on your 92% Logic score and Azure Mind traits.</p>
+                            </div>
+                        </div>
+
+                        <div class="career-match top-match glass-panel">
+                            <div class="match-header">
+                                <div class="career-icon">🤖</div>
+                                <div class="career-title">
+                                    <span class="match-percent">98% Match</span>
+                                    <h2>Machine Learning Engineer</h2>
+                                </div>
+                            </div>
+                            <p class="career-desc">Your exceptional performance in Calculus and Physics, combined with your high logical consistency, makes you a perfect candidate for designing neural networks and AI systems.</p>
+                            
+                            <div class="skill-reqs">
+                                <span>Required Skills:</span>
+                                <div class="skill-chips">
+                                    <span class="s-chip acquired">Calculus (Acquired)</span>
+                                    <span class="s-chip acquired">Logic (Acquired)</span>
+                                    <span class="s-chip pending">Python (Needed)</span>
+                                    <span class="s-chip pending">Linear Algebra (Needed)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="secondary-matches">
+                            
+                            <div class="career-match secondary glass-panel">
+                                <div class="match-header">
+                                    <div class="career-icon" style="background: rgba(0,255,136,0.1); color: #00FF88;">📊</div>
+                                    <div class="career-title">
+                                        <span class="match-percent" style="color: #00FF88;">85% Match</span>
+                                        <h3>Data Scientist</h3>
+                                    </div>
+                                </div>
+                                <p class="career-desc">Your ability to spot patterns in complex datasets aligns perfectly with analyzing big data for enterprise companies.</p>
+                            </div>
+
+                            <div class="career-match secondary glass-panel">
+                                <div class="match-header">
+                                    <div class="career-icon" style="background: rgba(255,51,102,0.1); color: #FF3366;">🎮</div>
+                                    <div class="career-title">
+                                        <span class="match-percent" style="color: #FF3366;">78% Match</span>
+                                        <h3>Game Developer</h3>
+                                    </div>
+                                </div>
+                                <p class="career-desc">While your math skills are top-tier, your creativity score limits this slightly. Excellent fallback option.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="career-action-box glass-panel mt-4">
+                            <div style="flex: 1;">
+                                <h4 style="font-size: 1.1rem; margin-bottom: 4px;">Bridge the Gap</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary);">Jarvis has generated a custom learning path to teach you Python to reach your Top Match.</p>
+                            </div>
+                            <button class="btn btn-primary bento-glow">Accept New Quest</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/core-auth.js"></script>
+    <script src="../js/career-starter.js"></script>
+</body>
+</html>

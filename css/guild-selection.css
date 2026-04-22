@@ -1,0 +1,295 @@
+/* ==========================================================================
+   GUILD SELECTION & INITIATION - CUSTOM STYLESHEET
+   ========================================================================== */
+
+.selection-body {
+    background-color: #030305;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 🌟 DYNAMIC BACKGROUND & PARTICLES */
+.ambient-glow {
+    position: absolute;
+    width: 800px; height: 800px;
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    transition: background 0.8s ease, opacity 0.5s ease;
+}
+
+.glow-top-left { top: -300px; left: -300px; }
+.glow-bottom-right { bottom: -300px; right: -300px; }
+
+.particles-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1; pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.3;
+    animation: float-up linear infinite;
+}
+
+@keyframes float-up {
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+    20% { opacity: 0.5; }
+    80% { opacity: 0.5; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+.selection-wrapper {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8) 5% calc(100px + var(--space-8)); /* Padding bottom for action bar */
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 🚀 HEADER */
+.selection-header {
+    margin-bottom: var(--space-8);
+}
+
+/* 🛡️ GUILD GRID */
+.guild-grid-container {
+    width: 100%;
+    perspective: 1000px;
+}
+
+.guild-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+}
+
+/* Base Card Styling */
+.guild-card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-6) var(--space-5);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-style: preserve-3d;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.guild-card-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+    opacity: 0; transition: opacity 0.4s ease; z-index: 0;
+}
+
+/* Theme Colors for Specific Cards */
+.shadow-card { --guild-color: #B026FF; }
+.azure-card { --guild-color: #0088FF; }
+.inferno-card { --guild-color: #FF3366; }
+.titan-card { --guild-color: #00FF88; }
+.zenith-card { --guild-color: #FFD700; }
+
+.guild-icon-wrapper {
+    position: relative; z-index: 2; margin-bottom: 24px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.guild-info { position: relative; z-index: 2; margin-bottom: 24px; flex: 1; }
+.guild-title { font-size: 1.8rem; margin-bottom: 4px; transition: color 0.3s; }
+.guild-tagline { display: block; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; letter-spacing: 1px; }
+.guild-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; }
+
+.guild-stats {
+    width: 100%; position: relative; z-index: 2;
+    display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;
+    background: rgba(0,0,0,0.3); padding: 16px; border-radius: var(--radius-md); border: var(--border-thin);
+}
+
+.stat-row { display: flex; align-items: center; gap: 12px; }
+.stat-name { width: 70px; text-align: left; font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+.stat-bar { flex: 1; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+.stat-fill { height: 100%; border-radius: 3px; transition: width 1s ease-out; opacity: 0.5; }
+
+.guild-bonus {
+    width: 100%; position: relative; z-index: 2;
+    background: rgba(255,255,255,0.02); padding: 12px; border-radius: var(--radius-md);
+    font-size: 0.85rem; color: var(--text-secondary); border: 1px dashed rgba(255,255,255,0.1);
+}
+.guild-bonus strong { color: var(--guild-color); }
+
+/* Selection Indicator */
+.select-indicator {
+    position: absolute; top: 20px; right: 20px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: transparent; border: 2px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 5; opacity: 0; transform: scale(0.5);
+}
+
+/* 🎯 HOVER & SELECTION STATES */
+.guild-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+.guild-card:hover .guild-card-bg { opacity: 1; background: radial-gradient(circle at center, var(--guild-color) 0%, transparent 70%); opacity: 0.15; }
+.guild-card:hover .guild-icon-wrapper { transform: scale(1.1) translateY(-5px); filter: drop-shadow(0 15px 30px var(--guild-color)); }
+.guild-card:hover .stat-fill { opacity: 1; box-shadow: 0 0 10px var(--guild-color); }
+
+/* The Grid Container controls sibling dimming */
+.guild-grid.has-selection .guild-card:not(.selected) {
+    opacity: 0.4;
+    transform: scale(0.95);
+    filter: grayscale(80%);
+}
+
+.guild-card.selected {
+    border-color: var(--guild-color);
+    box-shadow: 0 0 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(255,255,255,0.05);
+    transform: translateY(-10px) scale(1.02) !important;
+    background: rgba(20, 20, 22, 0.95);
+}
+
+.guild-card.selected .guild-card-bg { opacity: 0.2; background: radial-gradient(circle at center, var(--guild-color) 0%, transparent 70%); }
+.guild-card.selected .guild-title { color: var(--guild-color); text-shadow: 0 0 15px var(--guild-color); }
+.guild-card.selected .guild-icon-wrapper { transform: scale(1.15) translateY(-10px); filter: drop-shadow(0 20px 40px var(--guild-color)); }
+.guild-card.selected .stat-fill { opacity: 1; box-shadow: 0 0 10px var(--guild-color); }
+.guild-card.selected .guild-bonus { border-color: var(--guild-color); background: rgba(255,255,255,0.05); }
+
+.guild-card.selected .select-indicator {
+    opacity: 1; transform: scale(1);
+    background: var(--guild-color); border-color: var(--guild-color);
+    box-shadow: 0 0 15px var(--guild-color);
+}
+
+/* Special Layout for Zenith (Span Full) */
+.zenith-layout {
+    display: flex; align-items: center; gap: 32px; width: 100%; position: relative; z-index: 2;
+}
+
+/* 🚀 STICKY ACTION BAR */
+.action-bar-container {
+    position: fixed;
+    bottom: 24px; left: 50%;
+    transform: translateX(-50%);
+    width: 90%; max-width: 800px;
+    padding: 16px 24px;
+    border-radius: var(--radius-pill);
+    background: rgba(10, 10, 12, 0.9);
+    backdrop-filter: var(--blur-heavy);
+    -webkit-backdrop-filter: var(--blur-heavy);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 100;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.action-bar-container.active-state {
+    border-color: var(--selected-color, #fff);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px var(--selected-bg, transparent);
+}
+
+.action-status { display: flex; flex-direction: column; }
+.status-text { font-size: 1rem; font-weight: 600; transition: color 0.3s; }
+.status-text.selected { color: var(--selected-color, #fff); text-shadow: 0 0 10px var(--selected-color, transparent); }
+
+.btn.disabled {
+    opacity: 0.5; pointer-events: none; background: rgba(255,255,255,0.1); color: var(--text-muted);
+}
+
+.btn.ready {
+    background: var(--selected-color, var(--accent-primary));
+    color: #000;
+    box-shadow: 0 0 20px var(--selected-color, var(--accent-primary));
+    animation: pulse-btn 2s infinite;
+}
+
+@keyframes pulse-btn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* 🎬 CONFIRMATION OVERLAY */
+.initiation-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #030305; z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden; transition: all 0.5s ease;
+}
+
+.initiation-overlay.active { opacity: 1; visibility: visible; }
+
+.overlay-content {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    transform: scale(0.9); opacity: 0; transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: 0.2s;
+}
+
+.initiation-overlay.active .overlay-content { transform: scale(1); opacity: 1; }
+
+.overlay-icon {
+    width: 120px; height: 120px; margin-bottom: 32px;
+    filter: drop-shadow(0 0 30px var(--selected-color, #fff));
+    animation: float-icon 3s ease-in-out infinite;
+}
+
+@keyframes float-icon {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.overlay-title { font-size: 2.5rem; margin-bottom: 24px; color: var(--selected-color, #fff); }
+
+.progress-bar-container {
+    width: 300px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; margin-bottom: 16px;
+}
+
+.progress-bar-fill {
+    height: 100%; width: 0%; background: var(--selected-color, #fff); transition: width 2s ease-in-out;
+}
+
+.overlay-text { color: var(--text-secondary); font-family: 'Fira Code', monospace; font-size: 0.9rem; }
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .guild-grid { grid-template-columns: repeat(2, 1fr); }
+    .zenith-layout { flex-direction: column; text-align: center; gap: 16px; }
+    .zenith-layout .guild-info { text-align: center !important; }
+}
+
+@media (max-width: 600px) {
+    .guild-grid { grid-template-columns: 1fr; }
+    .guild-card { grid-column: span 1; }
+    
+    .action-bar-container {
+        flex-direction: column; gap: 16px; text-align: center;
+        padding: 16px;
+    }
+    
+    .btn-large { width: 100%; justify-content: center; }
+}

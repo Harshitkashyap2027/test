@@ -1,0 +1,162 @@
+/* ==========================================================================
+   DAILY CHALLENGE - CUSTOM STYLESHEET
+   ========================================================================== */
+
+.challenge-body {
+    overflow: hidden;
+}
+
+.challenge-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+}
+
+.challenge-container {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.challenge-state {
+    width: 100%;
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    animation: fade-in-scale 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fade-in-scale {
+    from { opacity: 0; transform: scale(0.95) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* =========================================================
+   STAGE 1: BRIEFING
+   ========================================================= */
+#state-briefing {
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(20,20,22,0.9) 0%, rgba(0,136,255,0.1) 100%);
+    border-color: rgba(0,136,255,0.3);
+}
+
+.briefing-visual {
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,136,255,0.2) 0%, transparent 70%);
+    border: 2px solid rgba(0,136,255,0.5);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 32px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,136,255,0.2);
+}
+
+.ai-eye-scanner {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    border: 4px dashed var(--accent-primary);
+    animation: spin 10s linear infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.scanner-line {
+    position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+    background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary);
+    animation: scan-down 2s ease-in-out infinite alternate;
+}
+
+@keyframes scan-down { 0% { top: 0%; } 100% { top: 100%; } }
+
+.badge-row { display: flex; justify-content: center; gap: 12px; margin-bottom: 24px; }
+.badge { padding: 6px 12px; border-radius: var(--radius-pill); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; }
+.ai-generated { background: rgba(176,38,255,0.15); color: #B026FF; border: 1px solid rgba(176,38,255,0.4); }
+.streak-badge { background: rgba(255,51,102,0.15); color: #FF3366; border: 1px solid rgba(255,51,102,0.4); }
+
+.bounty-board {
+    display: flex; justify-content: space-between; gap: 16px;
+    background: rgba(0,0,0,0.4); border: var(--border-thin); padding: 24px;
+    border-radius: var(--radius-md); width: 100%;
+}
+
+.bounty-item { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
+.bounty-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 1px; }
+.bounty-val { font-family: 'Fira Code', monospace; font-size: 1.2rem; font-weight: 900; }
+
+/* =========================================================
+   STAGE 2: LIVE COMBAT
+   ========================================================= */
+#state-combat {
+    padding: var(--space-6);
+}
+
+.combat-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 32px; padding-bottom: 16px; border-bottom: var(--border-light);
+}
+
+.progress-tracker { display: flex; flex-direction: column; gap: 8px; }
+.question-counter { font-size: 1.1rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+.q-dots { display: flex; gap: 8px; }
+.q-dot { width: 30px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; transition: background 0.3s; }
+.q-dot.active { background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary); }
+.q-dot.correct { background: #00FF88; }
+.q-dot.incorrect { background: #FF3366; }
+
+.combat-timer { position: relative; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
+.timer-text { position: absolute; font-family: 'Fira Code', monospace; font-size: 1.1rem; font-weight: bold; }
+#timer-circle { transition: stroke-dashoffset 1s linear, stroke 0.3s ease; }
+
+.combat-body { display: flex; flex-direction: column; gap: 32px; }
+.subject-tag { font-size: 0.8rem; color: var(--accent-primary); text-transform: uppercase; font-weight: 800; letter-spacing: 1px; margin-bottom: 12px; display: block; }
+.question-box h2 { font-size: 1.8rem; line-height: 1.4; color: #fff; }
+
+.options-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.combat-option {
+    display: flex; align-items: center; gap: 16px; padding: 20px;
+    background: rgba(255,255,255,0.03); border: var(--border-thin); border-radius: var(--radius-md);
+    cursor: pointer; transition: all var(--transition-fast); text-align: left;
+}
+
+.combat-option:hover:not(:disabled) {
+    background: rgba(255,255,255,0.08); transform: translateX(10px); border-color: rgba(255,255,255,0.2);
+}
+
+.combat-option.correct {
+    background: rgba(0,255,136,0.1); border-color: #00FF88; box-shadow: 0 0 20px rgba(0,255,136,0.2);
+}
+.combat-option.incorrect {
+    background: rgba(255,51,102,0.1); border-color: #FF3366; opacity: 0.7;
+}
+
+.opt-letter {
+    width: 40px; height: 40px; background: rgba(0,0,0,0.5); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; color: var(--text-muted); flex-shrink: 0;
+}
+.combat-option.correct .opt-letter { background: #00FF88; color: #000; border-color: #00FF88; }
+.combat-option.incorrect .opt-letter { background: #FF3366; color: #000; border-color: #FF3366; }
+
+.opt-text { font-size: 1.1rem; color: var(--text-primary); }
+
+/* =========================================================
+   STAGE 3: RESULTS
+   ========================================================= */
+.result-icon {
+    width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px; box-shadow: 0 0 40px rgba(0,255,136,0.3); border: 4px solid;
+}
+.result-icon.success-icon { background: rgba(0,255,136,0.1); color: #00FF88; border-color: #00FF88; }
+.result-icon.fail-icon { background: rgba(255,51,102,0.1); color: #FF3366; border-color: #FF3366; box-shadow: 0 0 40px rgba(255,51,102,0.3); }
+
+.result-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.r-stat { background: rgba(0,0,0,0.4); padding: 20px; border-radius: var(--radius-md); border: var(--border-thin); display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.r-label { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 1px; }
+.r-val { font-family: 'Fira Code', monospace; font-size: 1.5rem; font-weight: 900; color: #fff; }
+
+@media (max-width: 768px) {
+    .bounty-board { flex-direction: column; gap: 24px; }
+    .result-stats-grid { grid-template-columns: 1fr; }
+}

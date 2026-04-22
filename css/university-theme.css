@@ -1,0 +1,145 @@
+/* ==========================================================================
+   UNIVERSITY OS THEME ENGINE
+   ==========================================================================
+   Replaces the neon School RPG colors with a mature, corporate-ready palette.
+*/
+
+:root {
+    /* Deep Corporate Colors */
+    --bg-base: #020617; /* Slate 950 */
+    --bg-surface: #0F172A; /* Slate 900 */
+    
+    /* Academic Accents */
+    --uni-emerald: #10B981; /* Success / High CGPA */
+    --uni-teal: #0D9488;
+    --uni-navy: #1E3A8A; /* Primary Brand */
+    --uni-crimson: #E11D48; /* Alerts / Deadlines */
+    --uni-gold: #F59E0B; /* Honors / Capstone */
+    
+    /* Overriding Global Tokens for UNI */
+    --accent-primary: var(--uni-emerald);
+    --accent-secondary: var(--uni-teal);
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    
+    --border-light: 1px solid rgba(255, 255, 255, 0.08);
+    --border-thin: 1px solid rgba(255, 255, 255, 0.04);
+    
+    /* Sharper Radii for a mature look */
+    --radius-lg: 20px;
+    --radius-md: 12px;
+}
+
+body.uni-theme {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism Refinements */
+.uni-theme .glass-panel {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: var(--border-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Specific UI Module Styling --- */
+
+/* 1. Academic Identity Card */
+.academic-card {
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(16,185,129,0.05));
+}
+.academic-bg-pattern {
+    position: absolute; top: -50px; right: -50px; width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+}
+.card-content-wrapper { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+.identity-section { display: flex; align-items: center; gap: 24px; }
+.uni-seal { filter: drop-shadow(0 0 10px rgba(16,185,129,0.2)); }
+.student-info h2 { font-size: 2.2rem; margin: 4px 0; color: #fff; }
+.dept-name { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; }
+.degree-title { font-size: 1rem; color: var(--text-secondary); margin-bottom: 8px; }
+.enrollment-status { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; padding: 4px 10px; background: rgba(16,185,129,0.1); color: var(--uni-emerald); border-radius: var(--radius-pill); border: 1px solid rgba(16,185,129,0.3); }
+.status-dot { width: 6px; height: 6px; background: var(--uni-emerald); border-radius: 50%; box-shadow: 0 0 8px var(--uni-emerald); animation: pulse-glow 2s infinite; }
+
+.cgpa-display { display: flex; align-items: center; gap: 20px; background: rgba(0,0,0,0.3); padding: 16px; border-radius: var(--radius-md); border: var(--border-thin); }
+.cgpa-circle { position: relative; width: 80px; height: 80px; }
+.cgpa-circle svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.cgpa-circle .bg { fill: none; stroke: rgba(255,255,255,0.05); stroke-width: 6; }
+.cgpa-circle .fill { fill: none; stroke: var(--uni-emerald); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 283; transition: stroke-dashoffset 1.5s ease-out; filter: drop-shadow(0 0 5px rgba(16,185,129,0.5)); }
+.cgpa-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'JetBrains Mono', monospace; font-size: 1.4rem; font-weight: 800; color: #fff; }
+.cgpa-meta { display: flex; flex-direction: column; }
+.meta-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }
+.meta-status { font-size: 1rem; font-weight: 600; }
+
+/* 2. Credits Tracker */
+.credits-module { display: flex; flex-direction: column; }
+.credits-large-display { margin-bottom: 24px; display: flex; align-items: baseline; gap: 8px; }
+.credits-earned { font-family: 'JetBrains Mono', monospace; font-size: 3rem; font-weight: 900; color: #fff; line-height: 1; }
+.credits-divider { font-size: 2rem; color: var(--text-muted); font-weight: 300; }
+.credits-total { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; color: var(--text-secondary); }
+.credits-label { margin-left: auto; font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+
+.credit-progress-bar { width: 100%; height: 12px; background: rgba(255,255,255,0.05); border-radius: 6px; display: flex; overflow: hidden; margin-bottom: 12px; border: var(--border-thin); }
+.credit-fill { height: 100%; transition: width 1s ease-out; }
+.credit-fill.core { background: #3B82F6; box-shadow: inset 0 0 10px rgba(0,0,0,0.2); }
+.credit-fill.elective { background: #8B5CF6; }
+.credit-fill.project { background: #F59E0B; }
+
+.credit-legend { display: flex; gap: 16px; font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 24px; }
+.leg-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; margin-right: 4px; }
+.leg-dot.core { background: #3B82F6; } .leg-dot.elective { background: #8B5CF6; } .leg-dot.project { background: #F59E0B; }
+
+.milestone-alert { display: flex; align-items: center; gap: 12px; background: rgba(245,158,11,0.1); padding: 12px; border-radius: var(--radius-md); border: 1px solid rgba(245,158,11,0.2); }
+
+/* 3. Placement Matches */
+.placement-module { display: flex; flex-direction: column; }
+.job-matches-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.job-card { padding: 20px; border-radius: var(--radius-md); border: var(--border-thin); background: rgba(255,255,255,0.02); transition: transform var(--transition-fast), border-color 0.2s; display: flex; flex-direction: column; }
+.job-card:hover { transform: translateY(-4px); border-color: var(--uni-emerald); }
+.job-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.company-logo { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+.match-score { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: bold; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(16,185,129,0.3); }
+.job-title { font-size: 1.1rem; margin-bottom: 4px; color: #fff; }
+.company-name { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+.job-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: auto; }
+.j-tag { font-size: 0.7rem; padding: 2px 8px; background: rgba(255,255,255,0.05); color: var(--text-muted); border-radius: 4px; }
+
+/* 4. Deadlines List */
+.deadlines-module { display: flex; flex-direction: column; }
+.deadline-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.deadline-item { display: flex; align-items: center; gap: 16px; padding: 12px; background: rgba(255,255,255,0.02); border-radius: var(--radius-md); border: var(--border-thin); transition: background 0.2s; }
+.deadline-item:hover { background: rgba(255,255,255,0.05); }
+.d-date { display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); border-radius: 8px; width: 50px; height: 50px; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.05); }
+.day { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: bold; color: #fff; line-height: 1; }
+.month { font-size: 0.65rem; text-transform: uppercase; color: var(--uni-crimson); font-weight: 700; margin-top: 2px; }
+.d-info { flex: 1; }
+.d-info h4 { font-size: 0.95rem; margin-bottom: 4px; }
+.d-info span { font-size: 0.8rem; color: var(--text-muted); }
+.d-status { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); }
+.deadline-item.urgent { border-color: rgba(225,29,72,0.3); background: rgba(225,29,72,0.05); }
+.deadline-item.urgent .d-status { color: var(--uni-crimson); }
+.deadline-item.completed { opacity: 0.5; }
+
+/* 5. Advisor Messages */
+.advisor-module { display: flex; flex-direction: column; }
+.msg-thread { display: flex; flex-direction: column; gap: 16px; flex: 1; overflow-y: auto; padding-right: 8px; margin-bottom: 16px; }
+.msg-bubble { max-width: 85%; padding: 12px 16px; border-radius: var(--radius-md); font-size: 0.9rem; line-height: 1.5; position: relative; }
+.msg-meta { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600; }
+.msg-bubble.system { align-self: flex-start; background: rgba(255,255,255,0.05); border: var(--border-thin); border-top-left-radius: 4px; }
+.msg-bubble.self { align-self: flex-end; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #fff; border-top-right-radius: 4px; }
+.msg-input-area { display: flex; gap: 12px; }
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .card-content-wrapper { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .progression-section { width: 100%; }
+}
+@media (max-width: 900px) {
+    .job-matches-grid { grid-template-columns: 1fr; }
+}

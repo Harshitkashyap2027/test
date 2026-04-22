@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Arena | lvlBase Combat Hub</title>
+    
+    <meta name="description" content="Enter the Arena. Compete in Solo Battles, 1v1 Quick Duels, and massive Guild Wars to increase your Power Score and Rank.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/guilds.css">
+    <link rel="stylesheet" href="../css/arena.css">
+</head>
+<body class="dark-theme bento-body arena-body guild-azure">
+
+    <div class="ambient-glow glow-top-left guild-ambient-primary" style="opacity: 0.4;"></div>
+    <div class="ambient-glow glow-bottom-right guild-ambient-secondary" style="opacity: 0.3;"></div>
+    <div class="grid-overlay" style="background-size: 40px 40px; opacity: 0.6;"></div>
+    <div class="arena-particles" id="arena-particles"></div>
+
+    <div class="app-layout">
+        
+        <aside class="dashboard-sidebar glass-panel">
+            <div class="sidebar-header">
+                <div class="logo-container" onclick="window.location.href='../index.html'">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#0088FF"/>
+                        <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint_logo)"/>
+                        <defs><linearGradient id="paint_logo" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#0088FF"/><stop offset="1" stop-color="#00FF88"/></linearGradient></defs>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <span class="menu-label">Command Center</span>
+                <a href="../services/student/dashboard.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Overview</span>
+                </a>
+                <a href="../services/student/academics.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>My Subjects</span>
+                </a>
+
+                <span class="menu-label" style="margin-top: 24px;">The Arena</span>
+                <a href="daily-challenge.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Daily Quests</span>
+                </a>
+                <a href="battle-hub.html" class="menu-item active">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                    <span>Battle Hub</span>
+                </a>
+                <a href="leaderboards.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"></path><path d="M7 20v-4"></path><path d="M12 20v-8"></path><path d="M17 20V8"></path><path d="M22 4v16"></path></svg>
+                    <span>Leaderboards</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../settings/profile.html" class="user-profile-widget glass-panel">
+                    <div class="user-avatar guild-azure-bg">
+                        <img src="../../assets/images/avatars/student-1.png" alt="Profile" onerror="this.style.display='none';">
+                        <span class="fallback-initial">A</span>
+                    </div>
+                    <div class="user-meta">
+                        <span class="user-name">Alex Chen</span>
+                        <span class="user-rank text-gradient">Rank B (Elite)</span>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            
+            <header class="arena-header glass-panel" data-animate="fade-up">
+                <div class="header-content">
+                    <div class="arena-title-area">
+                        <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 4px;">Welcome to the <span class="text-gradient" style="color: var(--accent-primary);">Arena.</span></h1>
+                        <p style="color: var(--text-secondary);">Test your knowledge. Increase your Power Score. Dominate the Leaderboards.</p>
+                    </div>
+                    <div class="player-combat-stats">
+                        <div class="combat-stat">
+                            <span class="stat-label">Power Score ⚡</span>
+                            <span class="stat-val">8,450</span>
+                        </div>
+                        <div class="combat-stat">
+                            <span class="stat-label">Win Rate 🏆</span>
+                            <span class="stat-val">72.4%</span>
+                        </div>
+                        <div class="combat-stat">
+                            <span class="stat-label">Guild Bonus 🛡️</span>
+                            <span class="stat-val text-gradient">+10% Logic</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="bento-grid arena-grid">
+                
+                <div class="bento-card glass-panel span-6-col battle-mode-card duel-card" data-animate="fade-up">
+                    <div class="mode-bg-graphic">
+                        <svg viewBox="0 0 100 100" fill="none" opacity="0.1"><circle cx="50" cy="50" r="40" stroke="var(--accent-primary)" stroke-width="4" stroke-dasharray="10 10"/><path d="M20 50L80 50M50 20L50 80" stroke="var(--accent-primary)" stroke-width="2"/></svg>
+                    </div>
+                    <div class="mode-header">
+                        <div class="mode-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                        <span class="mode-tag">Real-Time PvP</span>
+                    </div>
+                    <div class="mode-content">
+                        <h2>Quick Duel (1v1)</h2>
+                        <p>Challenge a random student of similar Rank to a 5-question, rapid-fire battle. Winner takes the XP pot.</p>
+                        
+                        <div class="reward-preview">
+                            <span class="potential-reward">Potential Reward: <strong style="color: var(--accent-primary);">+500 XP</strong></span>
+                            <span class="risk">Risk: <strong style="color: var(--accent-red);">-100 XP</strong></span>
+                        </div>
+                    </div>
+                    <div class="mode-action">
+                        <button class="btn btn-primary bento-glow full-width" onclick="ArenaEngine.initiateMatchmaking('duel')">Find Opponent</button>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-6-col battle-mode-card war-card" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="mode-bg-graphic">
+                        <svg viewBox="0 0 100 100" fill="none" opacity="0.1"><polygon points="50,10 90,30 90,70 50,90 10,70 10,30" stroke="var(--accent-red)" stroke-width="4"/><polygon points="50,20 80,35 80,65 50,80 20,65 20,35" stroke="var(--accent-red)" stroke-width="2"/></svg>
+                    </div>
+                    <div class="mode-header">
+                        <div class="mode-icon" style="color: var(--accent-red);"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+                        <span class="mode-tag" style="background: rgba(255,51,102,0.1); color: var(--accent-red); border-color: var(--accent-red);">Live Event</span>
+                    </div>
+                    <div class="mode-content">
+                        <h2>Guild War: <span style="color: #0088FF;">Azure</span> vs <span style="color: #00FF88;">Titan</span></h2>
+                        <p>Contribute to your Guild's total score. The Guild with the highest combined XP by Sunday 11:59 PM wins the Weekly Trophy.</p>
+                        
+                        <div class="war-progress-mini" style="margin-top: 12px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 4px; font-weight: bold;">
+                                <span style="color: #0088FF;">4.25M</span><span style="color: #00FF88;">4.12M</span>
+                            </div>
+                            <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; display: flex;">
+                                <div style="width: 51%; background: #0088FF;"></div>
+                                <div style="width: 49%; background: #00FF88;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mode-action">
+                        <button class="btn btn-outline full-width" style="border-color: var(--accent-red); color: var(--accent-red);" onclick="window.location.href='guild-war.html'">Enter the Frontlines</button>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col battle-mode-card solo-card" data-animate="fade-up">
+                    <div class="mode-header">
+                        <div class="mode-icon" style="color: var(--accent-purple);"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/></svg></div>
+                        <span class="mode-tag" style="background: rgba(176,38,255,0.1); color: var(--accent-purple); border-color: var(--accent-purple);">Practice</span>
+                    </div>
+                    <div class="mode-content">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Solo AI Battle</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Fight against the AI tuned to your exact weakness level (Currently: Algebra). No rank risk.</p>
+                    </div>
+                    <div class="mode-action" style="margin-top: 16px;">
+                        <button class="btn btn-secondary full-width btn-small">Start Solo Match</button>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-8-col leaderboard-preview" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h3 style="font-size: 1.2rem;">Top Gladiators (National)</h3>
+                        <a href="leaderboards.html" style="font-size: 0.85rem; color: var(--accent-primary);">View Full Board</a>
+                    </div>
+                    
+                    <div class="lb-podium">
+                        <div class="podium-spot rank-2">
+                            <div class="podium-avatar"><img src="../../assets/images/avatars/student-2.png" onerror="this.style.display='none';"><span>M</span></div>
+                            <span class="podium-name">Marcus T.</span>
+                            <span class="podium-score">1.12M XP</span>
+                            <div class="podium-step" style="height: 60px;">2</div>
+                        </div>
+                        <div class="podium-spot rank-1">
+                            <div class="podium-avatar"><img src="../../assets/images/avatars/student-3.png" onerror="this.style.display='none';"><span>J</span><div class="crown">👑</div></div>
+                            <span class="podium-name" style="color: var(--accent-yellow); font-weight: bold;">Jin W.</span>
+                            <span class="podium-score">1.45M XP</span>
+                            <div class="podium-step" style="height: 100px;">1</div>
+                        </div>
+                        <div class="podium-spot rank-3">
+                            <div class="podium-avatar"><img src="../../assets/images/avatars/student-4.png" onerror="this.style.display='none';"><span>S</span></div>
+                            <span class="podium-name">Sarah P.</span>
+                            <span class="podium-score">980K XP</span>
+                            <div class="podium-step" style="height: 40px;">3</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-backdrop" id="matchmaking-modal">
+        <div class="matchmaking-ui glass-panel">
+            <button class="close-modal-btn" onclick="ArenaEngine.cancelMatchmaking()" style="position: absolute; top: 16px; right: 16px;">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            
+            <h2 class="text-center" style="margin-bottom: 8px;">Searching for Opponent</h2>
+            <p class="text-center" style="color: var(--text-secondary); margin-bottom: 32px;" id="match-status-text">Scanning for players in Rank B...</p>
+
+            <div class="radar-container">
+                <div class="radar-grid"></div>
+                <div class="radar-sweep"></div>
+                
+                <div class="radar-node player-node">
+                    <span class="node-pulse"></span>
+                    <div class="node-avatar">A</div>
+                </div>
+
+                <div id="opponent-nodes-container"></div>
+            </div>
+
+            <div class="match-footer text-center" style="margin-top: 32px;">
+                <span class="elapsed-time" id="match-timer">00:00</span>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px;">Estimated wait: 00:04</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="match-found-modal" style="background: rgba(0,0,0,0.95);">
+        <div class="vs-screen">
+            <div class="vs-player p1-side">
+                <div class="vs-avatar" style="box-shadow: 0 0 30px var(--accent-primary); border-color: var(--accent-primary);">A</div>
+                <h2>Alex Chen</h2>
+                <span class="vs-rank text-gradient">Rank B • Azure Mind</span>
+            </div>
+            
+            <div class="vs-logo">
+                <span class="v">V</span><span class="s">S</span>
+            </div>
+            
+            <div class="vs-player p2-side">
+                <div class="vs-avatar" style="box-shadow: 0 0 30px var(--accent-red); border-color: var(--accent-red);">E</div>
+                <h2>Elias R.</h2>
+                <span class="vs-rank" style="color: var(--accent-red);">Rank B • Inferno Squad</span>
+            </div>
+        </div>
+        <div class="battle-countdown" id="battle-countdown">3</div>
+    </div>
+
+    <script src="../../js/core-auth.js"></script>
+    <script src="../../js/arena.js"></script>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub | lvlBase OS</title>
+    
+    <meta name="description" content="Your personal learning command center. Track your Rank, complete Quests, and upgrade your Skill DNA.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/bento-system.css">
+    <link rel="stylesheet" href="../../css/guilds.css">
+    <link rel="stylesheet" href="../../css/dashboards.css">
+</head>
+<body class="dark-theme bento-body student-dashboard guild-azure">
+
+    <div class="ambient-glow glow-top-left guild-ambient-primary"></div>
+    <div class="ambient-glow glow-bottom-right guild-ambient-secondary"></div>
+    <div class="grid-overlay" style="opacity: 0.3;"></div>
+
+    <div class="app-layout">
+        
+        <aside class="dashboard-sidebar glass-panel">
+            <div class="sidebar-header">
+                <div class="logo-container" onclick="window.location.href='../../index.html'">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#0088FF"/>
+                        <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint_logo)"/>
+                        <defs><linearGradient id="paint_logo" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#0088FF"/><stop offset="1" stop-color="#00FF88"/></linearGradient></defs>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <span class="menu-label">Command Center</span>
+                <a href="dashboard.html" class="menu-item active">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Overview</span>
+                </a>
+                <a href="academics.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>My Subjects</span>
+                    <span class="badge notification-badge">2</span>
+                </a>
+                <a href="performance.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"></path></svg>
+                    <span>Performance DNA</span>
+                </a>
+
+                <span class="menu-label" style="margin-top: 24px;">The Arena</span>
+                <a href="arena.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Daily Quests</span>
+                </a>
+                <a href="../arena/battle-hub.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                    <span>Battle Hub</span>
+                </a>
+                <a href="../arena/leaderboards.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"></path><path d="M7 20v-4"></path><path d="M12 20v-8"></path><path d="M17 20V8"></path><path d="M22 4v16"></path></svg>
+                    <span>Leaderboards</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="profile.html" class="user-profile-widget glass-panel">
+                    <div class="user-avatar guild-azure-bg">
+                        <img src="../../assets/images/avatars/student-1.png" alt="Profile" onerror="this.style.display='none';">
+                        <span class="fallback-initial">A</span>
+                    </div>
+                    <div class="user-meta">
+                        <span class="user-name">Alex Chen</span>
+                        <span class="user-rank text-gradient">Rank B (Elite)</span>
+                    </div>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            
+            <header class="dashboard-topbar">
+                <div class="search-module glass-panel">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" placeholder="Ask AI Tutor or search topics (e.g. 'Photosynthesis')...">
+                    <div class="hotkey-hint">⌘K</div>
+                </div>
+
+                <div class="topbar-stats">
+                    <div class="stat-pill glass-panel power-score-pill">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        <div class="stat-data">
+                            <span class="stat-label">Power Score</span>
+                            <span class="stat-value">8,450</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-pill glass-panel streak-pill">
+                        <svg width="16" height="16" fill="none" stroke="#FF5F56" stroke-width="2"><path d="M17.5 19c-2 0-4-2.5-4-5 0-3 2-4 2-4s-3.5-1-5 2c-1.5 3-1 6-1 6s-2-1.5-2-4c0-3 3-6 3-6s-4.5 1-6 5c-1.5 4-1 8 2 10 3 2 7 2 9 0 2-2 3-5 3-7 0 0-1 1-2 3z"></path></svg>
+                        <div class="stat-data">
+                            <span class="stat-label">Streak</span>
+                            <span class="stat-value" style="color: #FF5F56;">14 Days</span>
+                        </div>
+                    </div>
+
+                    <button class="icon-btn glass-panel">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        <span class="pulse-indicator"></span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="bento-grid dashboard-grid">
+                
+                <div class="bento-card span-8-col rank-card-module guild-azure-border glass-panel">
+                    <div class="rank-card-bg-pattern"></div>
+                    
+                    <div class="rank-card-content">
+                        <div class="identity-section">
+                            <div class="guild-insignia">
+                                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" stroke="#0088FF" stroke-width="4"/>
+                                    <path d="M50 20L80 35V65L50 80L20 65V35L50 20Z" fill="rgba(0,136,255,0.2)"/>
+                                    <circle cx="50" cy="50" r="15" fill="#0088FF"/>
+                                </svg>
+                            </div>
+                            <div class="player-info">
+                                <span class="guild-name text-gradient">Azure Mind Guild</span>
+                                <h2>Alex Chen</h2>
+                                <p class="player-title">Class 10 | Level 42</p>
+                            </div>
+                        </div>
+
+                        <div class="progression-section">
+                            <div class="current-rank-display">
+                                <div class="rank-letter b-rank">B</div>
+                                <div class="rank-text">
+                                    <span class="rank-status">Elite Rank</span>
+                                    <span class="rank-multiplier">1.5x XP Multiplier Active</span>
+                                </div>
+                            </div>
+
+                            <div class="xp-progress-module">
+                                <div class="xp-header">
+                                    <span>Rank Progression</span>
+                                    <span class="xp-numbers"><span style="color: #fff;">84,500</span> / 100,000 XP</span>
+                                </div>
+                                <div class="xp-track">
+                                    <div class="xp-fill" style="width: 84.5%;">
+                                        <div class="xp-glow"></div>
+                                    </div>
+                                </div>
+                                <div class="xp-milestones">
+                                    <span>Rank C</span>
+                                    <span style="color: var(--accent-primary);">Rank A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card span-4-col ai-quick-module glass-panel">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <div class="pulse-ring" style="width: 14px; height: 14px; border-color: var(--accent-purple);"><div class="dot" style="width: 6px; height: 6px; background: var(--accent-purple);"></div></div>
+                            <h3 style="font-size: 1.1rem;">Jarvis AI Tutor</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-prompt-suggestions">
+                        <button class="ai-prompt-btn" onclick="openAITutor('Explain Newton’s Third Law like I am 10.')">
+                            <span class="emoji">🍎</span> Explain Newton's Third Law
+                        </button>
+                        <button class="ai-prompt-btn" onclick="openAITutor('Create a 5-minute math quiz on Algebra.')">
+                            <span class="emoji">⏱️</span> Generate a 5-min Algebra Quiz
+                        </button>
+                    </div>
+
+                    <div class="camera-scan-hook" onclick="window.location.href='../ai-features/homework-scanner.html'">
+                        <div class="scanner-icon">
+                            <svg width="24" height="24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><path d="M4 4h4v4H4z"></path><path d="M4 16h4v4H4z"></path><path d="M16 4h4v4h-4z"></path><path d="M16 16h4v4h-4z"></path><path d="M9 9h6v6H9z"></path></svg>
+                        </div>
+                        <div class="scanner-text">
+                            <h4>Scan Homework</h4>
+                            <p>Take a photo for instant AI solutions</p>
+                        </div>
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </div>
+                </div>
+
+                <div class="bento-card span-8-col quest-module glass-panel">
+                    <div class="card-header" style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: var(--border-light);">
+                        <h3>Active Quests</h3>
+                        <div class="filter-pills">
+                            <span class="pill active">All</span>
+                            <span class="pill">Homework</span>
+                            <span class="pill">AI Challenges</span>
+                        </div>
+                    </div>
+
+                    <ul class="quest-list">
+                        <li class="quest-item">
+                            <div class="quest-type-icon homework-icon">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                            </div>
+                            <div class="quest-details">
+                                <h4>Chapter 4: Quadratic Equations</h4>
+                                <div class="quest-meta">
+                                    <span class="subject math">Mathematics</span>
+                                    <span class="deadline urgent">Due Tomorrow, 8:00 AM</span>
+                                </div>
+                            </div>
+                            <div class="quest-actions">
+                                <div class="reward-pill">+1,200 XP</div>
+                                <button class="btn btn-outline btn-small">Start Quest</button>
+                            </div>
+                        </li>
+
+                        <li class="quest-item ai-generated">
+                            <div class="quest-type-icon ai-icon">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"></path></svg>
+                            </div>
+                            <div class="quest-details">
+                                <h4>Daily Challenge: Thermodynamics</h4>
+                                <div class="quest-meta">
+                                    <span class="subject physics">Physics</span>
+                                    <span class="ai-tag">🎯 Generated based on recent errors</span>
+                                </div>
+                            </div>
+                            <div class="quest-actions">
+                                <div class="reward-pill epic">+2,500 XP</div>
+                                <button class="btn btn-primary bento-glow btn-small">Enter Arena</button>
+                            </div>
+                        </li>
+
+                        <li class="quest-item completed">
+                            <div class="quest-type-icon success-icon">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <div class="quest-details">
+                                <h4 style="text-decoration: line-through; color: var(--text-muted);">Essay: The French Revolution</h4>
+                                <div class="quest-meta">
+                                    <span class="subject history">History</span>
+                                    <span class="status-done">Submitted successfully</span>
+                                </div>
+                            </div>
+                            <div class="quest-actions">
+                                <span class="claimed-text">XP Claimed</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bento-card span-4-col dna-module glass-panel">
+                    <div class="card-header">
+                        <h3>Skill DNA</h3>
+                        <button class="icon-btn tooltip-trigger" aria-label="Based on your quiz accuracy and speed">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        </button>
+                    </div>
+
+                    <div class="radar-chart-container">
+                        <svg viewBox="0 0 200 200" class="dna-radar">
+                            <polygon points="100,10 178,50 178,150 100,190 22,150 22,50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                            <polygon points="100,32.5 158.5,60 158.5,140 100,167.5 41.5,140 41.5,60" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                            <polygon points="100,55 139,70 139,130 100,145 61,130 61,70" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                            <polygon points="100,77.5 119.5,80 119.5,120 100,122.5 80.5,120 80.5,80" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                            
+                            <line x1="100" y1="10" x2="100" y2="100" stroke="rgba(255,255,255,0.1)"/>
+                            <line x1="178" y1="50" x2="100" y2="100" stroke="rgba(255,255,255,0.1)"/>
+                            <line x1="178" y1="150" x2="100" y2="100" stroke="rgba(255,255,255,0.1)"/>
+                            <line x1="100" y1="190" x2="100" y2="100" stroke="rgba(255,255,255,0.1)"/>
+                            <line x1="22" y1="150" x2="100" y2="100" stroke="rgba(255,255,255,0.1)"/>
+                            <line x1="22" y1="50" x2="100" y2="100" stroke="rgba(255,255,255,0.1)"/>
+
+                            <polygon class="dna-polygon" points="100,20 160,50 140,140 100,160 50,120 60,60" fill="rgba(0,136,255,0.4)" stroke="#0088FF" stroke-width="2"/>
+                            
+                            <circle cx="100" cy="20" r="3" fill="#fff"/>
+                            <circle cx="160" cy="50" r="3" fill="#fff"/>
+                            <circle cx="140" cy="140" r="3" fill="#fff"/>
+                            <circle cx="100" cy="160" r="3" fill="#fff"/>
+                            <circle cx="50" cy="120" r="3" fill="#fff"/>
+                            <circle cx="60" cy="60" r="3" fill="#fff"/>
+                        </svg>
+                        
+                        <span class="radar-label l-top">Math (90%)</span>
+                        <span class="radar-label l-top-right">Science (75%)</span>
+                        <span class="radar-label l-bottom-right">History (55%) <span class="weakness-dot"></span></span>
+                        <span class="radar-label l-bottom">English (80%)</span>
+                        <span class="radar-label l-bottom-left">Speed (65%)</span>
+                        <span class="radar-label l-top-left">Accuracy (85%)</span>
+                    </div>
+
+                    <div class="dna-insights">
+                        <div class="insight-alert">
+                            <svg width="14" height="14" fill="none" stroke="var(--accent-yellow)" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            <span>Weakness detected in <strong>History</strong>. AI has scheduled a 5-min micro-lesson for tomorrow.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card span-6-col guild-war-module glass-panel">
+                    <div class="card-header">
+                        <h3>Live Guild War</h3>
+                        <span class="live-badge"><span class="dot pulse-red"></span> Live</span>
+                    </div>
+                    
+                    <div class="war-matchup">
+                        <div class="guild-side ally-side">
+                            <div class="war-insignia"><svg width="30" height="30" viewBox="0 0 100 100" fill="none"><path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" fill="#0088FF"/></svg></div>
+                            <div class="war-stats">
+                                <h4>Azure Mind</h4>
+                                <span class="war-score">4,250,100 XP</span>
+                            </div>
+                        </div>
+                        
+                        <div class="vs-badge">VS</div>
+                        
+                        <div class="guild-side enemy-side">
+                            <div class="war-stats" style="text-align: right;">
+                                <h4>Titan Force</h4>
+                                <span class="war-score">4,120,800 XP</span>
+                            </div>
+                            <div class="war-insignia"><svg width="30" height="30" viewBox="0 0 100 100" fill="none"><path d="M10 10H90V50C90 75 50 90 50 90C50 90 10 75 10 50V10Z" fill="#00FF88"/></svg></div>
+                        </div>
+                    </div>
+
+                    <div class="war-progress-container">
+                        <div class="war-bar-bg">
+                            <div class="war-bar-azure" style="width: 51%;"></div>
+                            <div class="war-bar-titan" style="width: 49%;"></div>
+                        </div>
+                        <div class="war-labels">
+                            <span style="color: #0088FF;">Winning by 129.3k XP</span>
+                            <span style="color: var(--text-muted);">Ends in 2d 14h</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-outline full-width" style="margin-top: 16px;" onclick="window.location.href='../arena/guild-war.html'">Join the Frontline (Contribute XP)</button>
+                </div>
+
+                <div class="bento-card span-6-col goals-module glass-panel">
+                    <div class="card-header">
+                        <h3>Current Target</h3>
+                        <a href="../settings/profile.html" class="text-link">Edit Goals</a>
+                    </div>
+                    
+                    <div class="goal-container">
+                        <div class="goal-icon">🎯</div>
+                        <div class="goal-details">
+                            <h4>"Score 90% in Final Exams"</h4>
+                            <p>AI calculated trajectory based on current performance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trajectory-tracker">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span style="font-size: 0.85rem; color: var(--text-secondary);">Current Estimate: <strong style="color: #fff;">84%</strong></span>
+                            <span style="font-size: 0.85rem; color: var(--accent-yellow);">Need +6%</span>
+                        </div>
+                        <div class="trajectory-bar">
+                            <div class="traj-fill" style="width: 84%;"></div>
+                            <div class="traj-target-marker" style="left: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="rewards-preview" style="margin-top: 24px; padding-top: 16px; border-top: var(--border-light);">
+                        <h4 style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase;">Next Unlocks</h4>
+                        <div class="reward-items">
+                            <div class="reward-box tooltip-trigger" aria-label="Unlock at Rank A">
+                                <div class="reward-img">💎</div>
+                                <span>Azure Crown</span>
+                            </div>
+                            <div class="reward-box tooltip-trigger" aria-label="Unlock at 100k XP">
+                                <div class="reward-img">📜</div>
+                                <span>Master Cert.</span>
+                            </div>
+                            <div class="reward-box locked tooltip-trigger" aria-label="Keep 30-day streak">
+                                <div class="reward-img">🔥</div>
+                                <span>Power Aura</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-backdrop" id="ai-tutor-modal">
+        <div class="ai-chat-window glass-panel">
+            <div class="chat-header">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div class="ai-avatar">🤖</div>
+                    <div>
+                        <h3 style="font-size: 1rem; margin: 0;">Jarvis Study Assistant</h3>
+                        <span style="font-size: 0.75rem; color: var(--accent-primary);">Online & Ready</span>
+                    </div>
+                </div>
+                <button class="close-modal-btn" onclick="closeAITutor()">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages-container">
+                <div class="msg system-msg">
+                    <div class="msg-bubble">Hello Alex! I noticed you struggled with the History quiz earlier. Would you like me to generate a quick 5-minute summary of the French Revolution?</div>
+                </div>
+            </div>
+            
+            <div class="chat-input-wrapper">
+                <button class="voice-input-btn" aria-label="Use Voice Control">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"></path></svg>
+                </button>
+                <input type="text" id="tutor-input" placeholder="Ask a question or request a quiz..." autocomplete="off">
+                <button class="send-msg-btn">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/core-auth.js"></script>
+    <script src="../../js/gamification.js"></script>
+    <script>
+        // Simple embedded script for the AI modal logic to keep the file robust and functional
+        function openAITutor(initialPrompt = '') {
+            const modal = document.getElementById('ai-tutor-modal');
+            const input = document.getElementById('tutor-input');
+            const container = document.getElementById('chat-messages-container');
+            
+            document.body.style.overflow = 'hidden';
+            modal.style.display = 'flex';
+            
+            // Small delay for CSS animation
+            setTimeout(() => { modal.classList.add('open'); }, 10);
+            
+            if (initialPrompt) {
+                input.value = initialPrompt;
+                input.focus();
+                
+                // Simulate auto-send if a prompt was passed
+                setTimeout(() => {
+                    const btn = document.querySelector('.send-msg-btn');
+                    if(btn) btn.click();
+                }, 500);
+            }
+        }
+
+        function closeAITutor() {
+            const modal = document.getElementById('ai-tutor-modal');
+            modal.classList.remove('open');
+            setTimeout(() => { 
+                modal.style.display = 'none'; 
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Mock chat interaction
+        document.querySelector('.send-msg-btn').addEventListener('click', () => {
+            const input = document.getElementById('tutor-input');
+            const container = document.getElementById('chat-messages-container');
+            const text = input.value.trim();
+            
+            if(!text) return;
+
+            // User Message
+            container.innerHTML += `<div class="msg user-msg"><div class="msg-bubble">${text}</div></div>`;
+            input.value = '';
+            container.scrollTop = container.scrollHeight;
+
+            // AI Loading State
+            const typingId = 'typing-' + Date.now();
+            container.innerHTML += `<div id="${typingId}" class="msg system-msg"><div class="msg-bubble typing"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>`;
+            container.scrollTop = container.scrollHeight;
+
+            // AI Reply (Simulated LLM)
+            setTimeout(() => {
+                document.getElementById(typingId).remove();
+                const reply = `I've analyzed your request regarding <strong>"${text.substring(0, 15)}..."</strong>. Let me break this down into simple terms for you.`;
+                container.innerHTML += `<div class="msg system-msg"><div class="msg-bubble">${reply}</div></div>`;
+                container.scrollTop = container.scrollHeight;
+            }, 1200);
+        });
+        
+        // Enter key to send
+        document.getElementById('tutor-input').addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') document.querySelector('.send-msg-btn').click();
+        });
+    </script>
+</body>
+</html>

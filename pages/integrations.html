@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrations | Connect lvlBase to Everything</title>
+    
+    <meta name="description" content="Connect lvlBase to your existing infrastructure. Seamless integrations with Stripe, Twilio, Active Directory, SAP, and hundreds more via REST APIs.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/integrations.css">
+</head>
+<body class="dark-theme bento-body integrations-body">
+
+    <div class="ambient-glow glow-top-left" style="background: radial-gradient(circle, rgba(0, 136, 255, 0.15), transparent 60%);"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(0, 255, 136, 0.15), transparent 60%);"></div>
+    <div class="grid-overlay" style="background-size: 60px 60px;"></div>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint0_linear)"/>
+                    <defs>
+                        <linearGradient id="paint0_linear" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#00FF88"/>
+                            <stop offset="1" stop-color="#0088FF"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">lvlBase</span>
+            </div>
+            <nav class="nav-links">
+                <a href="product.html" class="nav-item">Product</a>
+                <a href="features.html" class="nav-item">Features</a>
+                <a href="marketplace.html" class="nav-item">Marketplace</a>
+                <a href="integrations.html" class="nav-item text-gradient" style="font-weight: 700;">Integrations</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="auth.html" class="btn btn-ghost">Sign In</a>
+                <a href="auth.html" class="btn btn-primary bento-glow">Dashboard</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="integrations-hero section-padding">
+            <div class="section-header text-center" data-animate="fade-up">
+                <div class="hero-badge" style="border-color: rgba(0,136,255,0.4); color: var(--accent-secondary); background: rgba(0,136,255,0.05);">
+                    <span class="pulse-dot" style="background: var(--accent-secondary);"></span> Webhooks & APIs
+                </div>
+                <h1 class="hero-title">Connect your <span class="text-gradient" style="background: linear-gradient(135deg, #0088FF 0%, #00FF88 100%); -webkit-background-clip: text;">Infrastructure.</span></h1>
+                <p class="hero-subtext" style="max-width: 700px; margin: 0 auto var(--space-6);">lvlBase plays nice with everyone. Sync your active directories, pipe gamification data into your HR software, and trigger payments seamlessly.</p>
+            </div>
+
+            <div class="network-map-container glass-panel" data-animate="fade-up">
+                <div class="center-node">
+                    <svg width="40" height="40" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#000"/>
+                        <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="#111"/>
+                    </svg>
+                </div>
+                
+                <svg class="connection-lines" width="100%" height="100%">
+                    <line x1="50%" y1="50%" x2="20%" y2="20%" stroke="rgba(0,136,255,0.3)" stroke-width="2" />
+                    <line x1="50%" y1="50%" x2="80%" y2="20%" stroke="rgba(176,38,255,0.3)" stroke-width="2" />
+                    <line x1="50%" y1="50%" x2="15%" y2="60%" stroke="rgba(0,255,136,0.3)" stroke-width="2" />
+                    <line x1="50%" y1="50%" x2="85%" y2="60%" stroke="rgba(255,51,102,0.3)" stroke-width="2" />
+                    <line x1="50%" y1="50%" x2="35%" y2="85%" stroke="rgba(255,214,0,0.3)" stroke-width="2" />
+                    <line x1="50%" y1="50%" x2="65%" y2="85%" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
+                    
+                    <circle cx="20%" cy="20%" r="4" fill="#0088FF"><animateMotion dur="2s" repeatCount="indefinite" path="M 50 50 L 20 20"/></circle>
+                </svg>
+
+                <div class="outer-node n-1" style="background: #635BFF;"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+                <div class="outer-node n-2" style="background: #4A154B;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+                <div class="outer-node n-3" style="background: #F80000;"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                <div class="outer-node n-4" style="background: #0058CC;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+                <div class="outer-node n-5" style="background: #FF9900;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+                <div class="outer-node n-6" style="background: #2563EB;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/></svg></div>
+            </div>
+        </section>
+
+        <section class="integrations-panel section-padding">
+            <div class="bento-grid" style="max-width: 1400px; margin: 0 auto;">
+                
+                <div class="bento-card glass-panel span-3-col config-sidebar">
+                    <div class="search-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="int-search" placeholder="Search integrations...">
+                    </div>
+                    
+                    <h4 class="sidebar-heading">Categories</h4>
+                    <ul class="int-category-list">
+                        <li class="active" data-cat="all">All Connections</li>
+                        <li data-cat="payment">Payments & Billing</li>
+                        <li data-cat="identity">Identity (SSO & AD)</li>
+                        <li data-cat="comms">Communications</li>
+                        <li data-cat="erp">ERP & Data Sync</li>
+                    </ul>
+                    
+                    <div style="margin-top: auto; padding-top: 24px; border-top: var(--border-light);">
+                        <span style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 8px;">API Status</span>
+                        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; color: var(--accent-primary);">
+                            <span class="dot" style="background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary);"></span> 100% Operational
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span-9-col">
+                    
+                    <div class="integration-cards-grid">
+                        
+                        <div class="int-card glass-panel" data-cat="payment">
+                            <div class="int-card-header">
+                                <div class="int-icon" style="background: #635BFF;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                                </div>
+                                <div class="connection-status connected">Connected</div>
+                            </div>
+                            <h3 class="int-title">Stripe Payments</h3>
+                            <p class="int-desc">Automate fee collection, process refunds, and sync invoices to user accounts.</p>
+                            <div class="int-footer">
+                                <button class="btn btn-outline btn-small configure-btn">Configure</button>
+                                <label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
+                            </div>
+                        </div>
+
+                        <div class="int-card glass-panel" data-cat="comms">
+                            <div class="int-card-header">
+                                <div class="int-icon" style="background: #F22F46;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                <div class="connection-status not-connected">Not Connected</div>
+                            </div>
+                            <h3 class="int-title">Twilio SMS</h3>
+                            <p class="int-desc">Send automated SMS alerts for security breaches or parent/guardian notifications.</p>
+                            <div class="int-footer">
+                                <button class="btn btn-primary btn-small">Connect</button>
+                                <label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+                            </div>
+                        </div>
+
+                        <div class="int-card glass-panel" data-cat="identity">
+                            <div class="int-card-header">
+                                <div class="int-icon" style="background: #00A4EF;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                                </div>
+                                <div class="connection-status connected">Connected</div>
+                            </div>
+                            <h3 class="int-title">Azure Active Directory</h3>
+                            <p class="int-desc">Enterprise SSO. Sync user roles, permissions, and department hierarchies automatically.</p>
+                            <div class="int-footer">
+                                <button class="btn btn-outline btn-small configure-btn">Configure</button>
+                                <label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
+                            </div>
+                        </div>
+
+                        <div class="int-card glass-panel" data-cat="erp">
+                            <div class="int-card-header">
+                                <div class="int-icon" style="background: #008CDD;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                                </div>
+                                <div class="connection-status error">Auth Error</div>
+                            </div>
+                            <h3 class="int-title">SAP Data Sync</h3>
+                            <p class="int-desc">Push lvlBase HR performance metrics (XP/Ranks) into your centralized SAP database.</p>
+                            <div class="int-footer">
+                                <button class="btn btn-outline btn-small configure-btn" style="border-color: var(--accent-red); color: var(--accent-red);">Fix Keys</button>
+                                <label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>
+                            </div>
+                        </div>
+
+                        <div class="int-card glass-panel" data-cat="comms">
+                            <div class="int-card-header">
+                                <div class="int-icon" style="background: #1A82E2;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div class="connection-status not-connected">Not Connected</div>
+                            </div>
+                            <h3 class="int-title">SendGrid Email</h3>
+                            <p class="int-desc">Route all system emails, quest rewards, and organizational newsletters through SendGrid.</p>
+                            <div class="int-footer">
+                                <button class="btn btn-primary btn-small">Connect</button>
+                                <label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+                            </div>
+                        </div>
+
+                        <div class="int-card glass-panel" data-cat="payment">
+                            <div class="int-card-header">
+                                <div class="int-icon" style="background: #02042B;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                                </div>
+                                <div class="connection-status not-connected">Not Connected</div>
+                            </div>
+                            <h3 class="int-title">Razorpay Gateway</h3>
+                            <p class="int-desc">Alternative payment gateway optimized for the Indian subcontinent. Supports UPI & NetBanking.</p>
+                            <div class="int-footer">
+                                <button class="btn btn-primary btn-small">Connect</button>
+                                <label class="switch"><input type="checkbox"><span class="slider round"></span></label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="webhook-section section-padding">
+            <div class="section-header text-center">
+                <h2 class="section-title">Live <span class="text-gradient">Webhook Firehose</span></h2>
+                <p class="section-subtitle">Monitor the raw data payloads leaving the lvlBase ecosystem in real-time.</p>
+            </div>
+
+            <div class="bento-grid" style="max-width: 1200px; margin: 0 auto;">
+                
+                <div class="bento-card glass-panel span-8-col webhook-terminal">
+                    <div class="terminal-header">
+                        <div class="mac-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <span>api.lvlbase.in/v1/webhooks/logs</span>
+                        <button class="btn btn-ghost btn-icon" id="clear-logs"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+                    </div>
+                    <div class="terminal-body" id="webhook-logs">
+                        <div class="log-entry">
+                            <span class="log-time">[20:41:02]</span>
+                            <span class="log-method post">POST</span>
+                            <span class="log-endpoint">/user.rank_up</span>
+                            <span class="log-status success">200 OK</span>
+                        </div>
+                        <div class="log-payload">
+<pre><code>{
+  "event": "user.rank_up",
+  "data": {
+    "user_id": "usr_981a",
+    "old_rank": "C",
+    "new_rank": "B",
+    "total_xp": 41200
+  },
+  "timestamp": "2026-04-22T20:41:02Z"
+}</code></pre>
+                        </div>
+                        
+                        <div class="log-entry">
+                            <span class="log-time">[20:42:15]</span>
+                            <span class="log-method post">POST</span>
+                            <span class="log-endpoint">/invoice.created</span>
+                            <span class="log-status error">502 BAD GATEWAY</span>
+                        </div>
+                        <div class="log-payload" style="border-left-color: var(--accent-red);">
+<pre><code style="color: var(--text-muted);">// Target endpoint (SAP ERP) timed out after 3000ms.
+// lvlBase will retry payload in 5 minutes.</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col" style="background: rgba(0,0,0,0.4);">
+                    <h3 style="margin-bottom: 16px;">Trigger Test Event</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 24px;">Manually fire payloads to test your connected endpoints.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <button class="btn btn-secondary full-width trigger-test" data-event="user.created">Test: User Registration</button>
+                        <button class="btn btn-secondary full-width trigger-test" data-event="quest.completed">Test: Quest Completed</button>
+                        <button class="btn btn-secondary full-width trigger-test" data-event="payment.success">Test: Payment Success</button>
+                    </div>
+
+                    <div style="margin-top: 32px; padding-top: 24px; border-top: var(--border-light);">
+                        <h4 style="font-size: 0.9rem; margin-bottom: 12px;">Security Signature</h4>
+                        <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 8px;">All webhooks are signed with an HMAC-SHA256 signature.</p>
+                        <div style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 4px; font-family: monospace; font-size: 0.7rem; color: var(--accent-primary); word-break: break-all;">
+                            lvlbase-signature: v1=a8f7b...99e1c
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+                <p>The ultimate multi-tenant platform with RPG gamification and AI.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Ecosystem</h4>
+                <ul><li><a href="features.html">Features</a></li><li><a href="marketplace.html">Marketplace</a></li><li><a href="integrations.html" style="color: var(--accent-secondary);">Integrations</a></li></ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul><li><a href="contact.html">Contact Us</a></li><li><a href="#">API Docs</a></li></ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/components.js"></script>
+</body>
+</html>

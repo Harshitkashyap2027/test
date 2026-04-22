@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace & Plugins | lvlBase Ecosystem</title>
+    
+    <meta name="description" content="Extend your lvlBase environment. Browse hundreds of verified plugins, modules, and API integrations for education, healthcare, and enterprise.">
+    <meta name="keywords" content="lvlBase Marketplace, Plugins, Modules, Gamification Extensions, ERP Apps">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/marketplace.css">
+</head>
+<body class="dark-theme bento-body marketplace-body">
+
+    <div class="ambient-glow glow-top-left" style="background: radial-gradient(circle, rgba(0, 255, 136, 0.1), transparent 60%); top: -100px; left: -100px;"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(176, 38, 255, 0.1), transparent 60%);"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint0_linear)"/>
+                    <defs>
+                        <linearGradient id="paint0_linear" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#00FF88"/>
+                            <stop offset="1" stop-color="#0088FF"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">lvlBase</span>
+            </div>
+            <nav class="nav-links">
+                <a href="product.html" class="nav-item">Product</a>
+                <a href="solutions.html" class="nav-item">Solutions</a>
+                <a href="features.html" class="nav-item">Features</a>
+                <a href="pricing.html" class="nav-item">Pricing</a>
+                <a href="marketplace.html" class="nav-item text-gradient" style="font-weight: 700;">Marketplace</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="auth.html" class="btn btn-ghost">Sign In</a>
+                <a href="auth.html" class="btn btn-primary bento-glow">Get Started</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="marketplace-main">
+        
+        <section class="marketplace-hero section-padding">
+            <div class="hero-content-wrapper text-center" data-animate="fade-up">
+                <div class="hero-badge" style="border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.05);">
+                    <span class="pulse-dot" style="background: var(--accent-primary);"></span> 450+ Active Plugins
+                </div>
+                <h1 class="hero-title">Expand your <span class="text-gradient">Ecosystem.</span></h1>
+                <p class="hero-subtext" style="max-width: 600px; margin: 0 auto var(--space-6);">Install powerful modules, gamification skins, and enterprise integrations to customize your organization's node.</p>
+                
+                <div class="search-container glass-panel">
+                    <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input type="text" id="plugin-search" placeholder="Search for 'Canvas LMS Sync', 'Epic EHR', or 'HR Analytics'..." autocomplete="off">
+                    <button class="btn btn-primary btn-small bento-glow search-btn">Search</button>
+                </div>
+                <div class="search-tags">
+                    <span>Popular:</span>
+                    <button class="tag-pill" data-filter="education">Education</button>
+                    <button class="tag-pill" data-filter="gamification">Gamification</button>
+                    <button class="tag-pill" data-filter="stripe">Stripe</button>
+                    <button class="tag-pill" data-filter="slack">Slack</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="marketplace-layout section-padding">
+            
+            <aside class="filter-sidebar glass-panel" data-animate="fade-up">
+                <div class="sidebar-block">
+                    <h4 class="sidebar-title">Categories</h4>
+                    <ul class="filter-list" id="category-filters">
+                        <li>
+                            <button class="filter-btn active" data-category="all">
+                                <span class="filter-name">All Plugins</span>
+                                <span class="filter-count">452</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="filter-btn" data-category="education">
+                                <span class="filter-name">Education & LMS</span>
+                                <span class="filter-count">128</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="filter-btn" data-category="corporate">
+                                <span class="filter-name">Corporate & HR</span>
+                                <span class="filter-count">95</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="filter-btn" data-category="healthcare">
+                                <span class="filter-name">Healthcare (EHR)</span>
+                                <span class="filter-count">42</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="filter-btn" data-category="gamification">
+                                <span class="filter-name">Gamification Assets</span>
+                                <span class="filter-count">156</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="filter-btn" data-category="finance">
+                                <span class="filter-name">Finance & Billing</span>
+                                <span class="filter-count">31</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <div class="sidebar-block">
+                    <h4 class="sidebar-title">Pricing Model</h4>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" checked value="free">
+                        <span class="checkmark"></span>
+                        <span class="label-text">Free (Included)</span>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" checked value="paid">
+                        <span class="checkmark"></span>
+                        <span class="label-text">Paid / Subscription</span>
+                    </label>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <div class="sidebar-block">
+                    <h4 class="sidebar-title">Developer Status</h4>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" checked value="official">
+                        <span class="checkmark"></span>
+                        <span class="label-text">Official lvlBase Plugins <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--accent-primary)"><path d="M12 2L3 7l9 5 9-5-9-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" checked value="verified">
+                        <span class="checkmark"></span>
+                        <span class="label-text">Verified Third-Party <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    </label>
+                </div>
+            </aside>
+
+            <div class="plugin-content-area">
+                
+                <div class="bento-card glass-panel featured-plugin" data-animate="fade-up">
+                    <div class="featured-visual">
+                        <div class="glow-orb" style="background: var(--accent-purple);"></div>
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
+                            <polyline points="7.5 19.79 7.5 14.6 3 12"/>
+                            <polyline points="21 12 16.5 14.6 16.5 19.79"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <div class="featured-info">
+                        <div class="badge-row">
+                            <span class="badge new-badge">New Release</span>
+                            <span class="badge official-badge">Official Core</span>
+                        </div>
+                        <h2 class="featured-title">Advanced RPG Combat Engine v3.0</h2>
+                        <p class="featured-desc">Replaces standard XP bars with a fully interactive 3D skill tree. Allow students or employees to form 'Guilds' and battle over weekly KPIs. Includes 50+ custom loot box animations.</p>
+                        <div class="plugin-meta">
+                            <span class="rating">
+                                <svg width="14" height="14" fill="#FFD700"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                4.9 (2.1k reviews)
+                            </span>
+                            <span class="installs">15k+ Installs</span>
+                        </div>
+                        <div class="featured-actions">
+                            <button class="btn btn-primary bento-glow install-btn" data-id="feat-1">Install to Node</button>
+                            <span class="price">Free on Pro/Enterprise</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plugin-grid" id="plugin-grid">
+                    
+                    <div class="bento-card glass-panel plugin-card" data-category="finance" data-price="free" data-developer="official" data-animate="fade-up">
+                        <div class="plugin-header">
+                            <div class="plugin-icon" style="background: #635BFF;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                            </div>
+                            <div class="plugin-price free-text">Free</div>
+                        </div>
+                        <div class="plugin-body">
+                            <h3>Stripe Payment Sync</h3>
+                            <span class="dev-name">By lvlBase Core <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent-primary)"><path d="M12 2L3 7l9 5 9-5-9-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+                            <p>Automate tuition, subscriptions, and hospital billing directly to your Stripe account. Supports auto-reconciliation.</p>
+                        </div>
+                        <div class="plugin-footer">
+                            <div class="rating-mini">⭐ 4.9</div>
+                            <button class="btn btn-outline btn-small view-details" data-id="plg-1">View</button>
+                        </div>
+                    </div>
+
+                    <div class="bento-card glass-panel plugin-card" data-category="education" data-price="free" data-developer="verified" data-animate="fade-up">
+                        <div class="plugin-header">
+                            <div class="plugin-icon" style="background: #E01E5A;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                            </div>
+                            <div class="plugin-price free-text">Free</div>
+                        </div>
+                        <div class="plugin-body">
+                            <h3>Canvas LMS Bridge</h3>
+                            <span class="dev-name">By EduTech Solutions <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <p>Two-way sync between Canvas grades and lvlBase Gamification. Automatically convert assignment scores into XP.</p>
+                        </div>
+                        <div class="plugin-footer">
+                            <div class="rating-mini">⭐ 4.7</div>
+                            <button class="btn btn-outline btn-small view-details" data-id="plg-2">View</button>
+                        </div>
+                    </div>
+
+                    <div class="bento-card glass-panel plugin-card" data-category="corporate" data-price="free" data-developer="official" data-animate="fade-up">
+                        <div class="plugin-header">
+                            <div class="plugin-icon" style="background: #4A154B;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                            </div>
+                            <div class="plugin-price free-text">Free</div>
+                        </div>
+                        <div class="plugin-body">
+                            <h3>Slack Notification Bot</h3>
+                            <span class="dev-name">By lvlBase Core <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent-primary)"><path d="M12 2L3 7l9 5 9-5-9-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+                            <p>Send Rank-Up announcements, Quest completions, and AI Server alerts directly to your designated Slack channels.</p>
+                        </div>
+                        <div class="plugin-footer">
+                            <div class="rating-mini">⭐ 4.8</div>
+                            <button class="btn btn-outline btn-small view-details" data-id="plg-3">View</button>
+                        </div>
+                    </div>
+
+                    <div class="bento-card glass-panel plugin-card" data-category="gamification" data-price="paid" data-developer="verified" data-animate="fade-up">
+                        <div class="plugin-header">
+                            <div class="plugin-icon" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+                            </div>
+                            <div class="plugin-price paid-text">$9.99/mo</div>
+                        </div>
+                        <div class="plugin-body">
+                            <h3>Premium Loot Box Skins</h3>
+                            <span class="dev-name">By GamiFi Studios <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <p>Upgrade the default UI with 20+ animated 3D loot boxes. Connect real-world Starbucks or Amazon gift cards to Epic drops.</p>
+                        </div>
+                        <div class="plugin-footer">
+                            <div class="rating-mini">⭐ 4.9</div>
+                            <button class="btn btn-outline btn-small view-details" data-id="plg-4">View</button>
+                        </div>
+                    </div>
+
+                    <div class="bento-card glass-panel plugin-card" data-category="healthcare" data-price="paid" data-developer="verified" data-animate="fade-up">
+                        <div class="plugin-header">
+                            <div class="plugin-icon" style="background: #FF3366;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            </div>
+                            <div class="plugin-price paid-text">$199/mo</div>
+                        </div>
+                        <div class="plugin-body">
+                            <h3>Epic Systems Sync (HIPAA)</h3>
+                            <span class="dev-name">By MedTech Integrators <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <p>Enterprise-grade synchronization with Epic Systems. Pulls patient data into the lvlBase ecosystem with zero-knowledge encryption.</p>
+                        </div>
+                        <div class="plugin-footer">
+                            <div class="rating-mini">⭐ 4.5</div>
+                            <button class="btn btn-outline btn-small view-details" data-id="plg-5">View</button>
+                        </div>
+                    </div>
+
+                    <div class="bento-card glass-panel plugin-card" data-category="corporate" data-price="free" data-developer="official" data-animate="fade-up">
+                        <div class="plugin-header">
+                            <div class="plugin-icon" style="background: #0088FF;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                            </div>
+                            <div class="plugin-price free-text">Free</div>
+                        </div>
+                        <div class="plugin-body">
+                            <h3>Power BI & Tableau Connector</h3>
+                            <span class="dev-name">By lvlBase Core <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent-primary)"><path d="M12 2L3 7l9 5 9-5-9-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+                            <p>Export all organizational telemetry, XP growth, and AI predictions into Microsoft Power BI or Tableau instantly.</p>
+                        </div>
+                        <div class="plugin-footer">
+                            <div class="rating-mini">⭐ 4.8</div>
+                            <button class="btn btn-outline btn-small view-details" data-id="plg-6">View</button>
+                        </div>
+                    </div>
+
+                    <div class="bento-card glass-panel plugin-card" data-category="corporate" data-price="free" data-developer="verified" data-animate="fade-up">
+                        <div class="plugin-header">
+                            <div class="plugin-icon" style="background: #5865F2;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            </div>
+                            <div class="plugin-price free-text">Free</div>
+                        </div>
+                        <div class="plugin-body">
+                            <h3>Discord Role Manager</h3>
+                            <span class="dev-name">By BotSmith <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <p>Automatically assign Discord roles based on a user's lvlBase rank. If they hit Rank S, their Discord name turns Gold automatically.</p>
+                        </div>
+                        <div class="plugin-footer">
+                            <div class="rating-mini">⭐ 4.6</div>
+                            <button class="btn btn-outline btn-small view-details" data-id="plg-7">View</button>
+                        </div>
+                    </div>
+
+                    <div class="bento-card glass-panel plugin-card" data-category="education" data-price="paid" data-developer="official" data-animate="fade-up">
+                        <div class="plugin-header">
+                            <div class="plugin-icon" style="background: var(--accent-primary);">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="4"/></svg>
+                            </div>
+                            <div class="plugin-price paid-text">$49/mo</div>
+                        </div>
+                        <div class="plugin-body">
+                            <h3>RFID & Biometric Attendance</h3>
+                            <span class="dev-name">By lvlBase Core <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent-primary)"><path d="M12 2L3 7l9 5 9-5-9-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+                            <p>Connect physical school/office RFID gates to the platform. Grants +10 XP for arriving on time, flags latecomers to AI.</p>
+                        </div>
+                        <div class="plugin-footer">
+                            <div class="rating-mini">⭐ 4.9</div>
+                            <button class="btn btn-outline btn-small view-details" data-id="plg-8">View</button>
+                        </div>
+                    </div>
+
+                    <div class="bento-card glass-panel plugin-card" data-category="education" data-price="free" data-developer="official" data-animate="fade-up">
+                        <div class="plugin-header">
+                            <div class="plugin-icon" style="background: #0088FF;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div class="plugin-price free-text">Free</div>
+                        </div>
+                        <div class="plugin-body">
+                            <h3>Guardian Comms Gateway</h3>
+                            <span class="dev-name">By lvlBase Core <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent-primary)"><path d="M12 2L3 7l9 5 9-5-9-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+                            <p>Secure SMS and Email bridging. Let teachers send bulk announcements to parents. Auto-translates based on parent language preference.</p>
+                        </div>
+                        <div class="plugin-footer">
+                            <div class="rating-mini">⭐ 4.7</div>
+                            <button class="btn btn-outline btn-small view-details" data-id="plg-9">View</button>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="text-center" style="margin-top: var(--space-8);">
+                    <button class="btn btn-secondary btn-large" id="load-more-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin-hover"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+                        Load More Modules
+                    </button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+                <p>The ultimate multi-tenant platform with RPG gamification and AI.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul><li><a href="features.html">Features</a></li><li><a href="marketplace.html">Marketplace</a></li></ul>
+            </div>
+            <div class="footer-links">
+                <h4>Developers</h4>
+                <ul><li><a href="#">API Documentation</a></li><li><a href="#">Submit a Plugin</a></li></ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-backdrop" id="plugin-modal">
+        <div class="modal-content glass-panel">
+            <button class="close-modal" id="close-modal-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-icon" id="modal-icon"></div>
+                <div class="modal-title-area">
+                    <h2 id="modal-title">Plugin Name</h2>
+                    <span id="modal-dev" class="dev-name">By Developer</span>
+                    <div class="modal-meta-row">
+                        <span class="rating" id="modal-rating">⭐ 4.9</span>
+                        <span class="price-tag" id="modal-price">Free</span>
+                        <span class="badge official-badge" id="modal-badge">Official</span>
+                    </div>
+                </div>
+                <div class="modal-action-area">
+                    <button class="btn btn-primary bento-glow btn-large" id="modal-install-btn">
+                        <span>Install Module</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <div class="gallery-image" style="background: rgba(0,0,0,0.5); border: var(--border-thin); border-radius: var(--radius-md); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-family: monospace;">
+                        [Screenshot / Dashboard Preview]
+                    </div>
+                </div>
+                
+                <div class="modal-description">
+                    <h3>About this Extension</h3>
+                    <p id="modal-desc-text">Full description will be injected here via JavaScript based on the clicked card.</p>
+                    
+                    <h4 style="margin-top: 24px; margin-bottom: 12px;">Permissions Required</h4>
+                    <ul class="permission-list">
+                        <li><svg width="16" height="16" fill="none" stroke="var(--accent-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Read User Profiles</li>
+                        <li><svg width="16" height="16" fill="none" stroke="var(--accent-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Write XP Data</li>
+                        <li><svg width="16" height="16" fill="none" stroke="var(--accent-yellow)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Organization Level Access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/components.js"></script>
+    </body>
+</html>

@@ -1,0 +1,194 @@
+/* ==========================================================================
+   AI & ARENA SPECIFIC STYLES (Radar Chart, Chat Modal)
+   ========================================================================== */
+
+/* --- Skill DNA Radar SVG Styling --- */
+.dna-module {
+    display: flex;
+    flex-direction: column;
+}
+
+.radar-chart-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dna-radar {
+    width: 160px;
+    height: 160px;
+    overflow: visible;
+}
+
+/* Radar Scan Animation Overlay */
+.dna-radar::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 160px; height: 160px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 70%, rgba(0,136,255,0.4) 100%);
+    animation: radar-spin 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes radar-spin {
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.dna-polygon {
+    transform-origin: center;
+    animation: pulse-polygon 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-polygon {
+    0% { transform: scale(0.98); opacity: 0.8; }
+    100% { transform: scale(1.02); opacity: 1; }
+}
+
+.radar-label {
+    position: absolute;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.l-top { top: -10px; left: 50%; transform: translateX(-50%); color: #fff; }
+.l-bottom { bottom: -10px; left: 50%; transform: translateX(-50%); }
+.l-top-right { top: 30px; right: 0; }
+.l-bottom-right { bottom: 30px; right: -10px; color: var(--accent-yellow); }
+.l-top-left { top: 30px; left: 0; }
+.l-bottom-left { bottom: 30px; left: 0; }
+
+.weakness-dot {
+    display: inline-block; width: 6px; height: 6px; background: var(--accent-yellow); border-radius: 50%; margin-left: 4px; box-shadow: 0 0 5px var(--accent-yellow);
+}
+
+.dna-insights { margin-top: auto; }
+.insight-alert {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.3);
+    padding: 12px; border-radius: var(--radius-md);
+    font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;
+}
+.insight-alert strong { color: #fff; }
+
+/* --- Hidden AI Tutor Modal (Jarvis) --- */
+.modal-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7); backdrop-filter: blur(5px);
+    z-index: 9999; display: none; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.open { opacity: 1; }
+
+.ai-chat-window {
+    width: 90%; max-width: 500px; height: 600px;
+    background: rgba(15,15,17,0.95);
+    border: 1px solid rgba(176,38,255,0.3);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px rgba(176,38,255,0.1);
+    display: flex; flex-direction: column;
+    transform: scale(0.95) translateY(20px);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+}
+
+.modal-backdrop.open .ai-chat-window {
+    transform: scale(1) translateY(0);
+}
+
+.chat-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 24px; border-bottom: var(--border-thin);
+    background: linear-gradient(90deg, rgba(176,38,255,0.1), transparent);
+}
+
+.ai-avatar {
+    width: 40px; height: 40px; border-radius: 12px;
+    background: rgba(176,38,255,0.2); border: 1px solid var(--accent-purple);
+    display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(176,38,255,0.3);
+}
+
+.close-modal-btn {
+    background: transparent; border: none; color: var(--text-muted); cursor: pointer; transition: color var(--transition-fast);
+}
+.close-modal-btn:hover { color: #fff; }
+
+.chat-messages {
+    flex: 1; padding: 24px; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 16px;
+}
+
+.chat-messages::-webkit-scrollbar { width: 6px; }
+.chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+
+.msg { max-width: 85%; animation: msg-pop 0.3s ease-out forwards; }
+@keyframes msg-pop { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.system-msg { align-self: flex-start; }
+.user-msg { align-self: flex-end; }
+
+.msg-bubble {
+    padding: 14px 18px; border-radius: 16px; font-size: 0.95rem; line-height: 1.5; color: #fff;
+}
+
+.system-msg .msg-bubble {
+    background: rgba(255,255,255,0.05); border: var(--border-thin);
+    border-top-left-radius: 4px;
+}
+
+.user-msg .msg-bubble {
+    background: rgba(176,38,255,0.2); border: 1px solid rgba(176,38,255,0.4);
+    border-top-right-radius: 4px;
+}
+
+/* Typing Indicator Dots */
+.typing { display: flex; gap: 4px; align-items: center; height: 24px; }
+.typing .dot {
+    width: 6px; height: 6px; background: var(--text-muted); border-radius: 50%;
+    animation: typing-bounce 1s infinite alternate;
+}
+.typing .dot:nth-child(2) { animation-delay: 0.2s; }
+.typing .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-bounce {
+    from { transform: translateY(0); opacity: 0.5; }
+    to { transform: translateY(-4px); opacity: 1; background: var(--accent-purple); }
+}
+
+.chat-input-wrapper {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 24px; background: rgba(0,0,0,0.3); border-top: var(--border-thin);
+}
+
+.voice-input-btn {
+    width: 45px; height: 45px; border-radius: 50%; border: none;
+    background: rgba(255,255,255,0.05); color: var(--text-muted); cursor: pointer; transition: all var(--transition-fast);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.voice-input-btn:hover { background: rgba(176,38,255,0.1); color: var(--accent-purple); }
+
+#tutor-input {
+    flex: 1; background: rgba(255,255,255,0.03); border: var(--border-light);
+    border-radius: var(--radius-pill); padding: 0 20px; height: 45px;
+    color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s;
+}
+#tutor-input:focus { border-color: var(--accent-purple); box-shadow: inset 0 0 10px rgba(176,38,255,0.1); }
+
+.send-msg-btn {
+    width: 45px; height: 45px; border-radius: 50%; border: none;
+    background: var(--text-primary); color: var(--bg-base); cursor: pointer; transition: all var(--transition-fast);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.send-msg-btn:hover { background: var(--accent-purple); color: #fff; transform: scale(1.05); }

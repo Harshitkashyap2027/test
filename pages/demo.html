@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Demo | lvlBase OS</title>
+    
+    <meta name="description" content="Experience the lvlBase OS live. Switch between Admin, Teacher, and Student roles in our interactive sandbox environment.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/demo.css">
+</head>
+<body class="dark-theme bento-body demo-body">
+
+    <div class="ambient-glow glow-top-left" style="background: radial-gradient(circle, rgba(0, 136, 255, 0.15), transparent 70%);"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(176, 38, 255, 0.15), transparent 70%);"></div>
+    <div class="grid-overlay"></div>
+
+    <main class="demo-wrapper">
+        
+        <header class="demo-topbar glass-panel">
+            <div class="demo-brand" onclick="window.location.href='../index.html'">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint0_linear)"/>
+                    <defs><linearGradient id="paint0_linear" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#00FF88"/><stop offset="1" stop-color="#0088FF"/></linearGradient></defs>
+                </svg>
+                <span>lvlBase Sandbox</span>
+            </div>
+
+            <div class="role-switcher">
+                <span style="font-size: 0.8rem; color: var(--text-muted); margin-right: 8px;">View as:</span>
+                <div class="switcher-group">
+                    <button class="role-btn active" data-role="admin">Admin</button>
+                    <button class="role-btn" data-role="teacher">Teacher</button>
+                    <button class="role-btn" data-role="student">Student</button>
+                </div>
+            </div>
+
+            <div class="demo-actions">
+                <span class="live-status"><span class="dot pulse-green"></span> Live Simulation</span>
+                <a href="auth.html" class="btn btn-primary btn-small bento-glow" style="padding: 8px 16px;">End Demo & Sign Up</a>
+            </div>
+        </header>
+
+        <div class="os-layout">
+            
+            <aside class="os-sidebar glass-panel">
+                <div class="sidebar-user-profile" id="demo-user-profile">
+                    <div class="avatar admin-avatar">A</div>
+                    <div class="user-info">
+                        <h4>System Admin</h4>
+                        <span>Root Access</span>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <h5 class="nav-heading">Main Menu</h5>
+                    <a href="#" class="nav-item active"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Dashboard</a>
+                    <a href="#" class="nav-item"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Schedule / Analytics</a>
+                    <a href="#" class="nav-item"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Directory</a>
+                    
+                    <h5 class="nav-heading">Gamification</h5>
+                    <a href="#" class="nav-item"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Quests</a>
+                    <a href="#" class="nav-item"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Guild Leaderboard</a>
+                    
+                    <h5 class="nav-heading">System</h5>
+                    <a href="#" class="nav-item"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Settings</a>
+                </nav>
+            </aside>
+
+            <div class="os-main-content" id="dashboard-container">
+                
+                <div class="dashboard-view active-view" id="view-admin">
+                    <div class="dash-header">
+                        <h2>Root Command Center</h2>
+                        <p>Global multi-tenant overview for organizational administrators.</p>
+                    </div>
+
+                    <div class="bento-grid">
+                        <div class="bento-card glass-panel span-3-col stat-card">
+                            <span class="stat-title">Total Active Users</span>
+                            <h3 class="stat-value">12,492</h3>
+                            <div class="stat-trend positive">↑ 4.2% vs last month</div>
+                        </div>
+                        <div class="bento-card glass-panel span-3-col stat-card">
+                            <span class="stat-title">System Health</span>
+                            <h3 class="stat-value text-gradient">Optimal</h3>
+                            <div class="stat-trend">Firebase Multi-Tenant Node</div>
+                        </div>
+                        <div class="bento-card glass-panel span-3-col stat-card">
+                            <span class="stat-title">XP Economy Deflation</span>
+                            <h3 class="stat-value" style="color: var(--accent-yellow);">-1.2%</h3>
+                            <div class="stat-trend negative">↓ AI auto-balancing active</div>
+                        </div>
+                        <div class="bento-card glass-panel span-3-col stat-card">
+                            <span class="stat-title">Pending Approvals</span>
+                            <h3 class="stat-value" style="color: var(--accent-red);">42</h3>
+                            <div class="stat-trend">Needs manual review</div>
+                        </div>
+
+                        <div class="bento-card glass-panel span-8-col graph-card">
+                            <div class="card-header">
+                                <h3>Organization Productivity Index</h3>
+                                <select class="bento-select"><option>This Week</option><option>This Month</option></select>
+                            </div>
+                            <div class="css-line-chart">
+                                <svg width="100%" height="100%" viewBox="0 0 800 200" preserveAspectRatio="none">
+                                    <path d="M0,200 L0,150 C100,140 200,180 300,120 C400,60 500,100 600,80 C700,60 800,90 800,90 L800,200 Z" fill="url(#grad1)"/>
+                                    <path d="M0,150 C100,140 200,180 300,120 C400,60 500,100 600,80 C700,60 800,90 800,90" fill="none" stroke="var(--accent-secondary)" stroke-width="3" class="draw-anim"/>
+                                    <defs>
+                                        <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="rgba(0,136,255,0.4)" />
+                                            <stop offset="100%" stop-color="rgba(0,136,255,0)" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="grid-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="bento-card glass-panel span-4-col list-card">
+                            <div class="card-header">
+                                <h3>AI System Alerts</h3>
+                            </div>
+                            <ul class="alert-list">
+                                <li class="alert-item warning">
+                                    <div class="alert-icon">⚠️</div>
+                                    <div class="alert-content">
+                                        <h4>High Drop-off Risk</h4>
+                                        <p>Dept. of Science showing 15% lower quest completion.</p>
+                                    </div>
+                                </li>
+                                <li class="alert-item success">
+                                    <div class="alert-icon">⚡</div>
+                                    <div class="alert-content">
+                                        <h4>Resource Scaled</h4>
+                                        <p>Auto-routed 10% more power to Auth servers.</p>
+                                    </div>
+                                </li>
+                                <li class="alert-item info">
+                                    <div class="alert-icon">🔒</div>
+                                    <div class="alert-content">
+                                        <h4>Backup Complete</h4>
+                                        <p>Zero-knowledge database successfully cloned.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-view" id="view-teacher" style="display: none;">
+                    <div class="dash-header">
+                        <h2>Manager Portal</h2>
+                        <p>Quest creation, grading, and Guild management.</p>
+                    </div>
+
+                    <div class="bento-grid">
+                        <div class="bento-card glass-panel span-12-col action-row">
+                            <button class="btn btn-primary"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Create Quest</button>
+                            <button class="btn btn-secondary"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg> Auto-Grade AI</button>
+                            <button class="btn btn-secondary"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Message Guild</button>
+                        </div>
+
+                        <div class="bento-card glass-panel span-6-col">
+                            <div class="card-header">
+                                <h3>Guild Progress (Class 10-A)</h3>
+                            </div>
+                            <div class="progress-bars">
+                                <div class="prog-item">
+                                    <div class="prog-label"><span>Math Assignment 4</span> <span>85% Submitted</span></div>
+                                    <div class="prog-bg"><div class="prog-fill" style="width: 85%; background: var(--accent-primary);"></div></div>
+                                </div>
+                                <div class="prog-item">
+                                    <div class="prog-label"><span>Science Project</span> <span>42% Submitted</span></div>
+                                    <div class="prog-bg"><div class="prog-fill" style="width: 42%; background: var(--accent-yellow);"></div></div>
+                                </div>
+                                <div class="prog-item">
+                                    <div class="prog-label"><span>History Quiz</span> <span>100% Submitted</span></div>
+                                    <div class="prog-bg"><div class="prog-fill" style="width: 100%; background: var(--accent-purple);"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bento-card glass-panel span-6-col">
+                            <div class="card-header">
+                                <h3>Top Rankers</h3>
+                                <a href="#" style="font-size: 0.8rem; color: var(--accent-primary);">View All</a>
+                            </div>
+                            <ul class="leaderboard-list">
+                                <li>
+                                    <div class="rank-pos gold">1</div>
+                                    <div class="lb-info"><h4>Elena R.</h4><span>Rank A</span></div>
+                                    <div class="lb-xp">14,200 XP</div>
+                                </li>
+                                <li>
+                                    <div class="rank-pos silver">2</div>
+                                    <div class="lb-info"><h4>Marcus T.</h4><span>Rank B</span></div>
+                                    <div class="lb-xp">11,540 XP</div>
+                                </li>
+                                <li>
+                                    <div class="rank-pos bronze">3</div>
+                                    <div class="lb-info"><h4>Sarah J.</h4><span>Rank B</span></div>
+                                    <div class="lb-xp">10,900 XP</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-view" id="view-student" style="display: none;">
+                    <div class="dash-header">
+                        <h2>My Status Board</h2>
+                        <p>Track your XP, accept Quests, and upgrade your Skill DNA.</p>
+                    </div>
+
+                    <div class="bento-grid">
+                        <div class="bento-card glass-panel span-4-col player-card" style="background: linear-gradient(180deg, rgba(176,38,255,0.05) 0%, rgba(20,20,22,0.8) 100%);">
+                            <div class="player-avatar-large">
+                                <div class="rank-badge-floating">B</div>
+                            </div>
+                            <h3 class="text-center" style="margin-top: 16px;">Alex Chen</h3>
+                            <span class="text-center" style="display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px;">Elite Guild Member</span>
+                            
+                            <div class="xp-bar-container">
+                                <div class="xp-labels"><span>Lvl 42</span> <span>45,000 / 50,000 XP to Rank A</span></div>
+                                <div class="xp-bg"><div class="xp-fill" style="width: 90%; background: var(--accent-purple); box-shadow: 0 0 10px rgba(176,38,255,0.5);"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="bento-card glass-panel span-4-col dna-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <h3 style="margin-bottom: 16px; align-self: flex-start;">Skill DNA</h3>
+                            <div style="position: relative; width: 180px; height: 180px;">
+                                <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                    <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                                    <polygon points="50,25 75,40 75,60 50,75 25,60 25,40" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                    <polygon points="50,15 85,35 60,70 50,85 15,65 30,30" fill="rgba(176,38,255,0.4)" stroke="var(--accent-purple)" stroke-width="2"/>
+                                </svg>
+                                <span class="dna-label" style="top: -15px; left: 40%;">Logic</span>
+                                <span class="dna-label" style="bottom: -15px; left: 35%;">Creativity</span>
+                                <span class="dna-label" style="top: 40%; left: -30%;">Discipline</span>
+                                <span class="dna-label" style="top: 40%; right: -25%;">Agility</span>
+                            </div>
+                        </div>
+
+                        <div class="bento-card glass-panel span-4-col">
+                            <div class="card-header">
+                                <h3>Active Quests</h3>
+                            </div>
+                            <div class="quest-list">
+                                <div class="quest-item">
+                                    <div class="quest-check"></div>
+                                    <div class="quest-info">
+                                        <h4>Advanced Calculus Set</h4>
+                                        <span>Due in 2 days</span>
+                                    </div>
+                                    <div class="quest-reward">+500 XP</div>
+                                </div>
+                                <div class="quest-item">
+                                    <div class="quest-check"></div>
+                                    <div class="quest-info">
+                                        <h4>Peer Review: Literature</h4>
+                                        <span>Due in 5 hours</span>
+                                    </div>
+                                    <div class="quest-reward" style="color: var(--accent-yellow);">+250 XP</div>
+                                </div>
+                                <div class="quest-item completed">
+                                    <div class="quest-check checked"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                    <div class="quest-info">
+                                        <h4 style="text-decoration: line-through;">Lab Safety Quiz</h4>
+                                        <span>Completed</span>
+                                    </div>
+                                    <div class="quest-reward" style="color: var(--text-muted);">Claimed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/demo.js"></script>
+</body>
+</html>

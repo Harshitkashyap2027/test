@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Console | lvlBase School Control</title>
+    
+    <meta name="description" content="Root access dashboard for school administrators. Manage users, finances, and gamification infrastructure.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/bento-system.css">
+    <link rel="stylesheet" href="../../css/dashboards.css">
+    <link rel="stylesheet" href="../../css/admin-dash.css">
+    <link rel="stylesheet" href="../../css/erp-tables.css">
+</head>
+<body class="dark-theme bento-body admin-dashboard">
+
+    <div class="ambient-glow glow-top-left" style="background: radial-gradient(circle, rgba(255, 51, 102, 0.15), transparent 70%);"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(255, 214, 0, 0.1), transparent 70%);"></div>
+    <div class="grid-overlay" style="opacity: 0.3; background-size: 50px 50px;"></div>
+
+    <div class="app-layout">
+        
+        <aside class="dashboard-sidebar glass-panel">
+            <div class="sidebar-header">
+                <div class="logo-container" onclick="window.location.href='../../index.html'">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#FF3366"/>
+                        <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint_logo_admin)"/>
+                        <defs><linearGradient id="paint_logo_admin" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3366"/><stop offset="1" stop-color="#FFD700"/></linearGradient></defs>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <span class="menu-label">Core Infrastructure</span>
+                <a href="core.html" class="menu-item active">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>System Overview</span>
+                </a>
+                <a href="users.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <span>User Management</span>
+                </a>
+
+                <span class="menu-label" style="margin-top: 24px;">Academic & Exams</span>
+                <a href="academic-ops.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>Curriculum Planner</span>
+                </a>
+                <a href="exam-ops.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Exam & Results Engine</span>
+                </a>
+
+                <span class="menu-label" style="margin-top: 24px;">Operations</span>
+                <a href="finance-ops.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    <span>Finance & Fees</span>
+                    <span class="badge notification-badge" style="background: var(--accent-yellow); color: #000;">Alert</span>
+                </a>
+                <a href="facilities.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <span>Facilities (Library/Transport)</span>
+                </a>
+                <a href="student-care.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                    <span>Behavior & Counseling</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="sys-settings.html" class="user-profile-widget glass-panel" style="background: rgba(255, 51, 102, 0.05); border-color: rgba(255, 51, 102, 0.3);">
+                    <div class="user-avatar" style="background: linear-gradient(135deg, #FF3366, #FFD700); color: #000;">
+                        <span>RT</span>
+                    </div>
+                    <div class="user-meta">
+                        <span class="user-name">Root Admin</span>
+                        <span class="user-rank text-gradient" style="color: #FF3366;">God Mode Active</span>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            
+            <header class="dashboard-topbar">
+                <div class="search-module glass-panel" style="width: 500px;">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" placeholder="Global Search: Students, Teachers, Invoices, Guilds...">
+                    <div class="hotkey-hint">⌘K</div>
+                </div>
+
+                <div class="topbar-stats">
+                    <div class="stat-pill glass-panel">
+                        <svg width="16" height="16" fill="none" stroke="var(--accent-primary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <div class="stat-data">
+                            <span class="stat-label">Firebase Cluster</span>
+                            <span class="stat-value text-gradient" style="color: var(--accent-primary);">12ms Ping</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary bento-glow btn-small" onclick="AdminOps.openAddUserModal()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        Add User
+                    </button>
+                </div>
+            </header>
+
+            <div class="bento-grid dashboard-grid">
+                
+                <div class="bento-card glass-panel span-3-col admin-metric-card" data-animate="fade-up">
+                    <div class="metric-icon" style="color: #0088FF; background: rgba(0,136,255,0.1);"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path></svg></div>
+                    <span class="metric-label">Total Enrolled</span>
+                    <h3 class="metric-val">2,450</h3>
+                    <div class="metric-trend positive">↑ 124 this term</div>
+                </div>
+
+                <div class="bento-card glass-panel span-3-col admin-metric-card" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="metric-icon" style="color: #FFD700; background: rgba(255,215,0,0.1);"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                    <span class="metric-label">Q3 Revenue</span>
+                    <h3 class="metric-val">$1.2M</h3>
+                    <div class="metric-trend positive">↑ 8.2% vs Q2</div>
+                </div>
+
+                <div class="bento-card glass-panel span-3-col admin-metric-card" data-animate="fade-up" style="animation-delay: 0.2s;">
+                    <div class="metric-icon" style="color: #FF3366; background: rgba(255,51,102,0.1);"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h.01"></path><path d="M7 20v-4"></path><path d="M12 20v-8"></path><path d="M17 20V8"></path><path d="M22 4v16"></path></svg></div>
+                    <span class="metric-label">S-Rank Players</span>
+                    <h3 class="metric-val">42</h3>
+                    <div class="metric-trend">Top 1.7% of School</div>
+                </div>
+
+                <div class="bento-card glass-panel span-3-col admin-metric-card" data-animate="fade-up" style="animation-delay: 0.3s;">
+                    <div class="metric-icon" style="color: #00FF88; background: rgba(0,255,136,0.1);"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                    <span class="metric-label">System Uptime</span>
+                    <h3 class="metric-val">99.99%</h3>
+                    <div class="metric-trend positive">All nodes active</div>
+                </div>
+
+                <div class="bento-card glass-panel span-8-col chart-card" data-animate="fade-up">
+                    <div class="card-header" style="margin-bottom: 24px;">
+                        <div>
+                            <h3 style="font-size: 1.2rem;">Revenue vs Gamification Engagement</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Tracking fee collection against total student XP earned across the network.</p>
+                        </div>
+                        <select class="bento-input" style="width: auto; padding: 4px 12px; font-size: 0.8rem;">
+                            <option>Last 6 Months</option>
+                            <option>Year to Date</option>
+                        </select>
+                    </div>
+
+                    <div class="css-bar-chart">
+                        <div class="chart-y-axis">
+                            <span>$300k</span><span>$200k</span><span>$100k</span><span>0</span>
+                        </div>
+                        <div class="chart-bars-container">
+                            <div class="chart-column">
+                                <div class="bar rev-bar tooltip-trigger" aria-label="Rev: $120k" style="height: 40%;"></div>
+                                <div class="bar xp-bar tooltip-trigger" aria-label="XP: 8.2M" style="height: 30%;"></div>
+                                <span class="x-label">May</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="bar rev-bar tooltip-trigger" aria-label="Rev: $150k" style="height: 50%;"></div>
+                                <div class="bar xp-bar tooltip-trigger" aria-label="XP: 12M" style="height: 45%;"></div>
+                                <span class="x-label">Jun</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="bar rev-bar tooltip-trigger" aria-label="Rev: $180k" style="height: 60%;"></div>
+                                <div class="bar xp-bar tooltip-trigger" aria-label="XP: 15M" style="height: 65%;"></div>
+                                <span class="x-label">Jul</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="bar rev-bar tooltip-trigger" aria-label="Rev: $210k" style="height: 70%;"></div>
+                                <div class="bar xp-bar tooltip-trigger" aria-label="XP: 22M" style="height: 80%;"></div>
+                                <span class="x-label">Aug</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="bar rev-bar tooltip-trigger" aria-label="Rev: $250k" style="height: 85%;"></div>
+                                <div class="bar xp-bar tooltip-trigger" aria-label="XP: 28M" style="height: 90%;"></div>
+                                <span class="x-label">Sep</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="bar rev-bar tooltip-trigger" aria-label="Rev: $280k" style="height: 95%;"></div>
+                                <div class="bar xp-bar tooltip-trigger" aria-label="XP: 31M" style="height: 100%;"></div>
+                                <span class="x-label">Oct</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><div class="legend-dot" style="background: var(--accent-yellow);"></div> Revenue Collected</span>
+                        <span><div class="legend-dot" style="background: var(--accent-purple);"></div> Total XP Farmed</span>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col sys-health-card" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="card-header" style="margin-bottom: 16px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <div class="pulse-ring" style="width: 14px; height: 14px; border-color: var(--accent-red);"><div class="dot pulse-red" style="width: 6px; height: 6px; background: var(--accent-red);"></div></div>
+                            <h3 style="font-size: 1.1rem;">Node Telemetry</h3>
+                        </div>
+                    </div>
+
+                    <div class="server-terminal glass-panel">
+                        <div class="term-header">
+                            <div class="mac-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                            <span>root@lvlbase-firebase-cluster</span>
+                        </div>
+                        <div class="term-body" id="admin-terminal">
+                            <div class="term-line">> Initializing security handshakes... <span style="color: #00FF88;">[OK]</span></div>
+                            <div class="term-line">> Multi-tenant shard health: <span style="color: #00FF88;">100%</span></div>
+                            <div class="term-line">> Active WebSocket connections: 1,402</div>
+                            <div class="term-line">> Last database snapshot: 12 mins ago</div>
+                            <div class="term-line warning">> [WARN] High API load detected on Guild Matchmaking route.</div>
+                            <div class="term-line">> Auto-scaling container logic executing...</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sys-actions" style="margin-top: 16px; display: flex; gap: 12px;">
+                        <button class="btn btn-outline btn-small full-width" style="border-color: var(--accent-red); color: var(--accent-red);">Restart Shard</button>
+                        <button class="btn btn-outline btn-small full-width">View Auth Logs</button>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-full user-table-card" data-animate="fade-up">
+                    <div class="card-header" style="margin-bottom: 20px;">
+                        <h3>Recent Network Activity</h3>
+                        <div style="display: flex; gap: 12px;">
+                            <button class="btn btn-ghost btn-small">Filter by Guild</button>
+                            <button class="btn btn-ghost btn-small">Export CSV</button>
+                        </div>
+                    </div>
+
+                    <div class="erp-table-wrapper">
+                        <table class="erp-table">
+                            <thead>
+                                <tr>
+                                    <th>User / ID</th>
+                                    <th>Role</th>
+                                    <th>Guild / Faction</th>
+                                    <th>Status (Rank)</th>
+                                    <th>Last Active</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="mini-avatar" style="background: rgba(0,136,255,0.2); color: #0088FF;">AC</div>
+                                            <div>
+                                                <div class="user-name">Alex Chen</div>
+                                                <div class="user-id">usr_99102</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="role-badge student">Student</span></td>
+                                    <td><span class="guild-text azure">Azure Mind</span></td>
+                                    <td><span class="rank-tag b-rank">Rank B</span></td>
+                                    <td>Just now</td>
+                                    <td>
+                                        <button class="icon-btn-small tooltip-trigger" aria-label="Edit Record"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></button>
+                                        <button class="icon-btn-small tooltip-trigger" aria-label="Suspend" style="color: var(--accent-red);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="mini-avatar" style="background: rgba(176,38,255,0.2); color: #B026FF;">MD</div>
+                                            <div>
+                                                <div class="user-name">Mr. Davis</div>
+                                                <div class="user-id">tch_4419</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="role-badge teacher">Teacher</span></td>
+                                    <td><span class="text-muted">N/A (Staff)</span></td>
+                                    <td><span class="status-tag active">Online</span></td>
+                                    <td>5 mins ago</td>
+                                    <td>
+                                        <button class="icon-btn-small"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></button>
+                                        <button class="icon-btn-small" style="color: var(--accent-red);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="mini-avatar" style="background: rgba(255,51,102,0.2); color: #FF3366;">ER</div>
+                                            <div>
+                                                <div class="user-name">Elias R.</div>
+                                                <div class="user-id">usr_99188</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="role-badge student">Student</span></td>
+                                    <td><span class="guild-text inferno">Inferno Squad</span></td>
+                                    <td><span class="rank-tag c-rank">Rank C</span></td>
+                                    <td>1 hour ago</td>
+                                    <td>
+                                        <button class="icon-btn-small"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></button>
+                                        <button class="icon-btn-small" style="color: var(--accent-red);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-backdrop" id="add-user-modal">
+        <div class="modal-content glass-panel" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2>Provision New Identity</h2>
+                <button class="close-modal-btn" onclick="AdminOps.closeAddUserModal()">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="step-indicator" style="display: flex; justify-content: space-between; margin-bottom: 24px; position: relative;">
+                    <div style="position: absolute; top: 12px; left: 0; width: 100%; height: 2px; background: rgba(255,255,255,0.1); z-index: 0;"></div>
+                    <div class="step active"><div class="step-num">1</div><span>Role</span></div>
+                    <div class="step"><div class="step-num">2</div><span>Details</span></div>
+                    <div class="step"><div class="step-num">3</div><span>Guild</span></div>
+                </div>
+
+                <form class="complex-form" id="add-user-form">
+                    <div class="form-step" id="step-1">
+                        <label class="radio-card" style="margin-bottom: 12px; display: block;">
+                            <input type="radio" name="new_role" value="student" checked>
+                            <div class="radio-content" style="flex-direction: row; justify-content: flex-start; padding: 12px 20px;">
+                                <span class="radio-icon">🎓</span> <span>Student (Player)</span>
+                            </div>
+                        </label>
+                        <label class="radio-card" style="margin-bottom: 12px; display: block;">
+                            <input type="radio" name="new_role" value="teacher">
+                            <div class="radio-content" style="flex-direction: row; justify-content: flex-start; padding: 12px 20px;">
+                                <span class="radio-icon">🧑‍🏫</span> <span>Teacher (Staff)</span>
+                            </div>
+                        </label>
+                        <label class="radio-card" style="display: block;">
+                            <input type="radio" name="new_role" value="parent">
+                            <div class="radio-content" style="flex-direction: row; justify-content: flex-start; padding: 12px 20px;">
+                                <span class="radio-icon">👨‍👩‍👧</span> <span>Parent (Guardian)</span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 16px; margin-top: 24px; padding-top: 16px; border-top: var(--border-light);">
+                        <button type="button" class="btn btn-ghost" onclick="AdminOps.closeAddUserModal()">Cancel</button>
+                        <button type="button" class="btn btn-primary bento-glow" id="next-step-btn" onclick="AdminOps.simulateNextStep()">Continue to Details</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/core-auth.js"></script>
+    <script src="../../js/erp-services.js"></script>
+</body>
+</html>

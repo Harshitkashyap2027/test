@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Scale Your lvlBase Ecosystem</title>
+    
+    <meta name="description" content="Transparent, scalable pricing for the lvlBase gamified management platform. Choose the right plan for your school, hospital, or company.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/pricing.css">
+</head>
+<body class="dark-theme bento-body">
+
+    <div class="ambient-glow glow-top-left" style="background: radial-gradient(circle, rgba(0, 255, 136, 0.15), transparent 70%);"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(0, 136, 255, 0.15), transparent 70%);"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint0_linear)"/>
+                    <defs><linearGradient id="paint0_linear" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#00FF88"/><stop offset="1" stop-color="#0088FF"/></linearGradient></defs>
+                </svg>
+                <span class="logo-text">lvlBase</span>
+            </div>
+            <nav class="nav-links">
+                <a href="product.html" class="nav-item">Product</a>
+                <a href="solutions.html" class="nav-item">Solutions</a>
+                <a href="features.html" class="nav-item">Features</a>
+                <a href="pricing.html" class="nav-item text-gradient" style="font-weight: 700;">Pricing</a>
+                <a href="ai-lab.html" class="nav-item ai-badge">AI Lab <span>New</span></a>
+            </nav>
+            <div class="nav-actions">
+                <a href="auth.html" class="btn btn-ghost">Sign In</a>
+                <a href="auth.html" class="btn btn-primary bento-glow">Get Started</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="pricing-hero section-padding">
+            <div class="section-header text-center" data-animate="fade-up">
+                <h1 class="hero-title">Scale Without <span class="text-gradient">Friction.</span></h1>
+                <p class="hero-subtext" style="max-width: 600px; margin: 0 auto;">Simple, transparent pricing. Pay for the resources you use, with zero hidden integration fees.</p>
+            </div>
+
+            <div class="billing-toggle-wrapper" data-animate="fade-up">
+                <span class="toggle-label" id="label-monthly">Monthly</span>
+                <div class="toggle-switch" id="billing-toggle">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span class="toggle-label active" id="label-yearly">Annually <span class="save-badge">Save 20%</span></span>
+            </div>
+        </section>
+
+        <section class="pricing-cards-section" data-animate="fade-up">
+            <div class="bento-grid" style="max-width: 1200px; margin: 0 auto;">
+                
+                <div class="bento-card glass-panel pricing-tier">
+                    <div class="tier-header">
+                        <div class="tier-icon" style="background: rgba(255,255,255,0.05);">🌱</div>
+                        <h3>Starter</h3>
+                        <p>Perfect for bootcamps and small teams testing the RPG mechanics.</p>
+                    </div>
+                    <div class="tier-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="0" data-yearly="0">0</span>
+                        <span class="period">/ forever</span>
+                    </div>
+                    <a href="auth.html" class="btn btn-secondary full-width" style="margin-bottom: 24px;">Deploy Free Node</a>
+                    <ul class="tier-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Up to 50 Active Users</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Core Gamification (Ranks E to C)</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 1 Active Module (e.g., School)</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Community Support</li>
+                        <li class="disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> AI Jarvis Assistant</li>
+                        <li class="disabled"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Custom Domain</li>
+                    </ul>
+                </div>
+
+                <div class="bento-card glass-panel pricing-tier popular-tier span-4-col" style="border-color: var(--accent-primary);">
+                    <div class="popular-tag">Most Popular</div>
+                    <div class="tier-header">
+                        <div class="tier-icon" style="background: rgba(0,255,136,0.1); box-shadow: 0 0 15px rgba(0,255,136,0.3);">⚡</div>
+                        <h3>Pro Ecosystem</h3>
+                        <p>For growing schools and SMEs that need full automation and AI.</p>
+                    </div>
+                    <div class="tier-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="299" data-yearly="239">239</span>
+                        <span class="period">/ mo, billed <span class="billing-text">annually</span></span>
+                    </div>
+                    <a href="auth.html" class="btn btn-primary bento-glow full-width" style="margin-bottom: 24px; font-weight: 700;">Start 14-Day Free Trial</a>
+                    <ul class="tier-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Up to 2,500 Active Users</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Full Gamification (Unlock Rank S)</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> All Standard Modules Included</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> AI Predictive Analytics</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Custom Domain Mapping</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Priority Email Support</li>
+                    </ul>
+                </div>
+
+                <div class="bento-card glass-panel pricing-tier span-4-col">
+                    <div class="tier-header">
+                        <div class="tier-icon" style="background: rgba(176,38,255,0.1); color: var(--accent-purple);">🏢</div>
+                        <h3>Enterprise</h3>
+                        <p>Dedicated infrastructure for massive universities and hospital networks.</p>
+                    </div>
+                    <div class="tier-price">
+                        <span class="amount" style="font-size: 2.5rem;">Custom</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline full-width" style="margin-bottom: 24px;">Contact Architecture Team</a>
+                    <ul class="tier-features">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Unlimited Users & Guilds</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Single-Tenant Node</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Full White-labeling (No lvlBase branding)</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Jarvis AI Voice Control</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> SLA: 99.99% Uptime Guarantee</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 24/7 Dedicated Account Manager</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="comparison-section section-padding" id="compare">
+            <div class="section-header text-center" data-animate="fade-up">
+                <h2 class="section-title">Deep <span class="text-gradient">Comparison</span></h2>
+                <p class="section-subtitle">A transparent look at every feature across our ecosystem.</p>
+            </div>
+
+            <div class="glass-panel comparison-container" data-animate="fade-up">
+                <div class="compare-table-wrapper">
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Feature Breakdown</th>
+                                <th>Starter</th>
+                                <th class="highlight-col">Pro Ecosystem</th>
+                                <th>Enterprise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="category-row"><td colspan="4">Core Architecture</td></tr>
+                            <tr>
+                                <td>Max Active Users</td>
+                                <td>50</td>
+                                <td class="highlight-col">2,500</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>Database Isolation</td>
+                                <td>Shared Tenant</td>
+                                <td class="highlight-col">Shared Tenant</td>
+                                <td>Dedicated Node</td>
+                            </tr>
+                            <tr>
+                                <td>API Access & Webhooks</td>
+                                <td><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> (Rate Limited)</td>
+                                <td class="highlight-col"><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                                <td><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            </tr>
+                            <tr>
+                                <td>SSO (Google, GitHub, SAML)</td>
+                                <td>Google Only</td>
+                                <td class="highlight-col">All Standard SSO</td>
+                                <td>Custom SAML / AD</td>
+                            </tr>
+
+                            <tr class="category-row"><td colspan="4">Gamification Engine</td></tr>
+                            <tr>
+                                <td>Max Rank Progression</td>
+                                <td>Rank C</td>
+                                <td class="highlight-col">Rank S</td>
+                                <td>Custom Ranks</td>
+                            </tr>
+                            <tr>
+                                <td>Guild System & Battles</td>
+                                <td><svg class="x-mark" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+                                <td class="highlight-col"><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                                <td><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            </tr>
+                            <tr>
+                                <td>Skill DNA Mapping</td>
+                                <td>Basic Stats</td>
+                                <td class="highlight-col">Dynamic Hex-Grid</td>
+                                <td>Dynamic Hex-Grid</td>
+                            </tr>
+                            <tr>
+                                <td>Custom Loot Box Rewards</td>
+                                <td><svg class="x-mark" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+                                <td class="highlight-col"><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                                <td><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            </tr>
+
+                            <tr class="category-row"><td colspan="4">AI & Automation</td></tr>
+                            <tr>
+                                <td>Predictive Analytics</td>
+                                <td><svg class="x-mark" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+                                <td class="highlight-col"><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                                <td><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            </tr>
+                            <tr>
+                                <td>Visual Automation Builder</td>
+                                <td><svg class="x-mark" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+                                <td class="highlight-col">Up to 50 active flows</td>
+                                <td>Unlimited flows</td>
+                            </tr>
+                            <tr>
+                                <td>Jarvis Voice Terminal</td>
+                                <td><svg class="x-mark" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+                                <td class="highlight-col"><svg class="x-mark" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+                                <td><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            </tr>
+
+                            <tr class="category-row"><td colspan="4">Support & Security</td></tr>
+                            <tr>
+                                <td>HIPAA / FERPA Compliance</td>
+                                <td><svg class="x-mark" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td>
+                                <td class="highlight-col"><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> (Add-on available)</td>
+                                <td><svg class="check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Included</td>
+                            </tr>
+                            <tr>
+                                <td>Support Level</td>
+                                <td>Community Discord</td>
+                                <td class="highlight-col">Priority Email (24h SLA)</td>
+                                <td>24/7 Dedicated Phone</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section section-padding" style="max-width: 900px; margin: 0 auto;">
+            <div class="section-header text-center" data-animate="fade-up">
+                <h2 class="section-title">Pricing <span class="text-gradient">FAQ</span></h2>
+            </div>
+            
+            <div class="faq-accordion" data-animate="fade-up">
+                <div class="faq-item glass-panel">
+                    <button class="faq-question">
+                        <span>What happens if we exceed our user limit on the Pro plan?</span>
+                        <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We believe in frictionless scaling. Your system will never lock you out. If you exceed 2,500 users, we automatically bill you $1.50 per additional active user at the end of your billing cycle. If you grow significantly, our team will reach out to migrate you to a cost-effective Enterprise node.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item glass-panel">
+                    <button class="faq-question">
+                        <span>Do you offer discounts for non-profits or public schools?</span>
+                        <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. We offer a flat 40% discount on the Pro Ecosystem plan for registered 501(c)(3) organizations and verified public educational institutions. Contact our support team with your documentation to apply the discount.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item glass-panel">
+                    <button class="faq-question">
+                        <span>Can we switch from Monthly to Annual billing later?</span>
+                        <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. You can upgrade to annual billing at any time from your Admin Dashboard to instantly lock in the 20% savings. Your current monthly payment will be prorated.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item glass-panel">
+                    <button class="faq-question">
+                        <span>How secure is the payment process?</span>
+                        <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All transactions are processed through Stripe, utilizing AES-256 level encryption. lvlBase does not store your credit card information on our Firebase servers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta-section section-padding">
+            <div class="cta-block glass-panel gradient-border" style="text-align: center;">
+                <h2>Start Your Gamified Network</h2>
+                <p>Deploy a fully operational instance in 3 minutes. No credit card required for the Starter plan.</p>
+                <div class="cta-buttons" style="margin-top: 24px; justify-content: center;">
+                    <a href="auth.html" class="btn btn-primary btn-large bento-glow">Get Started for Free</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+                <p>The ultimate multi-tenant platform with RPG gamification and AI.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul><li><a href="product.html">Overview</a></li><li><a href="features.html">Features</a></li></ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/pricing.js"></script>
+</body>
+</html>

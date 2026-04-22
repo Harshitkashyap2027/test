@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Lab | lvlBase Neural Core</title>
+    
+    <meta name="description" content="Experience the lvlBase AI engine. Predictive analytics, automated decision making, and the Jarvis conversational interface.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/ai-lab.css">
+</head>
+<body class="dark-theme bento-body ai-lab-body">
+
+    <div class="ambient-glow glow-top-left" style="background: radial-gradient(circle, rgba(176, 38, 255, 0.2), transparent 70%);"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(0, 255, 136, 0.1), transparent 70%);"></div>
+    
+    <div class="ai-grid-overlay"></div>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint0_linear)"/>
+                    <defs><linearGradient id="paint0_linear" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#00FF88"/><stop offset="1" stop-color="#0088FF"/></linearGradient></defs>
+                </svg>
+                <span class="logo-text">lvlBase</span>
+            </div>
+            <nav class="nav-links">
+                <a href="product.html" class="nav-item">Product</a>
+                <a href="solutions.html" class="nav-item">Solutions</a>
+                <a href="features.html" class="nav-item">Features</a>
+                <a href="pricing.html" class="nav-item">Pricing</a>
+                <a href="ai-lab.html" class="nav-item ai-badge active-nav">AI Lab <span>Active</span></a>
+            </nav>
+            <div class="nav-actions">
+                <a href="auth.html" class="btn btn-ghost">Sign In</a>
+                <a href="auth.html" class="btn btn-primary bento-glow">Get Started</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="ai-hero-section section-padding" id="ai-hero">
+            <div class="section-header text-center" data-animate="fade-up">
+                <div class="hero-badge" style="border-color: var(--accent-purple); color: var(--accent-purple); box-shadow: 0 0 15px rgba(176,38,255,0.2);">
+                    <span class="pulse-dot" style="background: var(--accent-purple);"></span> Neural Engine v2.0 Online
+                </div>
+                <h1 class="hero-title">Meet your new <span class="text-gradient" style="background: linear-gradient(135deg, #B026FF 0%, #0088FF 100%); -webkit-background-clip: text;">Co-Pilot.</span></h1>
+                <p class="hero-subtext">The lvlBase AI doesn't just answer questions. It predicts bottlenecks, routes server power, and executes multi-step operational tasks via natural voice or text commands.</p>
+            </div>
+
+            <div class="bento-card glass-panel jarvis-terminal span-full" data-animate="fade-up">
+                
+                <div class="terminal-header">
+                    <div class="mac-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                    <div class="terminal-status">
+                        <svg class="audio-wave" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2">
+                            <path d="M12 2v20M17 5v14M7 5v14M22 10v4M2 10v4"/>
+                        </svg>
+                        <span>Listening...</span>
+                    </div>
+                    <div class="terminal-actions">
+                        <button class="btn btn-ghost btn-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></button>
+                        <button class="btn btn-ghost btn-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="terminal-body" id="chat-container">
+                    <div class="chat-message system-msg">
+                        <div class="msg-avatar">🤖</div>
+                        <div class="msg-content">
+                            <p><strong>System Online.</strong> All tenant clusters are optimal. I have analyzed 14,200 data points in the last hour. How can I assist you, Administrator?</p>
+                            <div class="msg-suggestions">
+                                <button class="suggestion-chip">"Show me the dropout risk report"</button>
+                                <button class="suggestion-chip">"Route 20% more power to Tenant A"</button>
+                                <button class="suggestion-chip">"Approve all pending Rank-C leaves"</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+
+                <div class="terminal-input-area">
+                    <button class="voice-btn" id="voice-trigger">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+                    </button>
+                    <input type="text" id="ai-command-input" placeholder="Type a command or ask a question to the system..." autocomplete="off">
+                    <button class="send-btn" id="send-command">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-padding" id="predictive-analytics">
+            <div class="section-header">
+                <h2 class="section-title">Anticipate. <span class="text-gradient">Never React.</span></h2>
+                <p class="section-subtitle">Real-time telemetry parsed by the neural net to predict organizational shifts before they happen.</p>
+            </div>
+
+            <div class="bento-grid predictive-grid">
+                
+                <div class="bento-card glass-panel risk-card">
+                    <div class="card-top-row">
+                        <div class="rpg-icon-box" style="background: rgba(255,51,102,0.1); color: var(--accent-red); border-color: var(--accent-red);">⚠️</div>
+                        <span class="live-badge">Live Scan</span>
+                    </div>
+                    <h3>Attrition Risk</h3>
+                    <p class="desc">AI predicts a 14% chance of employee/student dropout in Department B based on recent XP stagnation.</p>
+                    
+                    <div class="risk-meter-container">
+                        <div class="risk-labels"><span>Safe</span> <span>Critical</span></div>
+                        <div class="risk-bar-bg">
+                            <div class="risk-bar-fill" style="width: 68%;"></div>
+                        </div>
+                        <div class="risk-value">68% <span class="trend up">↑ 4% this week</span></div>
+                    </div>
+                    
+                    <button class="btn btn-outline btn-small full-width" style="margin-top: 16px; border-color: var(--accent-red); color: var(--accent-red);">Generate Intervention Plan</button>
+                </div>
+
+                <div class="bento-card glass-panel server-card">
+                    <div class="card-top-row">
+                        <div class="rpg-icon-box" style="background: rgba(0,136,255,0.1); color: var(--accent-secondary); border-color: var(--accent-secondary);">⚡</div>
+                        <span class="live-badge green">Optimized</span>
+                    </div>
+                    <h3>Compute Flow</h3>
+                    <p class="desc">Auto-scaling clusters based on predicted exam-week login surges.</p>
+                    
+                    <div class="node-graph">
+                        <div class="node-ring main-node"><span class="pulse"></span></div>
+                        <svg class="connection-lines" width="100%" height="100%">
+                            <line x1="50%" y1="50%" x2="20%" y2="20%" stroke="rgba(0,136,255,0.5)" stroke-width="2" stroke-dasharray="4"/>
+                            <line x1="50%" y1="50%" x2="80%" y2="30%" stroke="rgba(0,255,136,0.5)" stroke-width="2"/>
+                            <line x1="50%" y1="50%" x2="30%" y2="80%" stroke="rgba(176,38,255,0.5)" stroke-width="2"/>
+                        </svg>
+                        <div class="node-ring sub-node n1">DB 1</div>
+                        <div class="node-ring sub-node n2 active-node">Auth</div>
+                        <div class="node-ring sub-node n3">AI Core</div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel economy-card span-2-col">
+                    <div class="card-top-row">
+                        <div class="rpg-icon-box" style="background: rgba(255,214,0,0.1); color: var(--accent-yellow); border-color: var(--accent-yellow);">💎</div>
+                        <div class="stat-pill">XP Economy Deflation: -2.4%</div>
+                    </div>
+                    <h3>Quest Economy Balancer</h3>
+                    <p class="desc">The AI has detected that Rank-B players are earning XP 15% faster than intended. Loot box drop rates have been automatically nerfed by 4% to maintain ecosystem balance.</p>
+                    
+                    <div class="economy-chart">
+                        <div class="chart-col">
+                            <div class="bar-expected" style="height: 60%;"></div>
+                            <div class="bar-actual" style="height: 75%;"></div>
+                            <span>Rank C</span>
+                        </div>
+                        <div class="chart-col">
+                            <div class="bar-expected" style="height: 40%;"></div>
+                            <div class="bar-actual" style="height: 85%; background: var(--accent-red); box-shadow: 0 0 10px rgba(255,51,102,0.4);"></div>
+                            <span style="color: var(--accent-red); font-weight: bold;">Rank B</span>
+                        </div>
+                        <div class="chart-col">
+                            <div class="bar-expected" style="height: 80%;"></div>
+                            <div class="bar-actual" style="height: 70%;"></div>
+                            <span>Rank A</span>
+                        </div>
+                        <div class="chart-col">
+                            <div class="bar-expected" style="height: 100%;"></div>
+                            <div class="bar-actual" style="height: 95%;"></div>
+                            <span>Rank S</span>
+                        </div>
+                        
+                        <div class="chart-legend">
+                            <div class="legend-item"><span class="box expected"></span> Target XP Rate</div>
+                            <div class="legend-item"><span class="box actual"></span> Actual XP Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-padding" id="automation">
+            <div class="automation-wrapper glass-panel">
+                <div class="automation-sidebar">
+                    <h3>Logic Blocks</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 16px;">Drag and connect AI nodes to build custom workflows without code.</p>
+                    
+                    <div class="block-list">
+                        <div class="logic-block trigger" draggable="true">
+                            <span class="dot" style="background: var(--accent-primary);"></span> On Form Submit
+                        </div>
+                        <div class="logic-block trigger" draggable="true">
+                            <span class="dot" style="background: var(--accent-primary);"></span> XP Threshold Reached
+                        </div>
+                        <div class="logic-block action" draggable="true">
+                            <span class="dot" style="background: var(--accent-purple);"></span> Generate AI Summary
+                        </div>
+                        <div class="logic-block action" draggable="true">
+                            <span class="dot" style="background: var(--accent-secondary);"></span> Upgrade User Rank
+                        </div>
+                        <div class="logic-block action" draggable="true">
+                            <span class="dot" style="background: var(--accent-red);"></span> Webhook to Slack
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="automation-canvas">
+                    <div class="canvas-header">
+                        <h4>Workflow: <span class="text-gradient">Student Promotion Protocol</span></h4>
+                        <button class="btn btn-primary bento-glow btn-small">Deploy Live</button>
+                    </div>
+                    
+                    <div class="canvas-area">
+                        <div class="placed-node" style="top: 20%; left: 10%; border-color: var(--accent-primary);">
+                            <div class="node-title">Trigger</div>
+                            <div class="node-desc">XP > 10,000</div>
+                            <div class="port out-port"></div>
+                        </div>
+                        
+                        <svg class="canvas-line" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+                            <path d="M 220 75 C 300 75, 300 150, 380 150" fill="none" stroke="var(--accent-purple)" stroke-width="3" stroke-dasharray="5" class="animated-line"/>
+                        </svg>
+
+                        <div class="placed-node active-pulse" style="top: 40%; left: 45%; border-color: var(--accent-purple); box-shadow: 0 0 20px rgba(176,38,255,0.2);">
+                            <div class="port in-port"></div>
+                            <div class="node-title">AI Process</div>
+                            <div class="node-desc">Analyze Skill DNA</div>
+                            <div class="port out-port"></div>
+                        </div>
+
+                        <svg class="canvas-line" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+                            <path d="M 520 150 C 600 150, 600 225, 680 225" fill="none" stroke="var(--accent-secondary)" stroke-width="3"/>
+                        </svg>
+
+                        <div class="placed-node" style="top: 60%; left: 80%; border-color: var(--accent-secondary);">
+                            <div class="port in-port"></div>
+                            <div class="node-title">Action</div>
+                            <div class="node-desc">Promote to Rank A</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta-section section-padding">
+            <div class="cta-block glass-panel gradient-border" style="text-align: center;">
+                <h2>Access the Neural Core</h2>
+                <p>Equip your organization with the most advanced, context-aware AI in the management space.</p>
+                <div class="cta-buttons" style="margin-top: 24px; justify-content: center;">
+                    <a href="auth.html" class="btn btn-primary btn-large bento-glow">Request API Keys</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+                <p>The ultimate multi-tenant platform with RPG gamification and AI.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul><li><a href="product.html">Overview</a></li><li><a href="ai-lab.html" style="color: var(--accent-purple);">AI Lab</a></li></ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/ai-lab.js"></script>
+</body>
+</html>

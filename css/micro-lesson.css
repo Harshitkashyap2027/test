@@ -1,0 +1,251 @@
+/* ==========================================================================
+   MICRO-LESSON & SIMULATION - CUSTOM STYLESHEET
+   ========================================================================== */
+
+/* 🚀 LAYOUT OVERRIDES */
+.lesson-body {
+    overflow: hidden;
+}
+
+.collapsed-sidebar {
+    width: 80px !important;
+    align-items: center;
+}
+
+.collapsed-sidebar .menu-item span,
+.collapsed-sidebar .logo-text {
+    display: none;
+}
+
+.collapsed-sidebar .menu-item {
+    justify-content: center;
+    padding: 12px;
+}
+
+/* ⏱️ LESSON HEADER & TIMER */
+.lesson-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    margin-bottom: var(--space-5);
+    border-radius: var(--radius-md);
+    border: var(--border-thin);
+}
+
+.lesson-title-area {
+    display: flex; flex-direction: column; gap: 4px;
+}
+
+.subject-badge {
+    font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+    padding: 2px 8px; border-radius: var(--radius-pill); width: fit-content;
+}
+.subject-badge.physics { background: rgba(0,136,255,0.1); color: #0088FF; border: 1px solid rgba(0,136,255,0.3); }
+
+.lesson-title-area h2 { font-size: 1.4rem; }
+
+.burst-timer-module {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    background: rgba(0,0,0,0.3); padding: 8px 24px; border-radius: var(--radius-md);
+    border: var(--border-thin); min-width: 200px;
+}
+
+.timer-display {
+    display: flex; align-items: center; gap: 8px; font-family: 'Fira Code', monospace;
+    font-size: 1.5rem; font-weight: 800; color: var(--accent-yellow);
+}
+
+.spin-slow { animation: spin 3s linear infinite; }
+
+.timer-progress-bar {
+    width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;
+}
+.timer-fill {
+    height: 100%; background: var(--accent-yellow); transition: width 1s linear;
+}
+.timer-fill.urgent { background: var(--accent-red); box-shadow: 0 0 10px var(--accent-red); }
+
+.lesson-actions { display: flex; gap: 12px; }
+
+/* 🧪 1. INTERACTIVE SIMULATION CANVAS */
+.simulation-card {
+    position: relative; padding: 0; overflow: hidden; display: flex; flex-direction: column;
+    min-height: 500px; border: 1px solid rgba(0,136,255,0.4);
+}
+
+.simulation-viewport {
+    flex: 1; position: relative; background: #050505; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.space-grid {
+    position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background-image: 
+        linear-gradient(rgba(0,136,255,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,136,255,0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    transform: perspective(500px) rotateX(60deg);
+    transform-origin: center;
+    opacity: 0.5;
+}
+
+.celestial-body { border-radius: 50%; position: absolute; }
+
+.central-mass {
+    width: 60px; height: 60px; background: radial-gradient(circle at 30% 30%, #FFD700, #FF8C00);
+    box-shadow: 0 0 50px rgba(255,140,0,0.6); z-index: 10; transition: all 0.3s ease;
+}
+
+/* Visualization of Gravity Well */
+.gravity-well {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,140,0,0.2) 0%, transparent 70%);
+    border: 1px dashed rgba(255,140,0,0.3); z-index: 1; transition: all 0.3s ease;
+    animation: pulse-well 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-well {
+    0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+}
+
+.orbit-path {
+    position: absolute; width: 300px; height: 300px; border-radius: 50%;
+    border: 2px solid rgba(0,136,255,0.3); z-index: 5;
+    animation: orbit-spin 6s linear infinite; transition: all 0.5s ease;
+}
+
+@keyframes orbit-spin {
+    100% { transform: rotate(360deg); }
+}
+
+.orbiting-mass {
+    width: 20px; height: 20px; background: radial-gradient(circle at 30% 30%, #00E5FF, #0088FF);
+    box-shadow: 0 0 20px rgba(0,136,255,0.8);
+    top: -10px; left: 50%; transform: translateX(-50%); position: absolute;
+}
+
+.velocity-vector {
+    position: absolute; top: 50%; left: 100%; width: 40px; height: 2px;
+    background: #00FF88; transform-origin: left center;
+    box-shadow: 0 0 5px #00FF88; transition: width 0.3s ease;
+}
+.velocity-vector::after {
+    content: ''; position: absolute; right: -2px; top: -4px;
+    border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid #00FF88;
+}
+
+/* Crash State CSS */
+.orbit-path.crashed {
+    animation-duration: 1s; width: 60px; height: 60px; border-color: rgba(255,51,102,0.8);
+}
+.orbit-path.crashed .orbiting-mass {
+    background: radial-gradient(circle at 30% 30%, #FF3366, #8B0000); box-shadow: 0 0 30px #FF3366;
+}
+
+/* Simulation Controls Bottom Bar */
+.simulation-controls {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 16px 24px; background: rgba(10,10,12,0.9); border-top: var(--border-thin); z-index: 10;
+}
+
+.control-group { display: flex; flex-direction: column; flex: 1; gap: 8px; position: relative; }
+.control-group label { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
+.control-val { position: absolute; right: 0; top: 0; font-family: 'Fira Code', monospace; font-size: 0.8rem; color: var(--accent-primary); }
+
+.bento-slider {
+    -webkit-appearance: none; width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; outline: none;
+}
+.bento-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--accent-primary); cursor: pointer; box-shadow: 0 0 10px var(--accent-primary);
+}
+
+.sim-feedback {
+    padding: 8px 16px; border-radius: var(--radius-pill); font-family: 'Fira Code', monospace;
+    font-size: 0.85rem; font-weight: bold; background: rgba(0,255,136,0.1); color: #00FF88; border: 1px solid rgba(0,255,136,0.3);
+}
+.sim-feedback.danger { background: rgba(255,51,102,0.1); color: #FF3366; border-color: rgba(255,51,102,0.3); }
+
+/* 📖 2. CONCEPT TEXT & TUTOR */
+.concept-card { display: flex; flex-direction: column; }
+.concept-content { flex: 1; }
+.concept-content h3 { font-size: 1.3rem; margin-bottom: 12px; }
+.concept-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px; }
+
+.math-formula-box {
+    background: rgba(0,0,0,0.4); border: 1px dashed rgba(255,255,255,0.2);
+    padding: 16px; border-radius: var(--radius-md); text-align: center; margin-bottom: 20px;
+}
+.formula { font-family: 'Georgia', serif; font-size: 1.3rem; letter-spacing: 2px; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+
+.tutor-box {
+    background: rgba(176,38,255,0.05); border: 1px solid rgba(176,38,255,0.2);
+    padding: 16px; border-radius: var(--radius-md); margin-top: auto;
+}
+.tutor-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 0.85rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; }
+.ai-avatar-mini { width: 24px; height: 24px; background: rgba(176,38,255,0.2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+.tutor-msg { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* 📝 3. GAMIFIED QUIZ */
+.quiz-card { display: flex; flex-direction: column; }
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: var(--border-light); }
+
+.xp-bounty { display: flex; align-items: center; gap: 12px; background: rgba(0,136,255,0.1); padding: 6px 16px; border-radius: var(--radius-pill); border: 1px solid rgba(0,136,255,0.3); }
+.bounty-label { font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: var(--text-muted); }
+.bounty-val { font-family: 'Fira Code', monospace; font-size: 1.1rem; font-weight: 900; }
+
+.quiz-question { font-size: 1.2rem; line-height: 1.5; margin-bottom: 24px; }
+
+.quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.quiz-option {
+    display: flex; align-items: center; gap: 16px; padding: 16px;
+    background: rgba(255,255,255,0.03); border: var(--border-thin); border-radius: var(--radius-md);
+    cursor: pointer; transition: all var(--transition-fast); text-align: left;
+}
+
+.quiz-option:hover:not(:disabled) {
+    background: rgba(255,255,255,0.08); transform: translateY(-3px); border-color: rgba(255,255,255,0.2);
+}
+
+.option-letter {
+    width: 32px; height: 32px; background: rgba(0,0,0,0.5); border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--text-muted); flex-shrink: 0;
+}
+.option-text { font-size: 0.95rem; color: var(--text-primary); line-height: 1.4; }
+
+/* Quiz Answer States */
+.quiz-option.correct { background: rgba(0,255,136,0.1); border-color: #00FF88; box-shadow: 0 0 20px rgba(0,255,136,0.2); }
+.quiz-option.correct .option-letter { background: #00FF88; color: #000; border-color: #00FF88; }
+.quiz-option.incorrect { background: rgba(255,51,102,0.1); border-color: #FF3366; opacity: 0.7; }
+.quiz-option.incorrect .option-letter { background: #FF3366; color: #000; border-color: #FF3366; }
+
+.quiz-feedback {
+    display: flex; align-items: flex-start; gap: 16px; margin-top: 24px; padding: 16px; border-radius: var(--radius-md); animation: fade-in-up 0.4s ease-out;
+}
+.quiz-feedback.success { background: rgba(0,255,136,0.05); border: 1px solid rgba(0,255,136,0.3); }
+.quiz-feedback.error { background: rgba(255,51,102,0.05); border: 1px solid rgba(255,51,102,0.3); }
+
+.feedback-icon { font-size: 1.8rem; }
+.feedback-text h4 { font-size: 1.1rem; margin-bottom: 4px; }
+.quiz-feedback.success h4 { color: #00FF88; }
+.quiz-feedback.error h4 { color: #FF3366; }
+.feedback-text p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .simulation-card, .concept-card { grid-column: span 12; }
+    .simulation-card { min-height: 400px; }
+    .simulation-controls { flex-direction: column; gap: 16px; align-items: stretch; }
+    .sim-feedback { text-align: center; }
+}
+
+@media (max-width: 768px) {
+    .quiz-options { grid-template-columns: 1fr; }
+    .lesson-topbar { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .burst-timer-module { width: 100%; }
+    .lesson-actions { width: 100%; }
+    .lesson-actions button { flex: 1; }
+}

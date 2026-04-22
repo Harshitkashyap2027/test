@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Overview | lvlBase Architecture</title>
+    
+    <meta name="description" content="Deep dive into the lvlBase ecosystem. Explore our multi-tenant architecture, role-based dashboards, and AI-driven system flow.">
+    <meta name="keywords" content="lvlBase Product, Multi-tenant Architecture, Role-based ERP, System Flow, Gamified Ecosystem">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <style>
+        /* Product Page Specific Overrides & Enhancements */
+        .product-hero {
+            padding-top: calc(var(--header-height) + var(--space-12));
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto var(--space-12);
+        }
+        
+        .architecture-diagram {
+            width: 100%;
+            height: auto;
+            background: rgba(255,255,255,0.02);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            border: var(--border-thin);
+            margin-top: var(--space-6);
+        }
+
+        .module-grid {
+            grid-template-columns: repeat(12, 1fr);
+        }
+        
+        .module-card {
+            grid-column: span 4;
+            min-height: 250px;
+        }
+
+        .role-dashboard-tabs {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .role-tab {
+            padding: 12px 32px;
+            border-radius: var(--radius-pill);
+            background: rgba(255,255,255,0.05);
+            border: var(--border-light);
+            color: var(--text-secondary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .role-tab.active {
+            background: var(--accent-primary);
+            color: #000;
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-glow-primary);
+        }
+
+        .system-flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
+            padding: var(--space-6);
+            background: rgba(255,255,255,0.03);
+            border-radius: var(--radius-md);
+            border: var(--border-thin);
+        }
+
+        .flow-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(0, 255, 136, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--accent-primary);
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 1024px) {
+            .module-card { grid-column: span 6; }
+            .flow-step { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 768px) {
+            .module-card { grid-column: span 12; }
+            .role-dashboard-tabs { flex-wrap: wrap; }
+            .role-tab { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body class="dark-theme bento-body">
+
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(0, 136, 255, 0.2), transparent 70%);"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint0_linear)"/>
+                    <defs><linearGradient id="paint0_linear" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#00FF88"/><stop offset="1" stop-color="#0088FF"/></linearGradient></defs>
+                </svg>
+                <span class="logo-text">lvlBase</span>
+            </div>
+            <nav class="nav-links">
+                <a href="product.html" class="nav-item text-gradient" style="font-weight: 700;">Product</a>
+                <a href="solutions.html" class="nav-item">Solutions</a>
+                <a href="features.html" class="nav-item">Features</a>
+                <a href="pricing.html" class="nav-item">Pricing</a>
+                <a href="ai-lab.html" class="nav-item ai-badge">AI Lab <span>New</span></a>
+            </nav>
+            <div class="nav-actions">
+                <a href="auth.html" class="btn btn-ghost">Sign In</a>
+                <a href="auth.html" class="btn btn-primary bento-glow">Get Started</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-hero" data-animate="fade-up">
+            <div class="hero-badge" style="border-color: var(--accent-secondary); color: var(--accent-secondary);">
+                <span class="pulse-dot" style="background: var(--accent-secondary);"></span> Deep Dive
+            </div>
+            <h1 class="hero-title">The Anatomy of a <span class="text-gradient" style="background: linear-gradient(135deg, #0088FF 0%, #B026FF 100%); -webkit-background-clip: text;">Super-System</span></h1>
+            <p class="hero-subtext">lvlBase is not just another ERP. It is a highly scalable, multi-tenant cloud operating system designed to gamify and automate massive organizations. Discover how the architecture works.</p>
+        </section>
+
+        <section class="section-padding" id="what-is-lvlbase">
+            <div class="bento-grid">
+                <div class="bento-card glass-panel span-full">
+                    <div class="section-header">
+                        <h2 class="section-title" style="font-size: 2.5rem;">The <span class="text-gradient">Core Philosophy</span></h2>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+                        <div>
+                            <h3 style="margin-bottom: 16px; color: var(--accent-primary); font-size: 1.5rem;">Beyond Traditional Management</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">Traditional systems treat users as data points in a spreadsheet. lvlBase treats them as players in an ecosystem. By introducing elements like XP, Ranks (E to S), and Skill Matrices, we transform mundane administrative tasks, school assignments, or corporate sprints into engaging "Quests."</p>
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 16px; color: var(--accent-secondary); font-size: 1.5rem;">Unified yet Isolated</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">Whether you are running a 50-person bootcamp or a 50,000-bed hospital network, the system adapts. Our architecture ensures that your data is strictly isolated via zero-knowledge proofs, yet runs on a singular, constantly optimizing codebase powered by Firebase.</p>
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 16px; color: var(--accent-purple); font-size: 1.5rem;">AI at the Center</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">We didn't bolt an AI chatbot onto an old system. lvlBase was built around an autonomous AI kernel. It monitors system loads, predicts student dropouts, flags inefficient supply chains, and can be voice-controlled via our proprietary "Jarvis" interface.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="architecture">
+            <div class="section-header text-center">
+                <h2 class="section-title">Enterprise-Grade <span class="text-gradient">Multi-Tenancy</span></h2>
+                <p class="section-subtitle">One global infrastructure, infinitely partitioned for ultimate security and scale.</p>
+            </div>
+            
+            <div class="glass-panel" style="padding: var(--space-8); text-align: center;">
+                <svg class="architecture-diagram" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+                    <style>
+                        .line { stroke: rgba(255,255,255,0.2); stroke-width: 2; stroke-dasharray: 5,5; animation: flow 20s linear infinite; }
+                        .solid-line { stroke: #00FF88; stroke-width: 3; }
+                        .node-box { fill: rgba(20,20,22,0.9); stroke: rgba(255,255,255,0.1); stroke-width: 2; rx: 12; }
+                        .node-box-glow { fill: rgba(0,255,136,0.1); stroke: #00FF88; stroke-width: 2; rx: 12; filter: drop-shadow(0 0 10px rgba(0,255,136,0.5)); }
+                        .text-main { fill: #fff; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; text-anchor: middle; }
+                        .text-sub { fill: #A0A0A5; font-family: 'Inter', sans-serif; font-size: 14px; text-anchor: middle; }
+                        @keyframes flow { to { stroke-dashoffset: -100; } }
+                    </style>
+                    
+                    <rect x="50" y="50" width="900" height="120" class="node-box" />
+                    <text x="500" y="90" class="text-main" style="font-size: 24px; fill: #0088FF;">lvlBase Global Cloud Infrastructure (Firebase & AI Core)</text>
+                    <text x="500" y="120" class="text-sub">Load Balancing • Master AI Model • Global Analytics • Auth Gateway</text>
+                    <text x="500" y="150" class="text-sub">Zero-Knowledge Proof Encryption Layer</text>
+
+                    <path d="M 500 170 L 500 250" class="solid-line" />
+                    <path d="M 500 210 L 250 210 L 250 250" class="line" />
+                    <path d="M 500 210 L 750 210 L 750 250" class="line" />
+
+                    <rect x="100" y="250" width="300" height="150" class="node-box-glow" style="stroke: #B026FF;" />
+                    <text x="250" y="290" class="text-main">Tenant A: Mega University</text>
+                    <text x="250" y="320" class="text-sub">Isolated DB: SQL + NoSQL</text>
+                    <text x="250" y="340" class="text-sub">Active Users: 15,000+</text>
+                    <rect x="120" y="360" width="80" height="30" fill="rgba(176,38,255,0.2)" rx="5"/><text x="160" y="380" class="text-sub" style="fill:#fff; font-size:12px;">Students</text>
+                    <rect x="210" y="360" width="80" height="30" fill="rgba(176,38,255,0.2)" rx="5"/><text x="250" y="380" class="text-sub" style="fill:#fff; font-size:12px;">Professors</text>
+                    <rect x="300" y="360" width="80" height="30" fill="rgba(176,38,255,0.2)" rx="5"/><text x="340" y="380" class="text-sub" style="fill:#fff; font-size:12px;">Admins</text>
+
+                    <rect x="450" y="250" width="300" height="150" class="node-box-glow" style="stroke: #FF3366;" />
+                    <text x="600" y="290" class="text-main">Tenant B: City Hospital</text>
+                    <text x="600" y="320" class="text-sub">Isolated DB: HIPAA Compliant</text>
+                    <text x="600" y="340" class="text-sub">Active Users: 3,200+</text>
+                    <rect x="470" y="360" width="80" height="30" fill="rgba(255,51,102,0.2)" rx="5"/><text x="510" y="380" class="text-sub" style="fill:#fff; font-size:12px;">Doctors</text>
+                    <rect x="560" y="360" width="80" height="30" fill="rgba(255,51,102,0.2)" rx="5"/><text x="600" y="380" class="text-sub" style="fill:#fff; font-size:12px;">Nurses</text>
+                    <rect x="650" y="360" width="80" height="30" fill="rgba(255,51,102,0.2)" rx="5"/><text x="690" y="380" class="text-sub" style="fill:#fff; font-size:12px;">Patients</text>
+
+                    <text x="850" y="320" class="text-main" style="font-size: 32px; fill: rgba(255,255,255,0.3);">. . .</text>
+                    <text x="850" y="350" class="text-sub">Infinite Scaling</text>
+
+                    <path d="M 250 400 L 250 450" class="line" />
+                    <path d="M 600 400 L 600 450" class="line" />
+                    <rect x="50" y="450" width="900" height="80" class="node-box" />
+                    <text x="500" y="495" class="text-main" style="font-size: 20px;">Open API & Marketplace Integrations (Stripe, Twilio, Canvas, SAP)</text>
+                </svg>
+                
+                <div style="display: flex; gap: var(--space-4); margin-top: var(--space-8); text-align: left; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <h4 style="color: var(--accent-primary); margin-bottom: 8px;">1. Strict Data Isolation</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Every organization (Tenant) gets its own isolated shard. A user in Tenant A cannot interact with Tenant B unless specifically bridged via the Cross-Org Network protocol.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <h4 style="color: var(--accent-secondary); margin-bottom: 8px;">2. Dynamic Resource Allocation</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Our AI monitors server strain. If a University tenant experiences massive traffic during exam week, compute power is dynamically routed to their shard with zero downtime.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <h4 style="color: var(--accent-purple); margin-bottom: 8px;">3. Universal Update Pipeline</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Because the core codebase is centralized, when we deploy a new feature (like a new Gamification Guild System), it becomes instantly available to all 500+ organizations simultaneously.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="roles">
+            <div class="section-header text-center">
+                <h2 class="section-title">Contextual <span class="text-gradient">Interfaces</span></h2>
+                <p class="section-subtitle">The UI physically morphs based on who logs in. No cluttered menus—only what you need.</p>
+            </div>
+
+            <div class="role-dashboard-tabs" id="roleTabs">
+                <button class="role-tab active" data-target="admin-dash">Root Admin</button>
+                <button class="role-tab" data-target="manager-dash">Teacher / Manager</button>
+                <button class="role-tab" data-target="student-dash">Student / Employee</button>
+            </div>
+
+            <div class="glass-panel" style="padding: 0; overflow: hidden; background: #0D0D0D;">
+                
+                <div class="dashboard-view active" id="admin-dash" style="padding: var(--space-6);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: var(--border-light); padding-bottom: 16px; margin-bottom: 24px;">
+                        <div>
+                            <h3 style="color: #fff; font-size: 1.5rem;">Root Command Center</h3>
+                            <span style="color: var(--accent-red); font-size: 0.8rem; border: 1px solid var(--accent-red); padding: 2px 8px; border-radius: 12px; margin-top: 8px; display: inline-block;">Permission Level: S-Rank</span>
+                        </div>
+                        <div style="display: flex; gap: 16px;">
+                            <div style="background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 8px;">
+                                <span style="color: var(--text-muted); font-size: 0.8rem;">System Health</span>
+                                <div style="color: var(--accent-primary); font-weight: bold;">100% Optimal</div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 8px;">
+                                <span style="color: var(--text-muted); font-size: 0.8rem;">Active Users (Live)</span>
+                                <div style="color: #fff; font-weight: bold;">14,592</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-4);">
+                        <div style="background: rgba(255,255,255,0.02); border: var(--border-thin); border-radius: 12px; padding: 24px; height: 300px; display: flex; flex-direction: column;">
+                            <h4 style="color: var(--text-secondary); margin-bottom: 16px;">Global Financial / Resource Burn</h4>
+                            <div style="flex: 1; display: flex; align-items: flex-end; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+                                <div style="width: 10%; height: 30%; background: var(--accent-primary); border-radius: 4px 4px 0 0;"></div>
+                                <div style="width: 10%; height: 50%; background: var(--accent-primary); border-radius: 4px 4px 0 0;"></div>
+                                <div style="width: 10%; height: 80%; background: var(--accent-primary); border-radius: 4px 4px 0 0;"></div>
+                                <div style="width: 10%; height: 40%; background: var(--accent-primary); border-radius: 4px 4px 0 0;"></div>
+                                <div style="width: 10%; height: 90%; background: var(--accent-red); border-radius: 4px 4px 0 0; box-shadow: 0 0 10px rgba(255,51,102,0.5);"></div>
+                                <div style="width: 10%; height: 60%; background: var(--accent-primary); border-radius: 4px 4px 0 0;"></div>
+                                <div style="flex: 1; text-align: center; color: var(--text-muted); font-size: 0.8rem; align-self: center;">Spike detected in Server Node 4.<br>AI has auto-scaled resources.</div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                            <div style="background: rgba(255,255,255,0.02); border: var(--border-thin); border-radius: 12px; padding: 16px; flex: 1;">
+                                <h4 style="color: var(--text-secondary); margin-bottom: 12px; font-size: 0.9rem;">Pending Approvals</h4>
+                                <ul style="list-style: none; padding: 0; font-size: 0.85rem;">
+                                    <li style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);"><span>New Guild Creation</span> <span style="color: var(--accent-yellow);">Pending</span></li>
+                                    <li style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);"><span>Payroll API Sync</span> <span style="color: var(--accent-yellow);">Pending</span></li>
+                                    <li style="display: flex; justify-content: space-between; padding: 8px 0;"><span>Dept. Budget Increase</span> <span style="color: var(--accent-yellow);">Pending</span></li>
+                                </ul>
+                            </div>
+                            <div style="background: linear-gradient(135deg, rgba(176,38,255,0.2), rgba(0,136,255,0.2)); border: 1px solid var(--accent-purple); border-radius: 12px; padding: 16px; cursor: pointer; text-align: center; font-weight: bold; transition: all 0.2s;">
+                                ⚙️ Access Module Configuration
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-padding" id="modules">
+            <div class="section-header text-center">
+                <h2 class="section-title">The <span class="text-gradient">Micro-Services</span></h2>
+                <p class="section-subtitle">Toggle modules on or off based on your organization type. Don't pay for what you don't use.</p>
+            </div>
+
+            <div class="bento-grid module-grid">
+                <div class="bento-card glass-panel module-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="rpg-icon-box" style="margin: 0; background: rgba(0,136,255,0.1); color: var(--accent-secondary);">📚</div>
+                        <span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px;">Education</span>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Academic Core</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; flex: 1;">Course scheduling, syllabus tracking, automated grading via AI, and assignment dropboxes.</p>
+                    <div style="margin-top: 16px; border-top: var(--border-light); padding-top: 12px; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+                        <span style="width: 8px; height: 8px; background: var(--accent-primary); border-radius: 50%; display: inline-block;"></span> Active
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel module-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="rpg-icon-box" style="margin: 0; background: rgba(0,255,136,0.1); color: var(--accent-primary);">💰</div>
+                        <span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px;">Universal</span>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Finance & Billing</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; flex: 1;">Automated invoicing, fee collection, payroll disbursement, and integration with Stripe/Razorpay.</p>
+                    <div style="margin-top: 16px; border-top: var(--border-light); padding-top: 12px; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+                        <span style="width: 8px; height: 8px; background: var(--accent-primary); border-radius: 50%; display: inline-block;"></span> Active
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel module-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="rpg-icon-box" style="margin: 0; background: rgba(176,38,255,0.1); color: var(--accent-purple);">⚔️</div>
+                        <span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px;">Universal</span>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Gamification Engine</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; flex: 1;">The heart of lvlBase. Controls XP distribution, rank calculation formulas (E to S), and loot box drop rates.</p>
+                    <div style="margin-top: 16px; border-top: var(--border-light); padding-top: 12px; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+                        <span style="width: 8px; height: 8px; background: var(--accent-primary); border-radius: 50%; display: inline-block;"></span> Active
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel module-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="rpg-icon-box" style="margin: 0; background: rgba(255,51,102,0.1); color: var(--accent-red);">🏥</div>
+                        <span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px;">Healthcare</span>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">EHR / Patient Flow</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; flex: 1;">Electronic Health Records, bed management, doctor shift scheduling, and pharmacy inventory.</p>
+                    <div style="margin-top: 16px; border-top: var(--border-light); padding-top: 12px; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+                        <span style="width: 8px; height: 8px; background: rgba(255,255,255,0.2); border-radius: 50%; display: inline-block;"></span> Optional Plugin
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel module-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="rpg-icon-box" style="margin: 0; background: rgba(255,214,0,0.1); color: var(--accent-yellow);">👥</div>
+                        <span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px;">Corporate</span>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">HRMS & Guilds</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; flex: 1;">Leave tracking, performance reviews (converted to Skill DNA), and department 'Guild' management.</p>
+                    <div style="margin-top: 16px; border-top: var(--border-light); padding-top: 12px; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+                        <span style="width: 8px; height: 8px; background: rgba(255,255,255,0.2); border-radius: 50%; display: inline-block;"></span> Optional Plugin
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel module-card" style="border-color: var(--accent-purple); box-shadow: inset 0 0 20px rgba(176,38,255,0.1);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="rpg-icon-box" style="margin: 0; background: rgba(176,38,255,0.2); color: #fff;">🧠</div>
+                        <span style="font-size: 0.7rem; background: var(--accent-purple); color: #fff; padding: 4px 8px; border-radius: 4px; font-weight: bold;">Premium</span>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">AI 'Jarvis' Controller</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; flex: 1;">Voice-operated system controller. Give verbal commands to generate reports, approve leaves, or pause server instances.</p>
+                    <div style="margin-top: 16px; border-top: var(--border-light); padding-top: 12px; font-size: 0.8rem; color: var(--accent-primary); display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <span style="width: 8px; height: 8px; background: var(--accent-primary); border-radius: 50%; display: inline-block;"></span> Included in Pro/Enterprise
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="system-flow">
+            <div class="section-header text-center">
+                <h2 class="section-title">The <span class="text-gradient">Data Lifecycle</span></h2>
+                <p class="section-subtitle">How a simple action translates into ecosystem-wide updates.</p>
+            </div>
+
+            <div class="system-flow-container max-width-800" style="margin: 0 auto; max-width: 900px;">
+                
+                <div class="flow-step" data-animate="fade-up">
+                    <div class="flow-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    </div>
+                    <div class="flow-content">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 8px;">1. User Action (Trigger)</h3>
+                        <p style="color: var(--text-secondary);">A student submits an assignment, an employee closes a JIRA ticket, or a doctor updates a chart. This creates a secure API payload on the client side.</p>
+                    </div>
+                </div>
+                
+                <div style="width: 2px; height: 40px; background: var(--accent-primary); margin: -10px 0 -10px 40px; border-radius: 2px;"></div>
+
+                <div class="flow-step" data-animate="fade-up">
+                    <div class="flow-icon" style="background: rgba(176,38,255,0.1); border-color: var(--accent-purple);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+                    </div>
+                    <div class="flow-content">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 8px;">2. AI Processing Kernel</h3>
+                        <p style="color: var(--text-secondary);">The payload hits the lvlBase AI engine. The AI verifies the action, grades it (if educational), checks for anomalies, and determines the exact XP reward based on difficulty parameters.</p>
+                    </div>
+                </div>
+
+                <div style="width: 2px; height: 40px; background: var(--accent-purple); margin: -10px 0 -10px 40px; border-radius: 2px;"></div>
+
+                <div class="flow-step" data-animate="fade-up">
+                    <div class="flow-icon" style="background: rgba(0,136,255,0.1); border-color: var(--accent-secondary);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="flow-content">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 8px;">3. Gamification State Update</h3>
+                        <p style="color: var(--text-secondary);">The user's XP is incremented. If a threshold is crossed, a massive UI animation triggers: the user ranks up (e.g., Rank C to Rank B), unlocking new permissions or real-world rewards.</p>
+                    </div>
+                </div>
+
+                <div style="width: 2px; height: 40px; background: var(--accent-secondary); margin: -10px 0 -10px 40px; border-radius: 2px;"></div>
+
+                <div class="flow-step" data-animate="fade-up">
+                    <div class="flow-icon" style="background: rgba(255,214,0,0.1); border-color: var(--accent-yellow);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
+                    <div class="flow-content">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 8px;">4. Database & Analytic Sync</h3>
+                        <p style="color: var(--text-secondary);">The multi-tenant Firebase structure commits the transaction. The Admin's analytic dashboard updates in real-time, showing a live graph of organizational productivity jumping upwards.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="final-cta-section section-padding">
+            <div class="cta-block glass-panel gradient-border" style="max-width: 1000px; margin: 0 auto;">
+                <h2>Experience the Architecture Live</h2>
+                <p>Stop reading documentation. Log into our interactive demo sandbox and see how the roles, modules, and gamification engine work together in real-time.</p>
+                <div class="cta-buttons" style="margin-top: 24px;">
+                    <a href="demo.html" class="btn btn-primary btn-large bento-glow">Launch Interactive Demo</a>
+                    <a href="pricing.html" class="btn btn-secondary btn-large">View Pricing Structure</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                        <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint_footer)"/>
+                        <defs><linearGradient id="paint_footer" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#00FF88"/><stop offset="1" stop-color="#0088FF"/></linearGradient></defs>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+                <p>The ultimate multi-tenant platform with RPG gamification and AI.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="product.html">Overview</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 lvlBase. All rights reserved.</p>
+            <div class="status-indicator">
+                <span class="dot green-dot"></span> All systems operational
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/components.js"></script>
+    <script>
+        // Page specific logic for Role Tabs (if needed beyond standard components)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Re-initialize scroll animations specific to this page
+            const animatedElements = document.querySelectorAll('[data-animate]');
+            const observerOptions = { threshold: 0.1 };
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        el.style.transition = 'all 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                        observer.unobserve(el);
+                    }
+                });
+            }, observerOptions);
+
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(40px)';
+                scrollObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

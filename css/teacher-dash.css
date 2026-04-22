@@ -1,0 +1,161 @@
+/* ==========================================================================
+   TEACHER DASHBOARD - CUSTOM STYLESHEET
+   ========================================================================== */
+
+/* ⚡ 1. QUICK ACTIONS OVERVIEW */
+.teacher-overview-card {
+    display: flex; flex-direction: column;
+}
+
+.action-btn-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    margin-top: auto;
+}
+
+.teacher-action-btn {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+    background: rgba(255,255,255,0.02); border: var(--border-thin); border-radius: var(--radius-md);
+    padding: 20px; cursor: pointer; transition: all var(--transition-bounce); color: var(--text-primary);
+}
+
+.teacher-action-btn:hover {
+    background: rgba(255,255,255,0.05); transform: translateY(-5px); border-color: rgba(255,255,255,0.2);
+    box-shadow: var(--shadow-sm);
+}
+
+.action-icon {
+    width: 50px; height: 50px; border-radius: 12px; border: 1px solid;
+    display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    transition: transform var(--transition-fast);
+}
+
+.teacher-action-btn:hover .action-icon { transform: scale(1.1); }
+.teacher-action-btn span { font-size: 0.9rem; font-weight: 600; }
+
+/* 📅 2. SCHEDULE & ROSTER */
+.schedule-timeline {
+    display: flex; flex-direction: column; gap: 24px; position: relative;
+    padding-left: 16px; margin-top: 16px;
+}
+
+.schedule-timeline::before {
+    content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: 2px;
+    background: rgba(255,255,255,0.1); border-radius: 1px;
+}
+
+.timeline-item {
+    position: relative; display: flex; flex-direction: column; gap: 8px; opacity: 0.5; transition: opacity 0.3s;
+}
+
+.timeline-item.active-class { opacity: 1; }
+
+.timeline-item::before {
+    content: ''; position: absolute; top: 6px; left: -21px; width: 10px; height: 10px;
+    border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--text-muted);
+}
+
+.timeline-item.active-class::before {
+    border-color: var(--accent-primary); background: var(--accent-primary);
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+.time-marker { font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--text-muted); font-weight: bold; }
+.class-info h4 { font-size: 1.05rem; margin-bottom: 2px; }
+.class-info span { font-size: 0.85rem; color: var(--text-secondary); }
+
+.live-pulse {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase;
+    color: var(--accent-primary); background: rgba(0,255,136,0.1); padding: 2px 8px; border-radius: var(--radius-pill); border: 1px solid rgba(0,255,136,0.3); margin-top: 8px;
+}
+
+/* 🤖 3. AI GRADING QUEUE */
+.grading-queue-card { display: flex; flex-direction: column; position: relative; overflow: hidden; }
+
+.queue-list { display: flex; flex-direction: column; gap: 12px; flex: 1; overflow-y: auto; padding-right: 8px; }
+.queue-list::-webkit-scrollbar { width: 6px; }
+.queue-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+
+.queue-item {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    background: rgba(255,255,255,0.02); padding: 16px; border-radius: var(--radius-md); border: var(--border-thin);
+    transition: all var(--transition-fast);
+}
+
+.queue-item:hover { background: rgba(255,255,255,0.05); transform: translateX(5px); border-color: rgba(255,255,255,0.15); }
+
+.student-identifier { display: flex; align-items: center; gap: 12px; width: 180px; }
+.mini-avatar { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.85rem; flex-shrink: 0; }
+.student-name { font-size: 0.95rem; font-weight: 600; }
+
+.submission-details { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.submission-details span { font-size: 0.9rem; color: var(--text-primary); }
+.time-submitted { font-family: 'Fira Code', monospace; font-size: 0.75rem !important; color: var(--text-muted) !important; }
+.time-submitted.urgent { color: var(--accent-yellow) !important; }
+
+/* AI Visualizer Overlay */
+.ai-grade-visualizer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;
+    background: rgba(10,10,12,0.8); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center; padding: 24px;
+    animation: fade-in 0.3s ease-out;
+}
+
+.scanning-bar {
+    position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+    background: var(--accent-purple); box-shadow: 0 0 20px var(--accent-purple);
+    animation: scan-down 2s ease-in-out infinite alternate; opacity: 0.5;
+}
+
+@keyframes scan-down { 0% { top: 0%; } 100% { top: 100%; } }
+
+.visualizer-content {
+    background: rgba(176,38,255,0.1); border: 1px solid rgba(176,38,255,0.3); padding: 24px; border-radius: var(--radius-lg);
+    width: 100%; max-width: 400px; display: flex; align-items: center; gap: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.spin-slow { animation: spin 4s linear infinite; }
+.grade-progress-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+.grade-progress-fill { height: 100%; width: 0%; background: var(--accent-purple); box-shadow: 0 0 10px var(--accent-purple); transition: width 0.2s linear; }
+.grade-percent { font-family: 'Fira Code', monospace; font-size: 1.2rem; font-weight: bold; color: #fff; }
+
+/* 📊 4. GUILD STANDINGS CHART */
+.guild-analytics-card { display: flex; flex-direction: column; }
+.guild-standings-chart { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; flex: 1; justify-content: center; }
+
+.chart-row { display: flex; align-items: center; gap: 16px; }
+.guild-label { width: 60px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.bar-track { flex: 1; height: 12px; background: rgba(255,255,255,0.05); border-radius: 6px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 6px; position: relative; }
+.xp-value { width: 70px; text-align: right; font-family: 'Fira Code', monospace; font-size: 0.8rem; color: var(--text-secondary); }
+
+.ai-insight-box {
+    background: rgba(176,38,255,0.05); border: 1px solid rgba(176,38,255,0.2); padding: 16px; border-radius: var(--radius-md);
+}
+.insight-label { font-size: 0.75rem; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; display: block; margin-bottom: 8px; }
+.ai-insight-box p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; }
+
+/* MODAL FIXES */
+.modal-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
+    z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+}
+.modal-backdrop.open { opacity: 1; visibility: visible; }
+.modal-content { transform: scale(0.9); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); width: 90%; }
+.modal-backdrop.open .modal-content { transform: scale(1); }
+.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 24px; border-bottom: var(--border-light); }
+.close-modal-btn { background: transparent; border: none; color: var(--text-muted); cursor: pointer; transition: color 0.2s; }
+.close-modal-btn:hover { color: #fff; }
+.modal-body { padding: 24px; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .action-btn-grid { grid-template-columns: repeat(2, 1fr); }
+    .roster-card, .grading-queue-card, .guild-analytics-card { grid-column: span 12; }
+}
+@media (max-width: 600px) {
+    .action-btn-grid { grid-template-columns: 1fr; }
+    .queue-item { flex-direction: column; align-items: flex-start; }
+    .student-identifier { width: 100%; }
+    .queue-actions { width: 100%; display: flex; }
+    .queue-actions button { flex: 1; }
+}

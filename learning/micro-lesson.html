@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Lesson: Gravity | lvlBase Learning</title>
+    
+    <meta name="description" content="5-Minute burst learning module. Interactive physics simulation and quick knowledge check.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/guilds.css">
+    <link rel="stylesheet" href="../css/dashboards.css">
+    <link rel="stylesheet" href="../css/micro-lesson.css">
+</head>
+<body class="dark-theme bento-body lesson-body guild-azure">
+
+    <div class="ambient-glow glow-top-left guild-ambient-primary" style="opacity: 0.4;"></div>
+    <div class="ambient-glow glow-bottom-right guild-ambient-secondary" style="opacity: 0.2;"></div>
+    <div class="grid-overlay" style="opacity: 0.5; background-size: 40px 40px;"></div>
+
+    <div class="app-layout">
+        
+        <aside class="dashboard-sidebar glass-panel collapsed-sidebar">
+            <div class="sidebar-header" style="justify-content: center;">
+                <div class="logo-container" onclick="window.location.href='../index.html'">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#0088FF"/>
+                        <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint_logo)"/>
+                        <defs><linearGradient id="paint_logo" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#0088FF"/><stop offset="1" stop-color="#00FF88"/></linearGradient></defs>
+                    </svg>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="../services/student/dashboard.html" class="menu-item tooltip-trigger" aria-label="Exit to Dashboard">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main lesson-main">
+            
+            <header class="lesson-topbar glass-panel" data-animate="fade-up">
+                <div class="lesson-title-area">
+                    <span class="subject-badge physics">Physics</span>
+                    <h2>Orbital Mechanics & Gravity</h2>
+                </div>
+                
+                <div class="burst-timer-module">
+                    <div class="timer-display">
+                        <svg width="20" height="20" fill="none" stroke="var(--accent-yellow)" stroke-width="2" class="spin-slow"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span id="lesson-timer">05:00</span>
+                    </div>
+                    <div class="timer-progress-bar">
+                        <div class="timer-fill" id="timer-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="lesson-actions">
+                    <button class="btn btn-ghost" onclick="window.location.href='subjects.html'">Save & Exit</button>
+                    <button class="btn btn-primary bento-glow" id="complete-lesson-btn" disabled>Complete Module</button>
+                </div>
+            </header>
+
+            <div class="bento-grid lesson-grid">
+                
+                <div class="bento-card glass-panel span-8-col simulation-card" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="card-header" style="position: absolute; top: 20px; left: 24px; z-index: 10; right: 24px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <h3 style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Interactive Canvas</h3>
+                            <span class="live-pulse"><span class="dot pulse-green"></span> Running Simulation</span>
+                        </div>
+                    </div>
+
+                    <div class="simulation-viewport" id="sim-viewport">
+                        <div class="space-grid"></div>
+                        
+                        <div class="celestial-body central-mass" id="sim-sun">
+                            <div class="gravity-well" id="gravity-well"></div>
+                        </div>
+
+                        <div class="orbit-path" id="sim-orbit-path">
+                            <div class="celestial-body orbiting-mass" id="sim-planet">
+                                <div class="velocity-vector"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="simulation-controls glass-panel">
+                        <div class="control-group">
+                            <label>Star Mass (M)</label>
+                            <input type="range" id="mass-slider" min="1" max="5" value="2" step="0.1" class="bento-slider">
+                            <span class="control-val" id="mass-val">2.0x</span>
+                        </div>
+                        <div class="control-group">
+                            <label>Planet Velocity (v)</label>
+                            <input type="range" id="velocity-slider" min="1" max="4" value="2" step="0.1" class="bento-slider">
+                            <span class="control-val" id="velocity-val">2.0 km/s</span>
+                        </div>
+                        <div class="sim-feedback" id="sim-feedback">Stable Orbit Achieved</div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col concept-card" data-animate="fade-up" style="animation-delay: 0.2s;">
+                    <div class="concept-content">
+                        <h3>Newton's Law of Universal Gravitation</h3>
+                        <p>Every particle attracts every other particle in the universe with a force proportional to the product of their masses and inversely proportional to the square of the distance between their centers.</p>
+                        
+                        <div class="math-formula-box">
+                            <span class="formula">F = G * (m₁ * m₂) / r²</span>
+                        </div>
+
+                        <p><strong>Experiment:</strong> Try increasing the Star's Mass in the simulation. Notice how the gravity well deepens and pulls the planet closer. If you don't increase the Planet's Velocity to escape the pull, what happens?</p>
+                    </div>
+
+                    <div class="tutor-box glass-panel">
+                        <div class="tutor-header">
+                            <div class="ai-avatar-mini">🤖</div>
+                            <span>Jarvis Context Agent</span>
+                        </div>
+                        <p class="tutor-msg">If the velocity is too low compared to the central mass, the orbit decays and the planet crashes. Try creating an elliptical (oval) orbit!</p>
+                        <button class="btn btn-outline btn-small full-width" style="margin-top: 12px;" onclick="openJarvisChat()">Ask a question</button>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-full quiz-card" id="knowledge-check" data-animate="fade-up" style="animation-delay: 0.3s;">
+                    <div class="quiz-header">
+                        <div class="xp-bounty">
+                            <span class="bounty-label">Bounty</span>
+                            <span class="bounty-val text-gradient">+250 XP</span>
+                        </div>
+                        <h3>Knowledge Check</h3>
+                    </div>
+
+                    <div class="quiz-question-container">
+                        <p class="quiz-question">Based on the simulation, if you <strong>double the mass</strong> of the central star without changing the planet's velocity, what is the most likely outcome?</p>
+                        
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-correct="false">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">The planet flies off into deep space.</span>
+                            </button>
+                            <button class="quiz-option" data-correct="true">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">The orbit decays and the planet crashes into the star.</span>
+                            </button>
+                            <button class="quiz-option" data-correct="false">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">The planet's orbit remains exactly the same.</span>
+                            </button>
+                            <button class="quiz-option" data-correct="false">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">The planet instantly reverses its direction.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-feedback" id="quiz-feedback" style="display: none;">
+                        <div class="feedback-icon" id="feedback-icon"></div>
+                        <div class="feedback-text">
+                            <h4 id="feedback-title">Correct!</h4>
+                            <p id="feedback-desc">Because the gravitational pull (F) increased but the forward momentum (v) stayed the same, the planet can no longer resist the pull.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/core-auth.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script src="../js/micro-lesson.js"></script>
+</body>
+</html>

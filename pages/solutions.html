@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Solutions | lvlBase</title>
+    
+    <meta name="description" content="Discover how lvlBase adapts its multi-tenant architecture for Schools, Universities, Hospitals, and Corporations.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/bento-system.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/solutions.css">
+</head>
+<body class="dark-theme bento-body">
+
+    <div class="ambient-glow glow-top-left" style="background: radial-gradient(circle, rgba(0, 136, 255, 0.15), transparent 70%);"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(0, 255, 136, 0.15), transparent 70%);"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <div class="logo-container" onclick="window.location.href='../index.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint0_linear)"/>
+                    <defs><linearGradient id="paint0_linear" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#00FF88"/><stop offset="1" stop-color="#0088FF"/></linearGradient></defs>
+                </svg>
+                <span class="logo-text">lvlBase</span>
+            </div>
+            <nav class="nav-links">
+                <a href="product.html" class="nav-item">Product</a>
+                <a href="solutions.html" class="nav-item text-gradient" style="font-weight: 700;">Solutions</a>
+                <a href="features.html" class="nav-item">Features</a>
+                <a href="pricing.html" class="nav-item">Pricing</a>
+                <a href="ai-lab.html" class="nav-item ai-badge">AI Lab <span>New</span></a>
+            </nav>
+            <div class="nav-actions">
+                <a href="auth.html" class="btn btn-ghost">Sign In</a>
+                <a href="auth.html" class="btn btn-primary bento-glow">Get Started</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="sticky-subnav glass-panel" id="solution-nav">
+        <div class="subnav-container">
+            <a href="#school" class="subnav-link active"><span class="icon" style="color: #0088FF;">📚</span> K-12 Schools</a>
+            <a href="#university" class="subnav-link"><span class="icon" style="color: #B026FF;">🎓</span> Universities</a>
+            <a href="#hospital" class="subnav-link"><span class="icon" style="color: #FF3366;">🏥</span> Hospitals</a>
+            <a href="#company" class="subnav-link"><span class="icon" style="color: #00FF88;">🏢</span> Corporate</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="solutions-hero section-padding">
+            <div class="section-header text-center" data-animate="fade-up">
+                <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 4.5rem);">One Architecture.<br><span class="text-gradient">Infinite Adaptability.</span></h1>
+                <p class="hero-subtext" style="max-width: 800px; margin: 0 auto;">lvlBase dynamically restructures its modules, roles, and UI based on your industry. Explore the specific configurations below.</p>
+            </div>
+        </section>
+
+        <section class="industry-block section-padding" id="school">
+            <div class="industry-header" data-animate="fade-up">
+                <div class="industry-badge" style="background: rgba(0,136,255,0.1); border-color: #0088FF; color: #0088FF;">Module: Education Basic</div>
+                <h2 class="section-title">The Gamified <span style="color: #0088FF;">School</span></h2>
+                <p class="section-subtitle">Turn homework into Quests, grades into XP, and classrooms into Guilds.</p>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card glass-panel span-8-col">
+                    <h3 style="margin-bottom: var(--space-4); font-size: 1.5rem;">Core Features</h3>
+                    <div class="feature-list-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #0088FF;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                            <div>
+                                <h4>Dynamic XP System</h4>
+                                <p>Students earn points for attendance, assignments, and positive behavior, directly updating their Rank (E → S).</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #0088FF;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                            <div>
+                                <h4>Parent Omni-Portal</h4>
+                                <p>Real-time push notifications for low grades, instant fee payments via Stripe, and direct teacher chat.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #0088FF;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                            <div>
+                                <h4>Smart Timetabling</h4>
+                                <p>AI automatically generates clash-free schedules for thousands of students and teachers in seconds.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #0088FF;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                            <div>
+                                <h4>Guild Battles</h4>
+                                <p>Group classes into 'Guilds'. The class with the highest average XP wins weekly digital loot boxes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col" style="background: rgba(0,136,255,0.02);">
+                    <h3 style="margin-bottom: var(--space-4); font-size: 1.5rem;">Role Interfaces</h3>
+                    <ul class="role-list">
+                        <li>
+                            <strong>Principal (Admin)</strong>
+                            <span>Root access, financial overview, school-wide analytics.</span>
+                        </li>
+                        <li>
+                            <strong>Teacher (Manager)</strong>
+                            <span>Quest creation, automated grading, attendance UI.</span>
+                        </li>
+                        <li>
+                            <strong>Student (Player)</strong>
+                            <span>Mobile-first dashboard, Skill DNA, XP tracking.</span>
+                        </li>
+                        <li>
+                            <strong>Parent (Observer)</strong>
+                            <span>Read-only analytics, billing, event calendars.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bento-card glass-panel span-full mockup-container" style="padding: 0; background: #08080A;">
+                    <div class="mockup-header">
+                        <div class="mac-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <div class="mockup-title">Student Portal View</div>
+                    </div>
+                    <div style="padding: var(--space-6); display: grid; grid-template-columns: 250px 1fr; gap: var(--space-6);">
+                        <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                            <div style="text-align: center; padding: var(--space-4); background: rgba(255,255,255,0.03); border-radius: var(--radius-md); border: var(--border-thin);">
+                                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #0088FF, #00FF88); border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; border: 4px solid rgba(255,255,255,0.1);">B</div>
+                                <h4>Alex Chen</h4>
+                                <span style="font-size: 0.8rem; color: var(--accent-primary);">Rank: B-Class Fighter</span>
+                                <div style="margin-top: 12px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
+                                    <div style="width: 75%; height: 100%; background: var(--accent-primary);"></div>
+                                </div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-top: 4px;">7,500 / 10,000 XP to Rank A</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.03); border-radius: var(--radius-md); padding: 16px; border: var(--border-thin);">
+                                <h5 style="color: var(--text-secondary); margin-bottom: 12px;">Active Quests</h5>
+                                <div style="font-size: 0.8rem; display: flex; flex-direction: column; gap: 8px;">
+                                    <div style="display: flex; justify-content: space-between;"><span>Math Homework</span><span style="color: var(--accent-primary);">+50 XP</span></div>
+                                    <div style="display: flex; justify-content: space-between;"><span>Science Lab</span><span style="color: var(--accent-primary);">+120 XP</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-rows: auto 1fr; gap: var(--space-4);">
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);">
+                                <div style="background: rgba(0,136,255,0.1); border: 1px solid rgba(0,136,255,0.3); border-radius: var(--radius-md); padding: 16px;">
+                                    <span style="font-size: 0.8rem; color: #0088FF;">Attendance Streak</span>
+                                    <h3 style="font-size: 2rem; margin-top: 8px;">14 Days 🔥</h3>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); border: var(--border-thin); border-radius: var(--radius-md); padding: 16px;">
+                                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Guild Rank</span>
+                                    <h3 style="font-size: 2rem; margin-top: 8px;">#3 <span style="font-size: 1rem; color: var(--text-muted);">/ 12</span></h3>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); border: var(--border-thin); border-radius: var(--radius-md); padding: 16px;">
+                                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Unopened Loot</span>
+                                    <h3 style="font-size: 2rem; margin-top: 8px; color: var(--accent-yellow);">2 Boxes 🎁</h3>
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.03); border: var(--border-thin); border-radius: var(--radius-md); padding: 24px;">
+                                <h4 style="margin-bottom: 16px;">Skill DNA Tree</h4>
+                                <div style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; position: relative;">
+                                    <svg viewBox="0 0 100 100" width="200" height="200">
+                                        <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                                        <polygon points="50,25 75,40 75,60 50,75 25,60 25,40" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                        <polygon points="50,15 85,35 60,70 50,85 15,65 30,30" fill="rgba(0,136,255,0.4)" stroke="#0088FF" stroke-width="2"/>
+                                    </svg>
+                                    <span style="position: absolute; top: 0; font-size: 0.7rem;">Logic</span>
+                                    <span style="position: absolute; bottom: 0; font-size: 0.7rem;">Creativity</span>
+                                    <span style="position: absolute; left: 20%; font-size: 0.7rem;">Discipline</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="industry-block section-padding" id="university">
+            <div class="industry-header" data-animate="fade-up">
+                <div class="industry-badge" style="background: rgba(176,38,255,0.1); border-color: #B026FF; color: #B026FF;">Module: Higher Education</div>
+                <h2 class="section-title">The Connected <span style="color: #B026FF;">Campus</span></h2>
+                <p class="section-subtitle">Complex department routing, thesis management, and alumni networking.</p>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card glass-panel span-4-col" style="background: rgba(176,38,255,0.02);">
+                    <h3 style="margin-bottom: var(--space-4); font-size: 1.5rem;">Role Interfaces</h3>
+                    <ul class="role-list">
+                        <li>
+                            <strong>Dean / Chancellor</strong>
+                            <span>Cross-department analytics, endowment tracking, AI forecasts.</span>
+                        </li>
+                        <li>
+                            <strong>Professor / HOD</strong>
+                            <span>Syllabus management, T.A. delegation, thesis approvals.</span>
+                        </li>
+                        <li>
+                            <strong>Undergrad / Postgrad</strong>
+                            <span>Elective bidding, placement portal, club management.</span>
+                        </li>
+                        <li>
+                            <strong>Corporate Recruiter</strong>
+                            <span>Direct access to Rank-A & Rank-S student profiles for hiring.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bento-card glass-panel span-8-col">
+                    <h3 style="margin-bottom: var(--space-4); font-size: 1.5rem;">Core Features</h3>
+                    <div class="feature-list-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #B026FF;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                            <div>
+                                <h4>Thesis & Research Hub</h4>
+                                <p>End-to-end management of research papers, plagiarism AI checks, and peer-review workflows.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #B026FF;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+                            <div>
+                                <h4>Department Isolation</h4>
+                                <p>Engineering, Arts, and Medical faculties operate on separate sub-tenants with unified top-level reporting.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #B026FF;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                            <div>
+                                <h4>Placement & Alumni Network</h4>
+                                <p>A built-in LinkedIn-style portal where alumni can mentor students and companies can hire top rankers.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #B026FF;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                            <div>
+                                <h4>Cross-Campus API</h4>
+                                <p>Integrate with existing campus infrastructure (RFID gates, library systems, cafeteria payments).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-full mockup-container" style="padding: 0; background: #08080A; border-color: rgba(176,38,255,0.3);">
+                    <div class="mockup-header" style="background: rgba(176,38,255,0.1);">
+                        <div class="mac-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <div class="mockup-title" style="color: #fff;">Chancellor OS View</div>
+                    </div>
+                    <div style="padding: var(--space-6);">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+                            <div>
+                                <h3 style="font-size: 1.5rem;">University Analytics Matrix</h3>
+                                <span style="color: var(--text-secondary); font-size: 0.9rem;">Global Data Sync: LIVE</span>
+                            </div>
+                            <div style="display: flex; gap: 12px;">
+                                <div style="background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: var(--radius-pill); font-size: 0.8rem;">Computer Science</div>
+                                <div style="background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: var(--radius-pill); font-size: 0.8rem;">Mechanical</div>
+                                <div style="background: var(--accent-purple); color: #000; padding: 8px 16px; border-radius: var(--radius-pill); font-size: 0.8rem; font-weight: bold;">Overview</div>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-bottom: var(--space-4);">
+                            <div style="background: rgba(255,255,255,0.02); border: var(--border-thin); padding: 16px; border-radius: var(--radius-md);">
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Total Enrollment</span>
+                                <h4 style="font-size: 1.8rem; margin-top: 4px;">24,500</h4>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.02); border: var(--border-thin); padding: 16px; border-radius: var(--radius-md);">
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Placement Rate</span>
+                                <h4 style="font-size: 1.8rem; margin-top: 4px; color: var(--accent-primary);">92.4%</h4>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.02); border: var(--border-thin); padding: 16px; border-radius: var(--radius-md);">
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Active Research Grants</span>
+                                <h4 style="font-size: 1.8rem; margin-top: 4px;">$14.2M</h4>
+                            </div>
+                            <div style="background: rgba(176,38,255,0.1); border: 1px solid rgba(176,38,255,0.3); padding: 16px; border-radius: var(--radius-md);">
+                                <span style="font-size: 0.8rem; color: var(--accent-purple);">AI Alert</span>
+                                <h4 style="font-size: 1.2rem; margin-top: 4px; color: #fff;">Dept. of Arts budget over-allocated by 4%.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="industry-block section-padding" id="hospital">
+            <div class="industry-header" data-animate="fade-up">
+                <div class="industry-badge" style="background: rgba(255,51,102,0.1); border-color: #FF3366; color: #FF3366;">Module: Healthcare Matrix</div>
+                <h2 class="section-title">The Intelligent <span style="color: #FF3366;">Hospital</span></h2>
+                <p class="section-subtitle">HIPAA compliant EHR, predictive triage, and seamless shift management.</p>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card glass-panel span-8-col">
+                    <h3 style="margin-bottom: var(--space-4); font-size: 1.5rem;">Core Features</h3>
+                    <div class="feature-list-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #FF3366;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                            <div>
+                                <h4>Unified EHR</h4>
+                                <p>Electronic Health Records that load instantly, with a visual timeline of a patient's entire medical history.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #FF3366;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                            <div>
+                                <h4>AI Shift & Bed Routing</h4>
+                                <p>The system predicts ER surges and automatically alerts on-call staff and reallocates ward beds.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #FF3366;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+                            <div>
+                                <h4>Pharmacy & Inventory Sync</h4>
+                                <p>Real-time tracking of medicine stocks. Auto-generates purchase orders when critical supplies drop below safe levels.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #FF3366;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                            <div>
+                                <h4>Zero-Knowledge Security</h4>
+                                <p>Patient data is encrypted at rest and in transit. Only authorized personnel assigned to the patient can decrypt the chart.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col" style="background: rgba(255,51,102,0.02);">
+                    <h3 style="margin-bottom: var(--space-4); font-size: 1.5rem;">Role Interfaces</h3>
+                    <ul class="role-list">
+                        <li>
+                            <strong>Chief Medical Officer</strong>
+                            <span>Hospital capacity overview, financial health, mortality analytics.</span>
+                        </li>
+                        <li>
+                            <strong>Doctor / Surgeon</strong>
+                            <span>Patient EHR timeline, lab result approvals, prescription issuance.</span>
+                        </li>
+                        <li>
+                            <strong>Head Nurse</strong>
+                            <span>Ward assignment, shift rosters, medication administration logs.</span>
+                        </li>
+                        <li>
+                            <strong>Patient</strong>
+                            <span>Appointment booking, bill payment, prescription downloads.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bento-card glass-panel span-full mockup-container" style="padding: 0; background: #08080A; border-color: rgba(255,51,102,0.3);">
+                    <div class="mockup-header" style="background: rgba(255,51,102,0.1);">
+                        <div class="mac-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <div class="mockup-title" style="color: #fff;">EHR: Patient Profile</div>
+                    </div>
+                    <div style="padding: var(--space-6); display: flex; gap: var(--space-6);">
+                        <div style="width: 300px; background: rgba(255,255,255,0.02); border: var(--border-thin); border-radius: var(--radius-md); padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div style="width: 60px; height: 60px; background: #333; border-radius: 50%;"></div>
+                                <div>
+                                    <h4 style="font-size: 1.2rem;">Sarah Jenkins</h4>
+                                    <span style="font-size: 0.8rem; color: var(--text-muted);">DOB: 12/04/1985 (41y)</span>
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.8rem;">
+                                <div style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 4px;"><strong>Blood:</strong> O+</div>
+                                <div style="background: rgba(255,51,102,0.1); color: var(--accent-red); padding: 8px; border-radius: 4px;"><strong>Allergy:</strong> Penicillin</div>
+                                <div style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 4px;"><strong>Height:</strong> 165cm</div>
+                                <div style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 4px;"><strong>Weight:</strong> 64kg</div>
+                            </div>
+                        </div>
+                        <div style="flex: 1; background: rgba(255,255,255,0.02); border: var(--border-thin); border-radius: var(--radius-md); padding: 24px;">
+                            <h4 style="margin-bottom: 24px;">Clinical Timeline</h4>
+                            <div style="position: relative; padding-left: 20px; border-left: 2px solid rgba(255,255,255,0.1);">
+                                <div style="position: relative; margin-bottom: 24px;">
+                                    <div style="position: absolute; left: -27px; width: 12px; height: 12px; background: var(--accent-red); border-radius: 50%;"></div>
+                                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Today, 09:30 AM</span>
+                                    <h5 style="font-size: 1rem; margin: 4px 0;">ER Admission - Triage Level 2</h5>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted);">Patient complains of acute abdominal pain. Vitals stable. Awaiting ultrasound.</p>
+                                </div>
+                                <div style="position: relative;">
+                                    <div style="position: absolute; left: -27px; width: 12px; height: 12px; background: rgba(255,255,255,0.2); border-radius: 50%;"></div>
+                                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Oct 12, 2025</span>
+                                    <h5 style="font-size: 1rem; margin: 4px 0;">Routine Checkup</h5>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted);">Prescribed generic antibiotics for minor sinus infection.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="industry-block section-padding" id="company">
+            <div class="industry-header" data-animate="fade-up">
+                <div class="industry-badge" style="background: rgba(0,255,136,0.1); border-color: #00FF88; color: #00FF88;">Module: Corporate Core</div>
+                <h2 class="section-title">The Agile <span style="color: #00FF88;">Company</span></h2>
+                <p class="section-subtitle">Replace boring HR software with an RPG-based performance engine.</p>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card glass-panel span-4-col" style="background: rgba(0,255,136,0.02);">
+                    <h3 style="margin-bottom: var(--space-4); font-size: 1.5rem;">Role Interfaces</h3>
+                    <ul class="role-list">
+                        <li>
+                            <strong>CEO / Founders</strong>
+                            <span>Burn rate tracking, department OKR performance, global announcements.</span>
+                        </li>
+                        <li>
+                            <strong>HR / Admin</strong>
+                            <span>Payroll processing, leave approvals, recruitment pipeline.</span>
+                        </li>
+                        <li>
+                            <strong>Project Manager</strong>
+                            <span>Sprint planning, ticket assignment (Quests), resource allocation.</span>
+                        </li>
+                        <li>
+                            <strong>Employee</strong>
+                            <span>Task execution, skill DNA growth, internal marketplace for perks.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bento-card glass-panel span-8-col">
+                    <h3 style="margin-bottom: var(--space-4); font-size: 1.5rem;">Core Features</h3>
+                    <div class="feature-list-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #00FF88;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M6 20V10M18 20V4"/></svg></div>
+                            <div>
+                                <h4>Performance = Rank</h4>
+                                <p>Say goodbye to annual reviews. Closing tickets, making sales, and helping peers generates XP. Higher Rank means better perks.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #00FF88;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+                            <div>
+                                <h4>Automated HRMS</h4>
+                                <p>Employees request leaves, download payslips, and claim expenses through the Jarvis AI chatbot instantly.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #00FF88;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                            <div>
+                                <h4>Guild Ecosystem</h4>
+                                <p>Departments are Guilds. The Engineering Guild can challenge the Sales Guild in company-wide KPI competitions.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="color: #00FF88;"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+                            <div>
+                                <h4>JIRA / Slack Sync</h4>
+                                <p>Integrate directly with existing tools. Closing a JIRA ticket automatically awards lvlBase XP in Slack.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-full mockup-container" style="padding: 0; background: #08080A; border-color: rgba(0,255,136,0.3);">
+                    <div class="mockup-header" style="background: rgba(0,255,136,0.1);">
+                        <div class="mac-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <div class="mockup-title" style="color: #fff;">Employee Workspace</div>
+                    </div>
+                    <div style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4);">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3 style="font-size: 1.5rem;">Current Sprint: Q3 Optimizations</h3>
+                            <div style="display: flex; align-items: center; gap: 8px; background: rgba(0,255,136,0.1); padding: 8px 16px; border-radius: var(--radius-pill); border: 1px solid rgba(0,255,136,0.3); color: var(--accent-primary);">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>3 Days Remaining</span>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);">
+                            <div style="background: rgba(255,255,255,0.02); border: var(--border-thin); border-radius: var(--radius-md); padding: 16px;">
+                                <h4 style="margin-bottom: 16px; color: var(--text-secondary); display: flex; justify-content: space-between;">Available Quests <span>2</span></h4>
+                                <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px; margin-bottom: 8px; border-left: 3px solid var(--accent-purple);">
+                                    <h5 style="font-size: 0.9rem; margin-bottom: 4px;">Refactor Auth API</h5>
+                                    <span style="font-size: 0.75rem; color: var(--accent-primary);">+500 XP</span>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px; border-left: 3px solid var(--accent-yellow);">
+                                    <h5 style="font-size: 0.9rem; margin-bottom: 4px;">Update Landing Page Copy</h5>
+                                    <span style="font-size: 0.75rem; color: var(--accent-primary);">+150 XP</span>
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.02); border: var(--border-thin); border-radius: var(--radius-md); padding: 16px;">
+                                <h4 style="margin-bottom: 16px; color: var(--text-secondary); display: flex; justify-content: space-between;">In Progress <span>1</span></h4>
+                                <div style="background: rgba(0,136,255,0.1); border: 1px solid rgba(0,136,255,0.3); padding: 12px; border-radius: 8px; border-left: 3px solid var(--accent-secondary);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                        <h5 style="font-size: 0.9rem;">Integrate Stripe Webhooks</h5>
+                                        <span style="font-size: 0.7rem; background: var(--accent-secondary); color: #000; padding: 2px 6px; border-radius: 4px;">Me</span>
+                                    </div>
+                                    <span style="font-size: 0.75rem; color: var(--accent-primary);">+800 XP</span>
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.02); border: var(--border-thin); border-radius: var(--radius-md); padding: 16px;">
+                                <h4 style="margin-bottom: 16px; color: var(--text-secondary); display: flex; justify-content: space-between;">Completed <span>1</span></h4>
+                                <div style="background: rgba(0,255,136,0.05); padding: 12px; border-radius: 8px; opacity: 0.6;">
+                                    <h5 style="font-size: 0.9rem; margin-bottom: 4px; text-decoration: line-through;">Fix Navigation Bug</h5>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">XP Claimed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta-section section-padding">
+            <div class="cta-block glass-panel gradient-border" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+                <h2>Which system fits you?</h2>
+                <p>Deploy the lvlBase OS tailored specifically for your organizational needs in minutes.</p>
+                <div class="cta-buttons" style="margin-top: 24px; justify-content: center;">
+                    <a href="auth.html" class="btn btn-primary btn-large bento-glow">Start Free Trial</a>
+                    <a href="contact.html" class="btn btn-secondary btn-large">Talk to an Architect</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FF88"/>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+                <p>The ultimate multi-tenant platform with RPG gamification and AI.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="#school">Schools</a></li>
+                    <li><a href="#university">Universities</a></li>
+                    <li><a href="#hospital">Hospitals</a></li>
+                    <li><a href="#company">Corporate</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/solutions.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Initiation | Choose Your Guild</title>
+    
+    <meta name="description" content="Welcome to lvlBase. Choose your guild to define your learning path, strengths, and team.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/bento-system.css">
+    <link rel="stylesheet" href="css/guild-selection.css">
+</head>
+<body class="dark-theme selection-body">
+
+    <div class="ambient-glow glow-top-left dynamic-glow-1" style="background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%); transition: background 0.5s ease;"></div>
+    <div class="ambient-glow glow-bottom-right dynamic-glow-2" style="background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent 70%); transition: background 0.5s ease;"></div>
+    
+    <div class="particles-container" id="particles"></div>
+    <div class="grid-overlay" style="opacity: 0.2;"></div>
+
+    <main class="selection-wrapper">
+        
+        <header class="selection-header text-center" data-animate="fade-up">
+            <div class="logo-container" style="justify-content: center; margin-bottom: 24px;">
+                <svg width="40" height="40" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#fff"/>
+                    <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="rgba(255,255,255,0.5)"/>
+                </svg>
+            </div>
+            <div class="hero-badge" style="border-color: rgba(255,255,255,0.3); color: #fff; background: rgba(255,255,255,0.05);">
+                <span class="pulse-dot" style="background: #fff;"></span> Step 1 of 1
+            </div>
+            <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-top: 16px;">The <span style="font-weight: 900; letter-spacing: 2px;">Initiation.</span></h1>
+            <p class="hero-subtext" style="max-width: 600px; margin: 16px auto 0;">Your Guild defines your identity, your teammates, and your core stat bonuses. Choose your allegiance carefully. This decision is permanent.</p>
+        </header>
+
+        <div class="guild-grid-container" data-animate="fade-up" style="animation-delay: 0.2s;">
+            <div class="bento-grid guild-grid">
+                
+                <div class="bento-card glass-panel guild-card shadow-card" data-guild="shadow">
+                    <div class="guild-card-bg"></div>
+                    <div class="guild-icon-wrapper">
+                        <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+                            <path d="M50 5L90 25V75L50 95L10 75V25L50 5Z" fill="rgba(176,38,255,0.1)" stroke="#B026FF" stroke-width="3"/>
+                            <path d="M50 20L75 35V65L50 80L25 65V35L50 20Z" fill="#B026FF"/>
+                            <path d="M50 35L65 45V55L50 65L35 55V45L50 35Z" fill="#050505"/>
+                        </svg>
+                    </div>
+                    <div class="guild-info">
+                        <h2 class="guild-title">Shadow Guild</h2>
+                        <span class="guild-tagline">"We move in silence, our results speak."</span>
+                        <p class="guild-desc">For the strategic thinkers. Shadow members prioritize flawless execution and high accuracy over brute speed.</p>
+                    </div>
+                    <div class="guild-stats">
+                        <div class="stat-row">
+                            <span class="stat-name">Accuracy</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 95%; background: #B026FF;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-name">Speed</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 60%; background: #B026FF;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-name">Logic</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 80%; background: #B026FF;"></div></div>
+                        </div>
+                    </div>
+                    <div class="guild-bonus text-center">
+                        <strong>Bonus:</strong> +5% Accuracy Multiplier
+                    </div>
+                    <div class="select-indicator"><svg width="24" height="24" fill="none" stroke="#000" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                </div>
+
+                <div class="bento-card glass-panel guild-card azure-card" data-guild="azure">
+                    <div class="guild-card-bg"></div>
+                    <div class="guild-icon-wrapper">
+                        <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+                            <path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" fill="rgba(0,136,255,0.1)" stroke="#0088FF" stroke-width="3"/>
+                            <circle cx="50" cy="50" r="25" fill="#0088FF"/>
+                            <circle cx="50" cy="50" r="10" fill="#050505"/>
+                        </svg>
+                    </div>
+                    <div class="guild-info">
+                        <h2 class="guild-title">Azure Mind</h2>
+                        <span class="guild-tagline">"Calm mind, powerful results."</span>
+                        <p class="guild-desc">The sanctuary of the intellectuals. Azure members dominate in STEM subjects through unparalleled logical deduction.</p>
+                    </div>
+                    <div class="guild-stats">
+                        <div class="stat-row">
+                            <span class="stat-name">Accuracy</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 85%; background: #0088FF;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-name">Speed</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 70%; background: #0088FF;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-name">Logic</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 100%; background: #0088FF;"></div></div>
+                        </div>
+                    </div>
+                    <div class="guild-bonus text-center">
+                        <strong>Bonus:</strong> +10% Logic XP Yield
+                    </div>
+                    <div class="select-indicator"><svg width="24" height="24" fill="none" stroke="#000" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                </div>
+
+                <div class="bento-card glass-panel guild-card inferno-card" data-guild="inferno">
+                    <div class="guild-card-bg"></div>
+                    <div class="guild-icon-wrapper">
+                        <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+                            <path d="M50 5L90 25V75L50 95L10 75V25L50 5Z" fill="rgba(255,51,102,0.1)" stroke="#FF3366" stroke-width="3"/>
+                            <path d="M50 15C70 45 80 65 50 85C20 65 30 45 50 15Z" fill="#FF3366"/>
+                            <path d="M50 40C60 60 65 75 50 85C35 75 40 60 50 40Z" fill="#FF8C00"/>
+                        </svg>
+                    </div>
+                    <div class="guild-info">
+                        <h2 class="guild-title">Inferno Squad</h2>
+                        <span class="guild-tagline">"Burn through every challenge."</span>
+                        <p class="guild-desc">Aggressive, fast, and competitive. Inferno members thrive under pressure and dominate time-attack battles.</p>
+                    </div>
+                    <div class="guild-stats">
+                        <div class="stat-row">
+                            <span class="stat-name">Accuracy</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 65%; background: #FF3366;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-name">Speed</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 100%; background: #FF3366;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-name">Logic</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 65%; background: #FF3366;"></div></div>
+                        </div>
+                    </div>
+                    <div class="guild-bonus text-center">
+                        <strong>Bonus:</strong> +10% Speed in Live Battles
+                    </div>
+                    <div class="select-indicator"><svg width="24" height="24" fill="none" stroke="#000" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                </div>
+
+                <div class="bento-card glass-panel guild-card titan-card" data-guild="titan">
+                    <div class="guild-card-bg"></div>
+                    <div class="guild-icon-wrapper">
+                        <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+                            <path d="M50 5L90 25V75L50 95L10 75V25L50 5Z" fill="rgba(0,255,136,0.1)" stroke="#00FF88" stroke-width="3"/>
+                            <rect x="35" y="35" width="30" height="30" fill="#00FF88"/>
+                            <path d="M50 20L65 35H35L50 20Z" fill="#00C853"/>
+                            <path d="M50 80L65 65H35L50 80Z" fill="#00C853"/>
+                        </svg>
+                    </div>
+                    <div class="guild-info">
+                        <h2 class="guild-title">Titan Force</h2>
+                        <span class="guild-tagline">"Built on discipline, driven by power."</span>
+                        <p class="guild-desc">The unbreakable wall. Titans are known for their sheer consistency, mastering fundamentals through endless practice.</p>
+                    </div>
+                    <div class="guild-stats">
+                        <div class="stat-row">
+                            <span class="stat-name">Accuracy</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 80%; background: #00FF88;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-name">Speed</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 60%; background: #00FF88;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-name">Consistency</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 100%; background: #00FF88;"></div></div>
+                        </div>
+                    </div>
+                    <div class="guild-bonus text-center">
+                        <strong>Bonus:</strong> +20% Streak XP Yield
+                    </div>
+                    <div class="select-indicator"><svg width="24" height="24" fill="none" stroke="#000" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                </div>
+
+                <div class="bento-card glass-panel guild-card zenith-card span-full" data-guild="zenith">
+                    <div class="guild-card-bg"></div>
+                    <div class="zenith-layout">
+                        <div class="guild-icon-wrapper" style="width: 100px; height: 100px;">
+                            <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                                <path d="M50 5L90 25V75L50 95L10 75V25L50 5Z" fill="rgba(255,215,0,0.1)" stroke="#FFD700" stroke-width="4"/>
+                                <path d="M50 15L75 30V70L50 85L25 70V30L50 15Z" stroke="#FFA500" stroke-width="2"/>
+                                <path d="M50 30L65 50L50 70L35 50L50 30Z" fill="#FFD700"/>
+                            </svg>
+                        </div>
+                        <div class="guild-info" style="text-align: left;">
+                            <div style="display: inline-block; background: rgba(255,215,0,0.1); color: #FFD700; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; border: 1px solid rgba(255,215,0,0.3);">Elite Faction</div>
+                            <h2 class="guild-title" style="font-size: 2.2rem;">Zenith Order</h2>
+                            <span class="guild-tagline">"We don't chase ranks — we define them."</span>
+                            <p class="guild-desc" style="max-width: 500px;">An exclusive faction for the highly balanced. Zenith members excel evenly across all domains, aiming strictly for the National S-Rank leaderboards.</p>
+                        </div>
+                        <div class="guild-stats" style="flex: 1; max-width: 300px;">
+                            <div class="stat-row">
+                                <span class="stat-name">Accuracy</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 90%; background: #FFD700;"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-name">Speed</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 90%; background: #FFD700;"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-name">Logic</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 90%; background: #FFD700;"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-name">Consistency</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 90%; background: #FFD700;"></div></div>
+                            </div>
+                        </div>
+                        <div class="select-indicator"><svg width="24" height="24" fill="none" stroke="#000" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="action-bar-container glass-panel">
+            <div class="action-status">
+                <span class="status-text text-muted" id="selection-status">Awaiting selection...</span>
+            </div>
+            <button class="btn btn-large btn-primary disabled" id="confirm-guild-btn">
+                <span>Pledge Allegiance</span>
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+        </div>
+
+    </main>
+
+    <div class="initiation-overlay" id="initiation-overlay">
+        <div class="overlay-content">
+            <div class="overlay-icon" id="overlay-icon"></div>
+            <h2 class="overlay-title" id="overlay-title">Initializing Identity...</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="init-progress"></div>
+            </div>
+            <p class="overlay-text" id="overlay-text">Configuring Dashboard & AI Systems</p>
+        </div>
+    </div>
+
+    <script src="js/core.js"></script>
+    <script src="js/guild-selection.js"></script>
+</body>
+</html>

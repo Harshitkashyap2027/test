@@ -1,0 +1,285 @@
+/* ==========================================================================
+   PRICING PAGE - CUSTOM STYLESHEET
+   ========================================================================== */
+
+/* 🚀 HERO & TOGGLE */
+.pricing-hero {
+    padding-top: calc(var(--header-height) + var(--space-12));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.billing-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px 24px;
+    border-radius: var(--radius-pill);
+    border: var(--border-thin);
+    backdrop-filter: var(--blur-base);
+}
+
+.toggle-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.toggle-label.active {
+    color: var(--text-primary);
+}
+
+.save-badge {
+    position: absolute;
+    top: -25px;
+    right: -20px;
+    background: rgba(0, 255, 136, 0.15);
+    color: var(--accent-primary);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    padding: 2px 8px;
+    border-radius: var(--radius-pill);
+    font-size: 0.7rem;
+    white-space: nowrap;
+}
+
+.toggle-switch {
+    width: 60px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-pill);
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background var(--transition-fast);
+}
+
+.toggle-switch.yearly {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.toggle-switch.yearly .toggle-slider {
+    transform: translateX(28px);
+}
+
+/* 💰 PRICING CARDS */
+.pricing-cards-section {
+    padding: 0 5% var(--space-16);
+    position: relative;
+    z-index: 5;
+}
+
+.pricing-tier {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8) var(--space-6);
+}
+
+.tier-header {
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.tier-icon {
+    width: 60px; height: 60px;
+    border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto var(--space-4);
+    border: var(--border-thin);
+}
+
+.tier-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.tier-header p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    min-height: 45px;
+}
+
+.tier-price {
+    text-align: center;
+    margin-bottom: var(--space-6);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transform: translateY(-10px);
+}
+
+.amount {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.period {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.tier-features {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.tier-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.tier-features li.disabled {
+    color: var(--text-muted);
+}
+
+.popular-tier {
+    position: relative;
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-brand);
+    color: #000;
+    font-weight: 800;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
+
+/* 📊 COMPARISON TABLE */
+.comparison-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.compare-table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Allow scrolling on mobile */
+    scrollbar-width: thin;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px; /* Force scroll on small screens */
+    text-align: left;
+}
+
+.compare-table th {
+    padding: var(--space-5) var(--space-4);
+    font-size: 1.1rem;
+    background: rgba(10, 10, 12, 0.9);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.compare-table th:first-child {
+    width: 40%;
+}
+
+.compare-table td {
+    padding: var(--space-4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.category-row td {
+    background: rgba(255, 255, 255, 0.02);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+    padding-top: var(--space-6);
+}
+
+/* Highlight the Pro Column */
+.highlight-col {
+    background: rgba(0, 255, 136, 0.03);
+    border-left: 1px solid rgba(0, 255, 136, 0.1);
+    border-right: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+.compare-table th.highlight-col {
+    color: var(--accent-primary);
+    background: rgba(0, 255, 136, 0.05);
+}
+
+/* SVG Check/Cross Icons */
+.check {
+    width: 20px; height: 20px;
+    fill: none; stroke: var(--accent-primary); stroke-width: 3;
+    display: inline-block; vertical-align: middle;
+}
+
+.x-mark {
+    width: 20px; height: 20px;
+    fill: none; stroke: var(--text-muted); stroke-width: 2;
+    display: inline-block; vertical-align: middle;
+}
+
+/* ==========================================================================
+   RESPONSIVE OVERRIDES
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .pricing-cards-section .bento-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+    
+    .popular-tier {
+        transform: scale(1); /* Remove scale on mobile so it doesn't break layout */
+        order: -1; /* Bring Most Popular to top */
+    }
+    
+    .popular-tag {
+        top: -12px;
+    }
+}

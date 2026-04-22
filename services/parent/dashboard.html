@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Portal | lvlBase OS</title>
+    
+    <meta name="description" content="Monitor your child's academic performance, AI-detected weak points, attendance, and financial standing.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/bento-system.css">
+    <link rel="stylesheet" href="../../css/dashboards.css">
+    <link rel="stylesheet" href="../../css/parent-dash.css">
+</head>
+<body class="dark-theme bento-body parent-dashboard">
+
+    <div class="ambient-glow glow-top-left" style="background: radial-gradient(circle, rgba(0, 255, 170, 0.1), transparent 70%);"></div>
+    <div class="ambient-glow glow-bottom-right" style="background: radial-gradient(circle, rgba(0, 136, 255, 0.1), transparent 70%);"></div>
+    <div class="grid-overlay" style="opacity: 0.25;"></div>
+
+    <div class="app-layout">
+        
+        <aside class="dashboard-sidebar glass-panel">
+            <div class="sidebar-header">
+                <div class="logo-container" onclick="window.location.href='../../index.html'">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="#00FFAA"/>
+                        <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="url(#paint_logo_parent)"/>
+                        <defs><linearGradient id="paint_logo_parent" x1="16" y1="9" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#00FFAA"/><stop offset="1" stop-color="#0088FF"/></linearGradient></defs>
+                    </svg>
+                    <span class="logo-text">lvlBase</span>
+                </div>
+            </div>
+
+            <div class="child-selector glass-panel">
+                <span style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; display: block;">Viewing Records For:</span>
+                <select class="bento-input" style="padding: 8px 12px; font-size: 0.9rem; font-weight: 600; color: var(--accent-primary);">
+                    <option value="std_1" selected>Alex Chen (Class 10-A)</option>
+                    <option value="std_2">Maya Chen (Class 6-B)</option>
+                </select>
+            </div>
+
+            <nav class="sidebar-menu">
+                <span class="menu-label">Guardian Console</span>
+                <a href="dashboard.html" class="menu-item active">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Overview</span>
+                </a>
+                <a href="analytics.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"></path><path d="M7 20v-4"></path><path d="M12 20v-8"></path><path d="M17 20V8"></path><path d="M22 4v16"></path></svg>
+                    <span>Performance Analytics</span>
+                </a>
+                <a href="finance.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2" ry="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg>
+                    <span>Fees & Billing</span>
+                    <span class="badge notification-badge" style="background: var(--accent-yellow); color: #000;">1 Due</span>
+                </a>
+                
+                <span class="menu-label" style="margin-top: 24px;">Communication</span>
+                <a href="messages.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    <span>Teacher Messages</span>
+                </a>
+                <a href="notices.html" class="menu-item">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    <span>School Notices</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="profile.html" class="user-profile-widget glass-panel" style="background: rgba(0, 255, 170, 0.05); border-color: rgba(0, 255, 170, 0.3);">
+                    <div class="user-avatar" style="background: linear-gradient(135deg, #00FFAA, #0088FF); color: #000;">
+                        <span>JC</span>
+                    </div>
+                    <div class="user-meta">
+                        <span class="user-name">Jonathan Chen</span>
+                        <span class="user-rank text-gradient" style="color: #00FFAA;">Guardian Profile</span>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            
+            <header class="dashboard-topbar">
+                <div class="search-module glass-panel" style="width: 400px;">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" placeholder="Search notices, fees, or reports...">
+                </div>
+
+                <div class="topbar-stats">
+                    <button class="btn btn-outline btn-small" id="download-report-btn">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+                        Download Report Card
+                    </button>
+                </div>
+            </header>
+
+            <div class="bento-grid dashboard-grid">
+                
+                <div class="bento-card glass-panel span-8-col child-status-card" data-animate="fade-up">
+                    <div class="card-header" style="margin-bottom: 24px;">
+                        <h3>Alex's Academic Standing</h3>
+                        <span class="live-pulse"><span class="dot pulse-green"></span> Live Tracking Active</span>
+                    </div>
+                    
+                    <div class="status-overview-grid">
+                        
+                        <div class="overview-box rank-box glass-panel">
+                            <span class="box-label">Current Rank</span>
+                            <div style="display: flex; align-items: center; gap: 16px; margin-top: 12px;">
+                                <div class="rank-letter b-rank">B</div>
+                                <div>
+                                    <h4 style="font-size: 1.2rem;">Elite Tier</h4>
+                                    <span style="font-family: 'Fira Code', monospace; color: var(--text-muted); font-size: 0.85rem;">84,500 / 100k XP</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overview-box power-box glass-panel">
+                            <span class="box-label">Power Score ⚡</span>
+                            <div style="margin-top: 12px;">
+                                <h4 style="font-size: 2rem; font-family: 'Fira Code', monospace; color: #fff;">8,450</h4>
+                                <span style="font-size: 0.8rem; color: var(--accent-primary);">↑ Top 15% in School</span>
+                            </div>
+                        </div>
+
+                        <div class="overview-box guild-box glass-panel">
+                            <span class="box-label">Faction / Guild</span>
+                            <div style="display: flex; align-items: center; gap: 12px; margin-top: 12px;">
+                                <div class="guild-mini-logo"><svg width="30" height="30" viewBox="0 0 100 100" fill="none"><path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" fill="#0088FF"/></svg></div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; color: #0088FF;">Azure Mind</h4>
+                                    <span style="font-size: 0.8rem; color: var(--text-muted);">Logic Bonus Active</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col ai-insight-card" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <div class="pulse-ring" style="width: 14px; height: 14px; border-color: var(--accent-purple);"><div class="dot pulse-purple" style="width: 6px; height: 6px; background: var(--accent-purple);"></div></div>
+                            <h3 style="font-size: 1.1rem;">Jarvis Insight</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="insight-content" style="margin-top: 16px;">
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 16px;">
+                            Alex has shown a <strong style="color: var(--accent-yellow);">14% drop in accuracy</strong> in History over the last 3 assignments. The system has automatically scheduled 5-minute micro-learning bursts to assist.
+                        </p>
+                        
+                        <div class="action-alert glass-panel">
+                            <span style="font-size: 1.5rem; margin-right: 12px;">⚠️</span>
+                            <div>
+                                <h4 style="font-size: 0.9rem; color: #fff; margin-bottom: 2px;">Recommendation</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Encourage 15 mins of reading today.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-8-col attendance-card" data-animate="fade-up">
+                    <div class="card-header" style="margin-bottom: 16px;">
+                        <h3>Attendance Record (Past 30 Days)</h3>
+                        <span style="font-family: 'Fira Code', monospace; color: var(--accent-primary); font-weight: bold;">96% Present</span>
+                    </div>
+
+                    <div class="heatmap-container">
+                        <div class="heatmap-grid">
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 14: Present"></div>
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 15: Present"></div>
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 16: Present"></div>
+                            <div class="hm-day absent tooltip-trigger" aria-label="Oct 17: Absent (Sick Leave)"></div>
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 18: Present"></div>
+                            
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 21: Present"></div>
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 22: Present"></div>
+                            <div class="hm-day late tooltip-trigger" aria-label="Oct 23: Late (15 mins)"></div>
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 24: Present"></div>
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 25: Present"></div>
+
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 28: Present"></div>
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 29: Present"></div>
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 30: Present"></div>
+                            <div class="hm-day present tooltip-trigger" aria-label="Oct 31: Present"></div>
+                            <div class="hm-day present tooltip-trigger" aria-label="Nov 1: Present"></div>
+                            
+                            <div class="hm-day present"></div><div class="hm-day present"></div><div class="hm-day present"></div><div class="hm-day present"></div><div class="hm-day present"></div>
+                            <div class="hm-day present"></div><div class="hm-day present"></div><div class="hm-day present"></div><div class="hm-day present"></div><div class="hm-day present"></div>
+                        </div>
+                        <div class="heatmap-legend" style="margin-top: 12px; display: flex; gap: 16px; font-size: 0.75rem; color: var(--text-muted);">
+                            <span style="display: flex; align-items: center; gap: 6px;"><div class="hm-day present" style="width:10px; height:10px;"></div> Present</span>
+                            <span style="display: flex; align-items: center; gap: 6px;"><div class="hm-day absent" style="width:10px; height:10px;"></div> Absent</span>
+                            <span style="display: flex; align-items: center; gap: 6px;"><div class="hm-day late" style="width:10px; height:10px;"></div> Late</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-4-col finance-card" data-animate="fade-up" style="animation-delay: 0.1s;">
+                    <div class="card-header" style="margin-bottom: 24px;">
+                        <h3>Pending Dues</h3>
+                    </div>
+                    
+                    <div class="invoice-box glass-panel">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                            <div>
+                                <h4 style="font-size: 1.1rem; color: #fff;">Q3 Tuition Fee</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Due: Nov 30, 2026</span>
+                            </div>
+                            <div class="badge" style="background: rgba(255,214,0,0.1); color: var(--accent-yellow); border: 1px solid rgba(255,214,0,0.3);">Unpaid</div>
+                        </div>
+                        
+                        <div class="invoice-amount" style="font-family: 'Fira Code', monospace; font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 24px;">
+                            $1,250.00
+                        </div>
+                        
+                        <button class="btn btn-primary bento-glow full-width" id="pay-fees-btn">
+                            Pay via Stripe <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bento-card glass-panel span-full recent-grades-card" data-animate="fade-up">
+                    <div class="card-header" style="margin-bottom: 20px;">
+                        <h3>Recent Academic Activity</h3>
+                        <a href="analytics.html" style="font-size: 0.85rem; color: var(--accent-primary);">View All History</a>
+                    </div>
+                    
+                    <div class="grade-table-wrapper">
+                        <table class="grade-table">
+                            <thead>
+                                <tr>
+                                    <th>Quest / Assignment</th>
+                                    <th>Subject</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>XP Earned</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Thermodynamics Lab</td>
+                                    <td><span class="subject-tag physics">Physics</span></td>
+                                    <td>Today</td>
+                                    <td><span class="status-tag graded">AI Graded</span></td>
+                                    <td style="color: var(--accent-primary); font-family: monospace; font-weight: bold;">+1,500 XP</td>
+                                </tr>
+                                <tr>
+                                    <td>Essay: The French Revolution</td>
+                                    <td><span class="subject-tag history">History</span></td>
+                                    <td>Yesterday</td>
+                                    <td><span class="status-tag graded">AI Graded</span></td>
+                                    <td style="color: var(--accent-yellow); font-family: monospace; font-weight: bold;">+800 XP</td>
+                                </tr>
+                                <tr>
+                                    <td>Quadratic Equations Quiz</td>
+                                    <td><span class="subject-tag math">Math</span></td>
+                                    <td>Nov 10</td>
+                                    <td><span class="status-tag graded">AI Graded</span></td>
+                                    <td style="color: var(--accent-primary); font-family: monospace; font-weight: bold;">+2,100 XP</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/core-auth.js"></script>
+    <script src="../../js/parent-ops.js"></script>
+</body>
+</html>

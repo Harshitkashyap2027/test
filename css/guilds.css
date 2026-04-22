@@ -1,0 +1,79 @@
+/* ==========================================================================
+   GUILD THEME ENGINE
+   ==========================================================================
+   This file dynamically overrides the global CSS variables based on the 
+   user's chosen guild. Applying the class to the <body> shifts the entire UI.
+*/
+
+/* 1. AZURE MIND (Blue - Intelligence & Calm) */
+body.guild-azure {
+    --accent-primary: #0088FF;
+    --accent-secondary: #00E5FF;
+    --guild-glow: rgba(0, 136, 255, 0.4);
+    --guild-bg: rgba(0, 136, 255, 0.05);
+    --gradient-brand: linear-gradient(135deg, #0088FF 0%, #00E5FF 100%);
+}
+
+/* 2. INFERNO SQUAD (Red/Orange - Aggression & Speed) */
+body.guild-inferno {
+    --accent-primary: #FF3366;
+    --accent-secondary: #FF8C00;
+    --guild-glow: rgba(255, 51, 102, 0.4);
+    --guild-bg: rgba(255, 51, 102, 0.05);
+    --gradient-brand: linear-gradient(135deg, #FF3366 0%, #FF8C00 100%);
+}
+
+/* 3. SHADOW GUILD (Purple/Black - Stealth & Accuracy) */
+body.guild-shadow {
+    --accent-primary: #B026FF;
+    --accent-secondary: #6A00FF;
+    --guild-glow: rgba(176, 38, 255, 0.4);
+    --guild-bg: rgba(176, 38, 255, 0.05);
+    --gradient-brand: linear-gradient(135deg, #B026FF 0%, #6A00FF 100%);
+}
+
+/* 4. TITAN FORCE (Green - Strength & Consistency) */
+body.guild-titan {
+    --accent-primary: #00FF88;
+    --accent-secondary: #00C853;
+    --guild-glow: rgba(0, 255, 136, 0.4);
+    --guild-bg: rgba(0, 255, 136, 0.05);
+    --gradient-brand: linear-gradient(135deg, #00FF88 0%, #00C853 100%);
+}
+
+/* 5. ZENITH ORDER (Gold - Elite Top Rankers) */
+body.guild-zenith {
+    --accent-primary: #FFD700;
+    --accent-secondary: #FFA500;
+    --guild-glow: rgba(255, 215, 0, 0.4);
+    --guild-bg: rgba(255, 215, 0, 0.05);
+    --gradient-brand: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+}
+
+/* --- Dynamic Utility Classes --- */
+.guild-ambient-primary {
+    background: radial-gradient(circle, var(--guild-glow), transparent 70%);
+}
+
+.guild-ambient-secondary {
+    background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+}
+
+.guild-text {
+    color: var(--accent-primary);
+    text-shadow: 0 0 10px var(--guild-glow);
+}
+
+.guild-border {
+    border-color: var(--accent-primary);
+    box-shadow: inset 0 0 20px var(--guild-bg);
+}
+
+/* Specific Element Overrides using Guild Tokens */
+.guild-azure-bg { background: linear-gradient(135deg, #0088FF, #00E5FF); }
+.guild-azure-border { border: 1px solid rgba(0,136,255,0.3); box-shadow: inset 0 0 30px rgba(0,136,255,0.05); }
+
+/* Dynamic Badge Colors */
+.b-rank { background: rgba(255, 51, 102, 0.1); color: #FF3366; border: 2px solid #FF3366; box-shadow: 0 0 15px rgba(255, 51, 102, 0.3); }
+.a-rank { background: rgba(176, 38, 255, 0.1); color: #B026FF; border: 2px solid #B026FF; box-shadow: 0 0 20px rgba(176, 38, 255, 0.4); }
+.s-rank { background: rgba(255, 215, 0, 0.1); color: #FFD700; border: 2px solid #FFD700; box-shadow: 0 0 30px rgba(255, 215, 0, 0.5); }

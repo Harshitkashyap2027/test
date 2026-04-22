@@ -1,0 +1,259 @@
+/* ==========================================================================
+   SOLUTIONS PAGE - CUSTOM STYLESHEET
+   ========================================================================== */
+
+/* 🚀 HERO ADJUSTMENTS */
+.solutions-hero {
+    padding-top: calc(var(--header-height) + var(--space-12));
+    padding-bottom: var(--space-8);
+    position: relative;
+    z-index: 2;
+}
+
+/* 🧭 STICKY INDUSTRY SUB-NAVIGATION */
+.sticky-subnav {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 100;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto var(--space-8);
+    border-radius: var(--radius-pill);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: var(--blur-heavy);
+    -webkit-backdrop-filter: var(--blur-heavy);
+    box-shadow: var(--shadow-md);
+    border: var(--border-thin);
+    transition: all var(--transition-base);
+}
+
+.subnav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subnav-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: var(--radius-pill);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+}
+
+.subnav-link .icon {
+    font-size: 1.1rem;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all var(--transition-fast);
+}
+
+.subnav-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.subnav-link.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.subnav-link.active .icon {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* 🏢 INDUSTRY BLOCK HEADERS */
+.industry-block {
+    scroll-margin-top: calc(var(--header-height) + 100px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: var(--space-16);
+}
+
+.industry-block:last-of-type {
+    border-bottom: none;
+}
+
+.industry-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-10);
+}
+
+.industry-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid;
+    margin-bottom: var(--space-4);
+}
+
+/* 🧩 FEATURE & ROLE LISTS */
+.feature-list-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.feature-icon {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.feature-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.feature-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.role-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    list-style: none;
+    padding: 0;
+}
+
+.role-list li {
+    background: rgba(255, 255, 255, 0.03);
+    border: var(--border-thin);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: transform var(--transition-fast);
+}
+
+.role-list li:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.role-list strong {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.role-list span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* 🖼️ MOCKUP CONTAINER & CSS DRAWING */
+.mockup-container {
+    overflow: hidden;
+}
+
+.mockup-header {
+    height: 40px;
+    border-bottom: var(--border-thin);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-4);
+}
+
+.mockup-title {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Specific Mockup Enhancements */
+.student-avatar {
+    position: relative;
+}
+
+.student-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; right: 5px;
+    width: 15px; height: 15px;
+    background: var(--accent-primary);
+    border: 2px solid #08080A;
+    border-radius: 50%;
+}
+
+.kanban-task {
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    cursor: grab;
+}
+
+.kanban-task:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.kanban-task:active {
+    cursor: grabbing;
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (SOLUTIONS SPECIFIC)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .feature-list-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sticky-subnav {
+        display: none; /* Hide sticky nav on tablet/mobile to save screen real estate */
+    }
+
+    /* Stack Mockup Grids */
+    .mockup-container > div:last-child {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .mockup-container > div > div > div {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .industry-header {
+        padding: 0 var(--space-4);
+    }
+
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+
+    /* Kanban specific stacking */
+    .bento-card[style*="rgba(0,255,136,0.3)"] > div:last-child > div:last-child {
+        grid-template-columns: 1fr !important;
+    }
+}
