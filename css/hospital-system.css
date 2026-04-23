@@ -1,0 +1,13 @@
+.hospital-shell{max-width:1240px;margin:0 auto;padding:2rem}
+.hospital-hero{padding:1.5rem 1.75rem;margin-bottom:1rem}
+.hospital-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.hospital-card{padding:1rem 1.1rem;text-decoration:none;color:inherit;display:block;min-height:130px}
+.hospital-card p{color:var(--text-secondary);margin:.4rem 0 0}
+.hospital-toolbar{display:flex;gap:.75rem;flex-wrap:wrap;margin:1rem 0}
+.hospital-toolbar input{background:rgba(255,255,255,.06);border:var(--border-thin);padding:.65rem .8rem;border-radius:12px;color:var(--text-primary)}
+.hospital-layout{display:grid;grid-template-columns:280px 1fr;gap:1rem}
+.hospital-nav{padding:1rem}
+.hospital-nav a{display:block;padding:.55rem .7rem;border-radius:10px;color:var(--text-secondary)}
+.hospital-nav a:hover,.hospital-nav a.active{background:rgba(0,255,136,.15);color:var(--text-primary)}
+@media (max-width:900px){.hospital-grid{grid-template-columns:1fr 1fr}.hospital-layout{grid-template-columns:1fr}}
+@media (max-width:640px){.hospital-grid{grid-template-columns:1fr}}
