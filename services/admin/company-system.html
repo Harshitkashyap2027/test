@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company System | Unified Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/root.css" />
+  <link rel="stylesheet" href="../../css/company-system.css" />
+</head>
+<body>
+  <div class="company-shell">
+    <aside class="company-sidebar">
+      <div class="brand-block">
+        <p class="brand-kicker">Enterprise OS</p>
+        <h1>Company Control Center</h1>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Service Navigation">
+        <button class="service-tab active" data-service="employee">👨‍💼 Employee Service</button>
+        <button class="service-tab" data-service="hr">🧑‍💼 HR Service</button>
+        <button class="service-tab" data-service="department">🏢 Department Service</button>
+        <button class="service-tab" data-service="admin">🏢 Admin Service</button>
+        <button class="service-tab" data-service="company-admin">🏢 3D Company Admin</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Connected to Firebase-ready architecture for auth, payroll, and operational analytics.</p>
+      </div>
+    </aside>
+
+    <main class="company-main">
+      <header class="top-strip">
+        <div>
+          <p class="meta-label">Live Workspace</p>
+          <h2 id="activeServiceTitle">Employee Service</h2>
+        </div>
+        <div class="top-actions">
+          <input id="serviceSearch" type="search" placeholder="Search modules, e.g. Payroll" aria-label="Search Modules" />
+          <button id="refreshBtn" type="button">Refresh</button>
+        </div>
+      </header>
+
+      <section class="bento-grid" id="statsGrid"></section>
+
+      <section class="module-panel">
+        <div class="module-panel-head">
+          <h3>Work Overview</h3>
+          <p>Operational modules mapped from your requested enterprise architecture.</p>
+        </div>
+        <div class="module-list" id="moduleList"></div>
+      </section>
+
+      <section class="timeline-panel">
+        <div class="module-panel-head">
+          <h3>Activity Timeline</h3>
+          <p>Recent flow across attendance, payroll, recruitment, and performance streams.</p>
+        </div>
+        <ul id="activityTimeline" class="timeline-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <template id="moduleCardTemplate">
+    <article class="module-card">
+      <header>
+        <h4></h4>
+        <span class="badge"></span>
+      </header>
+      <p class="module-desc"></p>
+      <div class="module-meta"></div>
+      <button class="module-open-btn" type="button">Open Module</button>
+    </article>
+  </template>
+
+  <script type="module" src="../../js/company-system.js"></script>
+</body>
+</html>
