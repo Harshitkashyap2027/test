@@ -1,0 +1,13 @@
+.university-shell{max-width:1200px;margin:0 auto;padding:2rem}
+.university-hero{padding:1.5rem 1.75rem;margin-bottom:1rem}
+.university-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.university-card{padding:1rem 1.1rem;text-decoration:none;color:inherit;display:block;min-height:130px}
+.university-card p{color:var(--text-secondary);margin:.4rem 0 0}
+.university-toolbar{display:flex;gap:.75rem;flex-wrap:wrap;margin:1rem 0}
+.university-toolbar input{background:rgba(255,255,255,.06);border:var(--border-thin);padding:.65rem .8rem;border-radius:12px;color:var(--text-primary)}
+.university-sidebar{display:grid;grid-template-columns:260px 1fr;gap:1rem}
+.university-nav{padding:1rem}
+.university-nav a{display:block;padding:.55rem .7rem;border-radius:10px;color:var(--text-secondary)}
+.university-nav a:hover,.university-nav a.active{background:rgba(0,136,255,.18);color:var(--text-primary)}
+@media (max-width:900px){.university-grid{grid-template-columns:1fr 1fr}.university-sidebar{grid-template-columns:1fr}}
+@media (max-width:640px){.university-grid{grid-template-columns:1fr}}

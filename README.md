@@ -11,6 +11,7 @@ A Firebase-ready, static front-end platform built with **HTML, CSS, and Vanilla 
   - `school/parents/dashboard.html`
   - `school/admin/dashboard.html`
 - Feature pages in `pages/`, `learning/`, `arena/`, and `ai-features/`.
+- Full university role tree in `university/` for Student, Faculty, Parent, and Admin services.
 - Firebase service layer in `js/firebase-config.js`.
 
 ## Structure
@@ -29,6 +30,11 @@ A Firebase-ready, static front-end platform built with **HTML, CSS, and Vanilla 
 │   ├── students/
 │   ├── teachers/
 │   ├── parents/
+│   └── admin/
+├── university/
+│   ├── student/
+│   ├── faculty/
+│   ├── parent/
 │   └── admin/
 ├── services/                # legacy role pages kept for compatibility
 ├── css/
