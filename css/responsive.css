@@ -122,6 +122,10 @@
         grid-column: span 12;
     }
 
+    .role-hub-grid {
+        grid-template-columns: 1fr;
+    }
+
     .pricing-grid,
     .testimonial-slider {
         grid-template-columns: 1fr;

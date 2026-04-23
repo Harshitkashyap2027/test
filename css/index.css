@@ -1217,3 +1217,31 @@
     box-shadow: 0 0 10px var(--accent-primary);
     animation: pulse-glow 2s infinite;
 }
+
+.role-hub-grid {
+    margin-top: var(--space-8);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.role-card {
+    min-height: 180px;
+    justify-content: center;
+    gap: var(--space-3);
+    text-align: left;
+}
+
+.role-card p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.role-card:hover {
+    transform: translateY(-8px) rotateX(2deg);
+    box-shadow: 0 22px 30px rgba(0, 0, 0, 0.35), 0 0 30px rgba(0, 136, 255, 0.18);
+}
+
+.center-cta {
+    margin-top: var(--space-7);
+    display: flex;
+    justify-content: center;
+}
