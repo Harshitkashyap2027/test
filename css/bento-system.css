@@ -258,6 +258,31 @@
 .tilt-down  { transform: perspective(1000px) rotateX(-10deg) translateZ(20px); }
 
 /* Neon border accent variants */
+.bento-card,
+.glass-panel {
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.bento-card {
+    transform-style: preserve-3d;
+}
+
+/* iPhone-inspired depth, radius, and satin highlight */
+.iphone-bento {
+    border-radius: 28px;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.32),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+    .glass-panel,
+    .bento-card {
+        border-radius: 22px;
+    }
+}
 .bento-accent-green  { border-color: rgba(0, 255, 136, 0.3); }
 .bento-accent-blue   { border-color: rgba(0, 136, 255, 0.3); }
 .bento-accent-purple { border-color: rgba(176, 38, 255, 0.3); }
