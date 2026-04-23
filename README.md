@@ -12,6 +12,7 @@ A Firebase-ready, static front-end platform built with **HTML, CSS, and Vanilla 
   - `school/admin/dashboard.html`
 - Feature pages in `pages/`, `learning/`, `arena/`, and `ai-features/`.
 - Full university role tree in `university/` for Student, Faculty, Parent, and Admin services.
+- Full hospital role tree in `hospital/` for Patient, Doctor, Pharmacy, and Admin services.
 - Firebase service layer in `js/firebase-config.js`.
 
 ## Structure
@@ -35,6 +36,11 @@ A Firebase-ready, static front-end platform built with **HTML, CSS, and Vanilla 
 │   ├── student/
 │   ├── faculty/
 │   ├── parent/
+│   └── admin/
+├── hospital/
+│   ├── patient/
+│   ├── doctor/
+│   ├── pharmacy/
 │   └── admin/
 ├── services/                # legacy role pages kept for compatibility
 ├── css/
