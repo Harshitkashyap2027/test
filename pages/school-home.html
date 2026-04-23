@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Hub | lvlBase</title>
+  <link rel="stylesheet" href="../css/root.css">
+  <link rel="stylesheet" href="../css/bento-system.css">
+  <style>
+    body{margin:0;padding:2rem;max-width:1200px;margin-inline:auto}
+    .hero{padding:2rem;margin-bottom:1.25rem}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+    .card{padding:1.25rem;text-decoration:none;color:inherit}
+    .card p{color:var(--text-secondary)}
+    @media (max-width:720px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="dark-theme">
+  <section class="glass-panel hero iphone-bento">
+    <h1>School Hub</h1>
+    <p>Structured role access for students, teachers, parents, and school administrators.</p>
+  </section>
+
+  <section class="grid">
+    <a class="glass-panel card" href="../school/students/dashboard.html"><h2>Students</h2><p>Quest board, micro-lessons, attendance, and XP rank.</p></a>
+    <a class="glass-panel card" href="../school/teachers/dashboard.html"><h2>Teachers</h2><p>Class operations, grading workflows, and attendance control.</p></a>
+    <a class="glass-panel card" href="../school/parents/dashboard.html"><h2>Parents</h2><p>Child progress tracking, alerts, and communication feed.</p></a>
+    <a class="glass-panel card" href="../school/admin/dashboard.html"><h2>School Admins</h2><p>Admissions, timetables, payroll, and compliance operations.</p></a>
+  </section>
+
+  <p style="margin-top:1.25rem"><a href="../index.html">← Back to Home</a></p>
+</body>
+</html>
